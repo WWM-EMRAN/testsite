@@ -1,0 +1,72 @@
+[
+  {
+    "id_ref": "prj_ducuphdres",
+    "title": "A MACHINE LEARNING BASED ANALYSIS OF SLEEP PATTERNS IN AGING USING PHYSIOLOGICAL SIGNALS",
+    "project_type": "PhD Research",
+    "organization": "Deakin University, Coventry University",
+    "timeframe_details": "Jan. 1, 2023 - Present | PhD Cotutelle Research",
+    "short_description": "Investigating the relationship between sleep dynamics (Hypnogram) and healthy ageing using interpretable machine learning models.",
+    "long_description": "This ongoing PhD research focuses on leveraging machine learning techniques to investigate age-related variations in sleep dynamics using physiological signals such as EEG, ECG, and PPG. The study aims to identify discriminative features and biomarkers that can assist in understanding sleep degradation with aging, enabling early detection and intervention for sleep-related disorders in elderly populations.",
+    "funding": "Cotutelle program studentship",
+    "funding_organization": "Centre for Computational Science and Mathematical Modelling (CSM), Coventry University, United Kingdom",
+    "collaboration_organization": "Coventry University (UK), Deakin University (Austrlia)",
+    "image_path": "assets/img/projects/sleep_ageing.jpg",
+    "url_link": ""
+  },
+  {
+    "id_ref": "prj_duaqp",
+    "title": "Air Quality Prediction (Temperature Prediction) for Indoor Environments in Different Cities of Australia.",
+    "project_type": "Research Assistant",
+    "organization": "Monash University, AETMOS Australia",
+    "timeframe_details": "Mar. 1, 2022 - Feb. 28, 2023 | Research Assistant",
+    "short_description": "Prediction of indoor air temperature and quality metrics using meteorological data and deep ensemble machine learning models.",
+    "long_description": "Contributed as a Research Assistant to a MAAP linkage project funded by the Australian Research Council. This project involved collaboration with Monash University and AETMOS, focusing on predicting indoor air temperature and air quality using meteorological data. The work explored deep learning architectures to evaluate health impacts of environmental conditions, and proposed predictive models for smart urban sustainability.",
+    "funding": "ARC MAAP linkage project fund",
+    "funding_organization": "Australian Research Council (ARC)",
+    "collaboration_organization": "Deakin University (Austrlia), Monash University (Australia), AETMOS (Australia)",
+    "image_path": "assets/img/projects/air_quality.jpg",
+    "url_link": "#publications"
+  },
+  {
+    "id_ref": "prj_duamdszicu",
+    "title": "Channel minimisation and epileptic seizure detection using single channels using Deep Learning from continuous iEEG of ICU patients.",
+    "project_type": "Research Assistant",
+    "organization": "Monash University, Alfred Health",
+    "timeframe_details": "Apr. 1, 2020 - Mar. 31, 2022 | Voluntary Collaboration (Paused)",
+    "short_description": "Channel minimisation and epileptic seizure detection using single channels using Deep Learning from continuous iEEG of ICU patients.",
+    "long_description": "This voluntary research focused on minimizing the number of EEG channels required for accurate epileptic seizure detection. Leveraging deep learning on continuous iEEG signals, the study aimed to optimize detection performance while reducing computational and clinical complexity, contributing to more accessible and efficient seizure monitoring systems.",
+    "funding": "No funding. This is a voluntary collaboration research work.",
+    "funding_organization": "",
+    "collaboration_organization": "Deakin University (Austrlia), Monash University (Australia), Alfred Health (Australia)",
+    "image_path": "assets/img/projects/epilepsy_seizure.jpg",
+    "url_link": ""
+  },
+  {
+    "id_ref": "prj_irthstu3lnp",
+    "title": "DESIGNING A 3-LAYER NETWORK SECURITY TECHNIQUE IN SERVERS FOR PREVENTION OF DDOS ATTACK.",
+    "project_type": "Project Research Associate",
+    "organization": "HSTU - Institute of Research and Technology (IRT)",
+    "timeframe_details": "Jul. 1, 2018 - Jun. 30, 2019 | IRT Research Grant",
+    "short_description": "DESIGNING A 3-LAYER NETWORK SECURITY TECHNIQUE IN SERVERS FOR PREVENTION OF DDOS ATTACK.",
+    "long_description": "This project proposed a novel three-layered security framework to mitigate DDoS attacks targeting server infrastructures. The system design integrated preventive, detection, and response mechanisms to enhance cybersecurity resilience and ensure uninterrupted service availability. The project was funded by HSTU through the IRT Annual Research Grant.",
+    "funding": "IRT Annual Research Fund",
+    "funding_organization": "Institute of Research and Training (IRT), Hajee Mohammad Danesh Science and Technology University (HSTU), Dinajpur-5200, Bangladesh.",
+    "collaboration_organization": "",
+    "image_path": "assets/img/projects/network_security.jpg",
+    "url_link": ""
+  },
+  {
+    "id_ref": "prj_irthstubsmnat",
+    "title": "ANALYSIS AND DESIGN OF A NON-INVASIVE WAY OF MEASURING AND MONITORING BLOOD-SODIUM CONCENTRATION LEVEL USING NEAR-INFRARED SPECTROSCOPY.",
+    "project_type": "Project Research Associate",
+    "organization": "HSTU - Institute of Research and Technology (IRT)",
+    "timeframe_details": "Jul. 1, 2018 - Jun. 30, 2019 | IRT Research Grant",
+    "short_description": "ANALYSIS AND DESIGN OF A NON-INVASIVE WAY OF MEASURING AND MONITORING BLOOD-SODIUM CONCENTRATION LEVEL USING NEAR-INFRARED SPECTROSCOPY.",
+    "long_description": "This project explored the feasibility of developing a non-invasive technique to monitor blood sodium concentration using near-infrared spectroscopy. The research involved signal processing, optical modeling, and preliminary prototype design to assess potential applications in real-time clinical diagnostics. It was supported by HSTU’s IRT Annual Research Fund.",
+    "funding": "IRT Annual Research Fund",
+    "funding_organization": "Institute of Research and Training (IRT), Hajee Mohammad Danesh Science and Technology University (HSTU), Dinajpur-5200, Bangladesh.",
+    "collaboration_organization": "",
+    "image_path": "assets/img/projects/nir_spectroscopy.jpg",
+    "url_link": ""
+  }
+]

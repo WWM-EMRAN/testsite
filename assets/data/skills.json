@@ -1,0 +1,52 @@
+[
+  {
+    "category": "Programming",
+    "description": "Python, Java, Swift, Objective-C, C, C++, C#, SQL, PHP, R",
+    "level": 100
+  },
+  {
+    "category": "Datascience",
+    "description": "Data Collection, Cleaning, Preprocessing, EDA, Analysis, Feature Engineering, Numpy, Pandas, Matplotlib",
+    "level": 90
+  },
+  {
+    "category": "Machine Learning",
+    "description": "Concept and Application, Scikit-learn, Auto-ML",
+    "level": 90
+  },
+  {
+    "category": "Deep Learning",
+    "description": "Concept and Application, Pytorch, Tensorflow, Keras",
+    "level": 85
+  },
+  {
+    "category": "Generative & Agentic AI",
+    "description": "(Gemini & Huggingface): Multi-Agent, Tools & MCP, Session & Memory, Observability, A2A",
+    "level": 60
+  },
+  {
+    "category": "Cloud Platforms",
+    "description": "AWS, AWS Sagemaker, MS Azure, Azure ML Designer",
+    "level": 85
+  },
+  {
+    "category": "Health Informatics and Signal Processing",
+    "description": "Disorder detection, Epilepsy, Sleep disorders, EEG",
+    "level": 85
+  },
+  {
+    "category": "Teaching and Training",
+    "description": "Demonstration, Communication, Supervision",
+    "level": 100
+  },
+  {
+    "category": "Management and Leadership",
+    "description": "Project Management, Team Lead, Client Management",
+    "level": 90
+  },
+  {
+    "category": "Soft Skills",
+    "description": "Critical Thinking, Problem Solving, Communication, Collaboration",
+    "level": 90
+  }
+]

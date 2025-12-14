@@ -1,0 +1,24 @@
+[
+  {
+    "id_ref": "sessevnt_spkr",
+    "title": "Seminar Speaker",
+    "type": "Seminar",
+    "icon_class": "bi bi-mic",
+    "organization": "CSE Club, HSTU",
+    "date": "Sep. 2022",
+    "description": "Presented a talk at a seminar on Higher Studies in Abroad - Journey to Australia and Research Experiences.",
+    "image_path": "",
+    "url_link": ""
+  },
+  {
+    "id_ref": "sessevnt_knspkr",
+    "title": "Keynote Speaker",
+    "type": "Seminar/Keynote",
+    "icon_class": "bi bi-mic",
+    "organization": "AFCSE, HSTU",
+    "date": "Apr. 2015",
+    "description": "Delivered a keynote at a seminar on career development and the future of mobile app development in Bangladesh.",
+    "image_path": "",
+    "url_link": ""
+  }
+]

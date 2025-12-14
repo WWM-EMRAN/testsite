@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Logo Preloader with White to Color Transition</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+
+    .preloader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    #logo {
+      width: 150px;
+      filter: brightness(0) invert(1); /* Show logo as white initially */
+      transition: filter 2s ease-in-out;
+    }
+
+    .dot-loader {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot-loader span {
+      width: 12px;
+      height: 12px;
+      background: #d43f3a;
+      border-radius: 50%;
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+
+    .dot-loader span:nth-child(2) { animation-delay: 0.2s; }
+    .dot-loader span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    #main-content {
+      display: none;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="../assets/img/Emran_Ali_Logo_Original-Trans.png" alt="Logo" id="logo">
+      <div class="dot-loader">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content">
+    <h1>Welcome to My Website</h1>
+    <p>Your main content goes here...</p>
+  </div>
+
+  <!-- JS -->
+  <script>
+    window.addEventListener("load", () => {
+      const logo = document.getElementById("logo");
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
+
+      // Trigger color transition
+      logo.style.filter = "none";
+
+      // Fade out preloader after color transition
+      setTimeout(() => {
+        preloader.style.transition = "opacity 0.6s ease";
+        preloader.style.opacity = "0";
+        setTimeout(() => {
+          preloader.style.display = "none";
+          mainContent.style.display = "flex";
+        }, 600);
+      }, 2000); // Wait for filter transition to complete
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+.g-scholar-icon {
+  display: inline-block;
+  width: 1.0em; /* Match the size of Boxicons 1.5em = 1.20em;*/
+  height: 1.0em;
+  background: no-repeat center/contain;
+  background-image: url('google-scholar_white.png'); /* Replace with your SVG path */
+  /*background-image: url('google-scholar-icon.svg'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
+
+
+.g-scholar-icon-black {
+  display: inline-block;
+  width: 1.0em; /* Match the size of Boxicons 1.5em = 1.20em;*/
+  height: 1.0em;
+  background: no-repeat center/contain;
+  background-image: url('google-scholar_black.svg'); /* Replace with your SVG path */
+  /*background-image: url('google-scholar-icon.svg'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
+
+
+.researchgate-icon {
+  display: inline-block;
+  width: 1.0em; /* Match the size of Boxicons | 1.0em */
+  height: 1.0em;
+  background: no-repeat center/contain;
+  background-image: url('reserach-gate_white.png'); /* Replace with your SVG path */
+  /*background-image: url('researchgate-icon.svg'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
+
+
+.researchgate-icon-black {
+  display: inline-block;
+  width: 1.0em; /* Match the size of Boxicons | 1.0em */
+  height: 1.0em;
+  background: no-repeat center/contain;
+  background-image: url('reserach-gate_black.svg'); /* Replace with your SVG path */
+  /*background-image: url('researchgate-icon.svg'); /* Replace with your SVG path */
+  vertical-align: middle;
+}
+
+
+

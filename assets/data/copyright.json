@@ -1,0 +1,21 @@
+[
+  {
+    "id_ref": "copyright_v1_1_0",
+    "version": "1.1.0",
+    "right_to_copy": "@wwm.emran",
+    "description": "The theme and content of this website have been modified for personal use. Any reproduction, distribution, or usage of this modified version or any of its contents for any purpose is strictly prohibited without the prior explicit consent of the website owner.",
+    "modifications": [
+      "Theme has been changed slightly",
+      "Color scheme has been changed slightly",
+      "Description page has been modified",
+      "Fonts are modified"
+    ]
+  },
+  {
+    "id_ref": "copyright_v1_0_0",
+    "version": "1.0.0",
+    "right_to_copy": "@wwm.emran",
+    "description": "The theme of this website was originally designed by 'iPortfolio' and is available on https://bootstrapmade.com/. In accordance with the license terms, this theme is used strictly for personal purposes only. The theme and content have been modified for personal use. Redistribution, reproduction, or usage of this modified version—or any part of it—for any purpose without prior explicit consent from the owner of this website is strictly prohibited.",
+    "modifications": []
+  }
+]

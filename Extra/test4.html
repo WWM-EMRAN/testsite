@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../assets/css/additional-icon.css" rel="stylesheet">
+  <title>Logo Preloader Example</title>
+  <style>
+    /* Preloader styling */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff; /* White background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it overlays everything */
+    }
+
+    /* Logo styling */
+    #logo {
+      width: 150px; /* Adjust size as needed */
+      filter: grayscale(100%);
+      transition: filter 0.3s ease-in-out; /* Smooth transition for color */
+    }
+
+    .watermark-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .watermark-container img {
+      width: 100%; /* Adjust image size as needed */
+      height: auto;
+    }
+
+    .watermark {
+      position: absolute;
+      bottom: 10px; /* Adjust watermark position */
+      right: 10px; /* Adjust watermark position */
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+      font-weight: bold;
+      pointer-events: none; /* Ensure the watermark doesn't interfere with interactions */
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: add shadow for better visibility */
+      z-index: 10;
+    }
+
+
+    .watermarked-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .watermarked-container img {
+      width: 100%; /* Adjust image size as needed */
+      height: auto;
+    }
+
+    .watermark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      pointer-events: none; /* Prevent interaction with the overlay */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .watermark-overlay img {
+      max-width: 100%; /* Adjust watermark size */
+      opacity: 0.3; /* Set transparency of the watermark */
+      pointer-events: none; /* Ensure the watermark does not block interactions */
+    }
+
+    .watermarked-image {
+      width: 300px;
+      height: 200px;
+      background-image: url('../assets/img/myimg/watermark-final.png'), url('../assets/img/gallery/emran-bg1.jpg');
+      background-size: cover, 100px; /* Adjust watermark size */
+      background-position: center, bottom right; /* Position the watermark */
+      background-repeat: no-repeat;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Preloader Section -->
+  <div id="preloader">
+    <img src="../assets/img/Emran_Ali_Logo.png" alt="Logo" id="logo">
+  </div>
+
+  <!-- Main Content -->
+<!--  <div style="display: none;" id="main-content">-->
+  <div>
+    <h1>Welcome to My Website</h1>
+    <p>Your main content goes here...</p>
+
+    <a href="https://scholar.google.com" target="_blank">
+      <img src="path-to-google-scholar-icon.svg" alt="Google Scholar" width="24" height="24">
+    </a>
+
+    <a href="https://scholar.google.com" target="_blank">
+      <i class="bi bi-book"></i>
+    </a>
+
+    <a href="https://scholar.google.com" target="_blank">
+      <i class="bx bx-book"></i>
+    </a>
+
+    <a href="https://scholar.google.com" target="_blank">
+      <i class="fas fa-graduation-cap"></i>
+    </a>
+    Hello me...
+    <a href="https://scholar.google.com" target="_blank">
+      <span class="g-scholar-icon"></span>
+    </a>
+
+    <i class="g-scholar-icon"></i>
+
+    <img src="https://scholar.google.com/favicon.ico" alt="Google Scholar">
+
+    <div class="watermark-container">
+      <img src="../assets/img/gallery/emran-bg1.jpg" alt="Example Image">
+      <div class="watermark">Your Watermark</div>
+    </div>
+
+
+    <div class="watermarked-container">
+      <img src="../assets/img/gallery/emran-bg1.jpg" alt="Example Image">
+      <div class="watermark-overlay">
+        <img src="../assets/img/myimg/watermark-bg.png" alt="Watermark">
+      </div>
+    </div>
+
+
+    <div class="watermarked-image"></div>
+
+
+
+  </div>
+
+  <script>
+    // JavaScript to handle the preloader
+    window.addEventListener("load", () => {
+      const logo = document.getElementById("logo");
+      const preloader = document.getElementById("preloader");
+      // const mainContent = document.getElementById("main-content");
+
+      // Begin color transition
+      logo.style.filter = "grayscale(0%)";
+
+      // Wait for the color transition to complete, then hide preloader
+      const computedStyle = getComputedStyle(logo);
+      const transitionDuration = parseFloat(computedStyle.transitionDuration) * 1000; // Convert to ms
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        // mainContent.style.display = "block";
+      }, transitionDuration);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('.watermark-container img');
+      images.forEach((img) => {
+        const watermark = document.createElement('div');
+        watermark.className = 'watermark';
+        watermark.textContent = 'Your Watermark'; // Customize your watermark text
+        img.parentElement.appendChild(watermark);
+      });
+    });
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('.watermarked-container img');
+    images.forEach((img) => {
+      const overlay = document.createElement('div');
+      overlay.className = 'watermark-overlay';
+
+      const watermark = document.createElement('img');
+      watermark.src = 'watermark.png'; // Path to your watermark image
+      watermark.alt = 'Watermark';
+      watermark.style.opacity = '0.3'; // Adjust transparency
+
+      overlay.appendChild(watermark);
+      img.parentElement.appendChild(overlay);
+    });
+  });
+  </script>
+
+</body>
+</html>

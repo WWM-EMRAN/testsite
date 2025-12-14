@@ -1,0 +1,44 @@
+[
+  {
+    "id_ref": "lan_ben",
+    "language": "Bengali",
+    "status": "Native",
+    "proficiency_level": "Excellent",
+    "details": "Native language · Excellent proficiency in Listening, Reading, Writing, and Speaking (LRWS).",
+    "proficiency_breakdown": {
+      "listening": "Excellent",
+      "reading": "Excellent",
+      "writing": "Excellent",
+      "speaking": "Excellent"
+    },
+    "url_link": ""
+  },
+  {
+    "id_ref": "lan_eng",
+    "language": "English",
+    "status": "Professional",
+    "proficiency_level": "Professional level",
+    "details": "Medium of instruction at HSTU and Deakin University · IELTS (6.5) - LRWS (6.0, 6.5, 6.5, 7.0) - 2019.",
+    "proficiency_breakdown": {
+      "listening": "6.0",
+      "reading": "6.5",
+      "writing": "6.5",
+      "speaking": "7.0"
+    },
+    "url_link": ""
+  },
+  {
+    "id_ref": "lan_spn",
+    "language": "Spanish",
+    "status": "Beginner",
+    "proficiency_level": "Beginner-level",
+    "details": "Beginner-level self-learner with foundational vocabulary and expressions.",
+    "proficiency_breakdown": {
+      "listening": "Beginner",
+      "reading": "Beginner",
+      "writing": "Beginner",
+      "speaking": "Beginner"
+    },
+    "url_link": ""
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "site_info": {
+    "meta_description": "Emran Ali - Educator, Trainer, Researcher, Developer: Personal Portfolio.",
+    "meta_keywords": "Emran Ali, Educator, Teacher, Trainer, Researcher, AI, Machine Learning, Data Science, PhD, Projects, Developer, Portfolio, Resume, CV, Personal Website",
+    "author": "Emran Ali",
+    "title": "Emran Ali_XX - Personal Website"
+  },
+  "assets": {
+    "icons": {
+      "favicon_gif": "Emran_Ali_Logo_Fav.gif",
+      "favicon_ico": "Emran_Ali_Logo_Fav.ico",
+      "apple_touch_icon": "Emran_Ali_Logo_Fav.ico",
+      "logo_png": "Emran_Ali_Logo_Fav.png"
+    },
+    "images": {
+      "profile_image_pp": "emran-ali-pp.jpg",
+      "site_background": "emran-ali-bg.jpg",
+      "profile_image_formal": "emran-ali-formal.jpg",
+      "preloader_logo": "Emran_Ali_Logo.gif"
+    },
+    "documents": {
+      "resume_pdf": "./assets/docs/Emran-1Page-Resume-Final.pdf"
+    }
+  },
+  "social_links": [
+    {"platform": "x", "url": "https://www.x.com/WWM_EMRAN", "icon_class": "bi bi-twitter-x"},
+    {"platform": "facebook", "url": "https://facebook.com/wwm.emran", "icon_class": "bi bi-facebook"},
+    {"platform": "instagram", "url": "https://instagram.com/wwm.emran", "icon_class": "bi bi-instagram"},
+    {"platform": "linkedin", "url": "https://www.linkedin.com/in/wwmemran", "icon_class": "bi bi-linkedin"},
+    {"platform": "google-scholar", "url": "https://scholar.google.com.au/citations?hl=en&user=ej8d6LkAAAAJ", "icon_class": "g-scholar-icon"},
+    {"platform": "researchgate", "url": "https://www.researchgate.net/profile/Emran-Ali-2", "icon_class": "researchgate-icon"},
+    {"platform": "email", "url": "mailto:emran.ali@research.deakin.edu.au", "icon_class": "bi bi-envelope-at"},
+    {"platform": "teams", "url": "https://teams.microsoft.com/l/chat/0/0?users=wwm.emran@hotmail.com", "icon_class": "bi bi-microsoft-teams"},
+    {"platform": "github", "url": "https://github.com/WWM-EMRAN", "icon_class": "bi bi-github"},
+    {"platform": "kaggle", "url": "https://kaggle.com/wwmemran", "icon_class": "fa-brands fa-kaggle"},
+    {"platform": "stack-overflow", "url": "https://stackoverflow.com/users/2314674/wwm-emran", "icon_class": "bi bi-stack-overflow"},
+    {"platform": "quora", "url": "https://quora.com/Wwm-Emran", "icon_class": "bi bi-quora"},
+    {"platform": "youtube", "url": "https://www.youtube.com/c/WWMEMRAN", "icon_class": "bi bi-youtube"},
+    {"platform": "website", "url": "https://emran.humachlab.com/", "icon_class": "bi bi-globe"}
+  ],
+  "_EXTRA_social_links": [
+    {"platform": "twitter", "url": "https://www.twitter.com/WWM_EMRAN", "icon_class": "bi bi-twitter"},
+    {"platform": "google-old", "url": "https://scholar.google.com.au/citations?hl=en&user=ej8d6LkAAAAJ", "icon_class": "bi bi-google"},
+    {"platform": "researchgate-old", "url": "https://www.researchgate.net/profile/Emran-Ali-2", "icon_class": "bx bi-r-square"},
+    {"platform": "researchgate-fab", "url": "https://www.researchgate.net/profile/Emran-Ali-2", "icon_class": "fab fa-researchgate"},
+    {"platform": "skype", "url": "skype:wwm.emran?chat", "icon_class": "bi bi-skype"},
+    {"platform": "tel", "url": "tel:+61480248845", "icon_class": "bi bi-telephone"},
+    {"platform": "whatsapp", "url": "https://wa.me/+61480248845", "icon_class": "bi bi-whatsapp"}
+  ],
+  "navigation": {
+    "main_menu": [
+      {"label": "Home_XX", "url": "#hero", "icon_class": "bx bx-home", "is_dropdown": false},
+      {"label": "About_XX", "url": "#about", "icon_class": "bi bi-person", "is_dropdown": false},
+      {"label": "Education_XX", "url": "#educations", "icon_class": "bi bi-mortarboard", "is_dropdown": false},
+      {"label": "Professional Experiences_XX", "url": "#professionalExperiences", "icon_class": "bi bi-briefcase", "is_dropdown": false},
+      {
+        "label": "Expertise and Achievements_XX",
+        "url": "#",
+        "icon_class": "bi bi-trophy",
+        "is_dropdown": true,
+        "submenu": [
+          {"label": "Skills and Tools_XX", "url": "#skillsTools", "icon_class": "bi bi-tools"},
+          {"label": "Honors and Awards_XX", "url": "#honorsAwards", "icon_class": "bi bi-award"},
+          {"label": "Certificates_XX", "url": "#coursesTrainingsCertificates", "icon_class": "bx bi-journal-bookmark-fill"},
+          {"label": "Projects_XX", "url": "#projects", "icon_class": "bi bi-lightbulb"},
+          {"label": "Memberships_XX", "url": "#memberships", "icon_class": "bi bi-people"},
+          {"label": "Sessions and Events_XX", "url": "#sessionsEvents", "icon_class": "bi bi-calendar-event"},
+          {"label": "Languages_XX", "url": "#languages", "icon_class": "bx bx-conversation"},
+          {"label": "Portfolios_XX", "url": "#portfolios", "icon_class": "bi-images"},
+          {"label": "Volunteering_XX", "url": "#volunteerings", "icon_class": "bx bxs-donate-heart"}
+        ]
+      },
+      {"label": "Publications_XX", "url": "#publications", "icon_class": "bx bi-journal-richtext", "is_dropdown": false},
+      {"label": "Contacts_XX", "url": "#contacts", "icon_class": "bi bi-envelope", "is_dropdown": false}
+    ],
+    "details_menu": [
+      {"label": "Home_XX", "url": "./", "icon_class": "bx bx-home"},
+      {"label": "Back_XX", "url": "javascript:history.back()", "icon_class": "bx bx-share"}
+    ]
+  },
+  "footer_meta": {
+    "menu_footer": {
+      "copyright_year": "auto",
+      "copyright_owner": "WWM Emran_XX",
+      "copyright_logo_link": "ea-logo.html",
+      "copyright_text_link": "copyright.html",
+      "links": [
+        {"label": "Diary_XX", "url": "diary.html"},
+        {"label": "Gallery_XX", "url": "gallery.html"}
+      ]
+    },
+    "main_page_footer": {
+      "sitename": "iPortfolio_XX",
+      "design_credit": "BootstrapMade_XX",
+      "design_link": "https://bootstrapmade.com/"
+    }
+  }
+}

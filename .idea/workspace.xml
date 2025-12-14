@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="JSON: data loading for index page with full menue and hero.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myjsonjssite.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/diary-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/diary-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/index - 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/index - 1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/printable_cv - 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/printable_cv - 1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/test-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/test5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/copyright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/diary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/ea-logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/ea-logo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/general-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/general-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/honorsAndAwards-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/honorsAndAwards-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/languages-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/languages-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/memberships-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/memberships-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/portfolios-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/portfolios-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/printable_cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/projects-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/projects-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/publications-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/publications-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/sessionsAndEvents-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/sessionsAndEvents-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra2/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/volunteerings-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/education.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/education.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/honors_awards.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/honors_awards.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/key_metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/key_metrics.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/personal_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/personal_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/professional_experience.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/professional_experience.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/site.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/copyright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/diary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ea-logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ea-logo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/general-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honorsAndAwards-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/honorsAndAwards-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/languages-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memberships-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/memberships-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolios-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolios-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/printable_cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publications-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/publications-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessionsAndEvents-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sessionsAndEvents-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/skillsAndTools-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/volunteerings-details.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;WWM-EMRAN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/WWM-EMRAN/myjsonjssite.git&quot;,
+    &quot;accountId&quot;: &quot;4d0c55dd-3583-452a-8225-97edb8aacd5a&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="36YD844QEwWa5ZgA1JcTLoApH0A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aliem/Desktop/aliem/myjsonjssite/Extra3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aliem\Desktop\aliem\myjsonjssite\Extra3" />
+      <recent name="C:\Users\aliem\Desktop\aliem\wwm-emran.github.io" />
+      <recent name="C:\Users\aliem\Desktop\aliem\wwm-emran.github.io\Extra2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aliem\Desktop\aliem\myjsonjssite\assets\data" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="myjsonjssite" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="" />
+      <created>1765174448712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765174448712</updated>
+      <workItem from="1765174450103" duration="572000" />
+      <workItem from="1765175055180" duration="278000" />
+      <workItem from="1765175361835" duration="26000" />
+      <workItem from="1765180399639" duration="7377000" />
+      <workItem from="1765288363954" duration="6405000" />
+      <workItem from="1765353127895" duration="3029000" />
+      <workItem from="1765356543477" duration="11311000" />
+      <workItem from="1765533054840" duration="35575000" />
+      <workItem from="1765644673363" duration="34845000" />
+      <workItem from="1765715332940" duration="54000" />
+      <workItem from="1765715404741" duration="107000" />
+      <workItem from="1765715623810" duration="848000" />
+      <workItem from="1765719030151" duration="242000" />
+    </task>
+    <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
+      <option name="closed" value="true" />
+      <created>1765175135614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765175135614</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Version 1.2 with updated contents and grammer checks: done.">
+      <option name="closed" value="true" />
+      <created>1765290215782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765290215782</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Version 1.2 with updated contents and grammer checks: done.">
+      <option name="closed" value="true" />
+      <created>1765290233794</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765290233794</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Version 1.2 with updated contents and grammer checks: done.">
+      <option name="closed" value="true" />
+      <created>1765293776741</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765293776741</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Try to add js and json">
+      <option name="closed" value="true" />
+      <created>1765356719935</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765356719935</updated>
+    </task>
+    <task id="LOCAL-00006" summary="JSON: files added">
+      <option name="closed" value="true" />
+      <created>1765527623306</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765527623306</updated>
+    </task>
+    <task id="LOCAL-00007" summary="JSON: files added | new image added">
+      <option name="closed" value="true" />
+      <created>1765527647214</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765527647214</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Version 1.2 with updated contents and grammer checks: done." />
+    <MESSAGE value="Try to add js and json" />
+    <MESSAGE value="JSON: files added" />
+    <MESSAGE value="JSON: files added | new image added" />
+    <MESSAGE value="JSON integration: upto Professional experiences done" />
+    <MESSAGE value="JSON: data loading for index page with full menue and hero." />
+    <option name="LAST_COMMIT_MESSAGE" value="JSON: data loading for index page with full menue and hero." />
+  </component>
+</project>

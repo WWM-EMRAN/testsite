@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logo Preloader Example</title>
+  <style>
+    /* Preloader styling */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff; /* White background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it overlays everything */
+    }
+
+    /* Logo container with masking effect */
+    #logo-container {
+      position: relative;
+      width: 150px;
+      height: 150px; /* Adjust size to fit your logo */
+      overflow: hidden;
+    }
+
+    /* Logo styling */
+    #logo {
+      width: 100%;
+      height: 100%;
+      filter: grayscale(100%);
+      transition: filter 5s ease-in-out; /* Smooth transition for color */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* Mask effect for left-to-right coloring */
+    #logo-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%; /* Start with no mask visible */
+      height: 100%;
+      background: #000;
+      animation: revealMask 5s linear forwards; /* Animate the mask */
+    }
+
+    /* Animation for left-to-right reveal */
+    @keyframes revealMask {
+      to {
+        width: 100%; /* Fully cover the logo */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader Section -->
+  <div id="preloader">
+    <div id="logo-container">
+      <img src="../assets/img/Emran_Ali_Logo_Icon.png" alt="Logo" id="logo">
+      <div id="logo-mask"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div style="display: none;" id="main-content">
+    <h1>Welcome to My Website</h1>
+    <p>Your main content goes here...</p>
+  </div>
+
+  <script>
+    // JavaScript to handle the preloader
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      const mainContent = document.getElementById("main-content");
+
+      // Hide preloader after the animation
+      setTimeout(() => {
+        preloader.style.display = "none";
+        mainContent.style.display = "block";
+      }, 5000); // Match this duration with the CSS animation
+    });
+  </script>
+</body>
+</html>

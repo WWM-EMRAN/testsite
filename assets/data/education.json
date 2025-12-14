@@ -1,0 +1,113 @@
+{
+  "section_info": {
+    "title": "Education_XX",
+    "details": "_XXI am an enthusiastic, dedicated, and patient learner and researcher who aspires to explore and deepen my knowledge of Machine Learning and Deep Learning, particularly in their applied domains such as healthcare, automation, human–computer interaction, and the bio-sciences.",
+    "icon_class": "bx bxs-graduation"
+  },
+  "summary": {
+    "title": "Summary_XX",
+    "status_list": [
+      "_XXDoctor of Philosophy (PhD) Program",
+      "Graduate Researcher, Higher Degree Research (HDR) at Deakin University",
+      "Post-Graduate Research (PGR) Student at Coventry University",
+      "Deakin–Coventry Cotutelle (Joint) Research Program.",
+      "Application of AI, ML and DL in Health Informatics Research",
+      "Institution-Industry Collaboration_XX"
+    ]
+  },
+  "column_titles": {
+    "left_column": "_XXDoctor of Philosophy (PhD)_XX",
+    "right_column_master": "_XXMaster of Science (by Research) – MRes_XX",
+    "right_column_bachelor": "_XXBachelor of Science (B.Sc.)_XX"
+  },
+  "degrees": [
+    {
+      "degree_id": "phd_cu_csm",
+      "column": "left",
+      "level": "_XXDoctor of Philosophy (PhD)",
+      "timeframe_details": "_XXJan 2023 – Present | Full-time | 3.5-year program (maximum 4 years) | Ongoing",
+      "institution_type": "_XXComputational Science and Mathematical Modelling (CSM)",
+      "institution_name": "_XXCoventry University",
+      "institution_location": "_XXCoventry, United Kingdom",
+      "link": "https://www.coventry.ac.uk/",
+      "specialisation": "_XXApplied Machine Learning (ML) and Deep Learning (DL) in health informatics and (physiological) signal processing.",
+      "scholarship": "_XXCotutelle Studentship – awarded during the study period at Coventry University",
+      "scholarship_link": "#honorsAwards",
+      "research_topic": "_XXA Machine Learning-based Analysis of Sleep Patterns in Healthy Ageing using Physiological Signals.",
+      "activities_involvement": "Research · Development · Industry collaboration",
+      "description_full": "_XXThis Cotutelle (joint) PhD program is jointly administered by Deakin University (host institution) and Coventry University (partner institution). All key milestones, including candidature confirmation, annual progress reviews, and final thesis defense, are conducted independently by both institutions. The project is guided by a strong supervisory team of more than four specialists (2 from each institutions) from Deakin University and Coventry University. This project is about finding relationship between sleep pattern and different health status (healthy or have sleep disorders) using a simpler physiological signal called Hypnogram for assistive diagnostic. Starting from traditional ML and ensemble ML to advanced models such as traditional DL, CNN, RNN, graph neural networks (GNN), are applied to analyse the feasibility of a wearable sleep monitoring system. The research is carried out under the Centre for Computational Science and Mathematical Modelling (CSM).",
+      "thesis_title": "",
+      "thesis_length": "",
+      "research_projects": [
+        {"type": "_XXResearch", "title": "_XXA Machine Learning-based Analysis of Sleep Patterns in Healthy Ageing using Physiological Signals.", "link": "#projects"}
+      ]
+    },
+    {
+      "degree_id": "phd_du_it",
+      "column": "left",
+      "level": "Doctor of Philosophy (PhD)_XX",
+      "timeframe_details": "_XXJan 2023 – Present | Full-time | 3-year program (maximum 4 years) | Ongoing",
+      "institution_type": "_XXInformation Technology (IT)",
+      "institution_name": "_XXDeakin University",
+      "institution_location": "_XXMelbourne, Australia",
+      "link": "https://www.deakin.edu.au/",
+      "specialisation": "_XXApplied Machine Learning (ML) and Deep Learning (DL) in health informatics and (physiological) signal processing.",
+      "scholarship": "_XXDeakin University Postgraduate Research Scholarship (DUPRS) – awarded for the duration of the study at Deakin University",
+      "scholarship_link": "#honorsAwards",
+      "research_topic": "_XXA Machine Learning-based Analysis of Sleep Patterns in Healthy Ageing using Physiological Signals.",
+      "activities_involvement": "_XXResearch · Development · Industry collaboration · Student engagement via: Australian Computer Society (ACS) · Deakin University Student Association (DUSA) · Deakin Biomed Society (DUBS) · Deakin Software Engineering Club (DSEC) · Deakin AI Society (DAIS)",
+      "description_full": "_XXThis is a Cotutelle (joint) PhD program hosted by Deakin University (host institution), Australia, in collaboration with Coventry University (partner institution), United Kingdom. It is a full-time, research-based program spanning 3 years (maximum completion duration: 4 years), with a focus on, applied ML and DL with biomedical signal processing in detecting sleep disorders. All key milestones, including candidature confirmation, annual progress reviews, and final thesis defense, are conducted independently by both institutions. This project is about finding relationship between sleep pattern and different health status (healthy or have sleep disorders) using a simpler physiological signal called Hypnogram for assistive diagnostic. Starting from traditional ML and ensemble ML to advanced models such as traditional DL, CNN, RNN, graph neural networks (GNN), are applied to analyse the feasibility of a wearable sleep monitoring system. At Deakin, the program is conducted under the School of Information Technology (SIT), Faculty of Science, Engineering and Built Environment (SEBE), and the research is based at the Data Analytics and Research Lab (DARL).",
+      "thesis_title": "",
+      "thesis_length": "",
+      "research_projects": [
+        {"type": "_XXResearch", "title": "A Machine Learning-based Analysis of Sleep Patterns in Healthy Ageing using Physiological Signals.", "link": "#projects"}
+      ]
+    },
+    {
+      "degree_id": "mres_du_it",
+      "column": "right",
+      "level": "_XXMaster of Science (by Research) – MRes",
+      "timeframe_details": "_XXFeb. 2020 – Feb. 2022 | Full-time | 2 years (maximum 3 years) | Awarded in Oct. 2022",
+      "institution_type": "_XXInformation Technology (IT)",
+      "institution_name": "_XXDeakin University",
+      "institution_location": "_XXMelbourne, Australia",
+      "link": "https://www.deakin.edu.au/",
+      "specialisation": "_XXApplied Machine Learning (ML) and system optimisation with a focus on (pythological) signal processing and medical diagnostic",
+      "scholarship": "_XXScience and Technology Fellowship (STF)",
+      "scholarship_link": "#honorsAwards",
+      "research_topic": "_XXMinimising Scalp Electroencephalogram (EEG) Channels for Epileptic Seizure Detection",
+      "activities_involvement": "_XXResearch · Development · Industry collaboration · Student engagement through Deakin University Student Association (DUSA)",
+      "description_full": "_XXThis is a full-time, research-only program delivered under the School of Information Technology (SIT), within the Faculty of Science, Engineering, and Built Environment (SEBE). The research is conducted under the Data to Intelligence (D2I) Research Centre, focusing on biomedical engineering, signal processing, and Machine Learning (ML). The project focused on various aspects epileptic seizure detectino using EEG signal, especiall, EEG channel minimisation.",
+      "thesis_title": "_XXMinimising Electroencephalogram Channels for Epileptic Seizure Detection",
+      "thesis_length": "_XXover 50,000 words.",
+      "research_projects": [
+        {"type": "_XXResearch", "title": "Channel Minimisation for Epileptic Seizure Detection and Prediction using Signal Processing and Machine Learning on Surface EEG Data.", "link": "#projects"},
+        {"type": "_XXProject", "title": "Epileptic Seizure Detection using Single-channel Deep Learning Models on Continuous EEG Recordings from ICU Patients (A collaborative work with Monash University and Alfred Health).", "link": "#projects"},
+        {"type": "_XXProject", "title": "Air Quality (Indoor Temperature) Prediction Based on Meteorological and Indoor Sensor Data (A MAAP Linkage ARC Project Funded by the Australian Research Council (ARC), and a Collaborative Work with Monash University and Sensor Industry AETMOS Australia).", "link": "#projects"}
+      ]
+    },
+    {
+      "degree_id": "bsc_hstu_cse",
+      "column": "right",
+      "level": "_XXBachelor of Science (B.Sc.)",
+      "timeframe_details": "_XXJan. 2007 – Dec. 2010 | Full-time | 4-year | Awarded in Apr. 2012",
+      "institution_type": "_XXComputer Science and Engineering (CSE)",
+      "institution_name": "_XXHajee Mohammad Danesh Science and Technology University (HSTU)",
+      "institution_location": "_XXDinajpur, Bangladesh",
+      "link": "https://www.hstu.ac.bd/",
+      "specialisation": "_XXComputer programming and Algorithm, Database Management, Machine Learning and Pattern Recognition",
+      "scholarship": "_XXGrameen Bank Student Scholarship",
+      "scholarship_link": "",
+      "research_topic": "_XXAdvanced string search algorithms using indexed binary search for a J2ME-based English-to-English dictionary application.",
+      "activities_involvement": "_XXAcademic coursework · Research · Software/Application development · Competitive programming · Active member of the programming community — Programmers Arena",
+      "description_full": "_XXThis is a full-time undergraduate program offered by the Department of Computer Science and Engineering (CSE), under the Faculty of Computer Science and Engineering. The curriculum spans a broad range of computer science and engineering topics including: mathematics, physics, statistics, computer programming (C, C++, Java, PHP, etc.), database systems, artificial intelligence, machine learning, software engineering, system architecture, and microprocessor systems. A mandatory final-year thesis/project is required for program completion.",
+      "thesis_title": "_XXJ2ME English-to-English Dictionary with Indexed Binary Search",
+      "thesis_length": "_XXapproximately 9,500 words",
+      "research_projects": [
+        {"type": "_XXResearch", "title": "Development of a Dictionary Application using Java (J2ME) and Enhanced Text Searching Algorithms.", "link": "index.html#publications"},
+        {"type": "_XXProject", "title": "Shop Management System – Developed using .NET framework and Visual C#", "link": ""},
+        {"type": "_XXProject", "title": "Highway Bus Ticket Management System – Developed using HTML, PHP, and MySQL", "link": ""}
+      ]
+    }
+  ]
+}

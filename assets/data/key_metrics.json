@@ -1,0 +1,57 @@
+{
+  "section_info": {
+    "title": "Key Information_XX",
+    "details": "_XXKey information about the study, experience, research, and achievements.",
+    "icon_class": "bx bx-key"
+  },
+  "metrics": [
+    {
+      "icon_class": "bi bi-vector-pen",
+      "value": 12,
+      "strong_text": "Years_XX",
+      "description": "of teaching and research experience"
+    },
+    {
+      "icon_class": "bx bi-file-earmark-code",
+      "value": 3,
+      "strong_text": "Years",
+      "description": "of software development experience"
+    },
+    {
+      "icon_class": "bx bi-lightbulb",
+      "value": 5,
+      "strong_text": "Projects",
+      "description": "with research contribution"
+    },
+    {
+      "icon_class": "bx bi-journal-richtext",
+      "value": 15,
+      "strong_text": "Publications",
+      "description": "related to research"
+    },
+    {
+      "icon_class": "bx bi-building",
+      "value": 5,
+      "strong_text": "Institutional",
+      "description": "involvement in academic and research"
+    },
+    {
+      "icon_class": "bx bi-tools",
+      "value": 5,
+      "strong_text": "Industrial",
+      "description": "involvement in research and software development"
+    },
+    {
+      "icon_class": "bx bi-snow3",
+      "value": 4,
+      "strong_text": "Research collaboration",
+      "description": "with institutes and industries"
+    },
+    {
+      "icon_class": "bx bi-journal-bookmark-fill",
+      "value": 20,
+      "strong_text": "Specialisation Certificates_XX",
+      "description": "for courses and training"
+    }
+  ]
+}

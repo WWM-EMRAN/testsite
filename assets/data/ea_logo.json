@@ -1,0 +1,58 @@
+[
+  {
+    "id_ref": "logo_8",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_8.gif",
+    "title": "EA Logo 8",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_7",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_7.gif",
+    "title": "EA Logo 7",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_6",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_6.png",
+    "title": "EA Logo 6",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_5",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_5.png",
+    "title": "EA Logo 5",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_4",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_4.png",
+    "title": "EA Logo 4",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_3",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_3.png",
+    "title": "EA Logo 3",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_2",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_2.png",
+    "title": "EA Logo 2",
+    "description": ""
+  },
+  {
+    "id_ref": "logo_1",
+    "category": "logo",
+    "image_path": "assets/img/ealogo/EA_Logo_1.png",
+    "title": "EA Logo 1",
+    "description": ""
+  }
+]
