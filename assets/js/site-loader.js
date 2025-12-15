@@ -1632,35 +1632,135 @@ function renderHonorsAwardsDetails(honorsData) {
 
 
 
+// /**
+//  * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
+//  * for the main index page, using the filterable portfolio/gallery layout.
+//  * FIX: Uses the correct JSON key 'coursestrainingscertificates'.
+//  * @param {object} coursesData
+//  */
+// function renderCoursesTrainingsCertificates(coursesData) {
+//     // Helper function defined locally for reliability
+//     const ArrayOfObjects = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'object' && item !== null);
+//
+//     // 1. Guard check uses the correct 'coursestrainingscertificates' key
+//     if (!coursesData || !ArrayOfObjects(coursesData.coursestrainingscertificates)) return;
+//
+//     const section = document.getElementById('coursesTrainingsCertificates');
+//     if (!section) return;
+//
+//     const sectionInfo = coursesData.section_info;
+//     // Use the correct key for the main data array
+//     const courses = coursesData.coursestrainingscertificates;
+//
+//     // Target the section title area and the items container
+//     const sectionTitleContainer = section.querySelector('.section-title');
+//     const itemsContainer = section.querySelector('.row.gy-4.isotope-container');
+//
+//     if (!sectionTitleContainer || !itemsContainer) return;
+//
+//     // --- 2. Render Section Title and Description ---
+//     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
+//     const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6'); // Index page uses H6 for description
+//
+//     if (sectionTitleH2 && sectionInfo) {
+//         sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
+//     }
+//     if (sectionDescriptionH6 && sectionInfo) {
+//         sectionDescriptionH6.textContent = sectionInfo.details;
+//     }
+//
+//     // 3. Clear existing static content
+//     itemsContainer.innerHTML = '';
+//
+//     // 4. Generate and Append Course/Certificate Items
+//     courses.forEach(item => {
+//         // Concatenate filter tags into a single string for the class attribute
+//         const filterClasses = item.filter_tags ? item.filter_tags.join(' ') : '';
+//         const defaultTitle = item.title;
+//         const defaultSource = item.source;
+//
+//         const itemHTML = `
+//             <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterClasses}" data-aos="fade-up" data-aos-delay="200">
+//                 <div class="portfolio-content h-100">
+//                     <img src="${item.image_path}" class="img-fluid" alt="Emran Ali - Certificate: ${defaultTitle}">
+//                     <div class="portfolio-info">
+//                         <h4>${defaultTitle} </h4>
+//                         <p>${defaultSource}</p>
+//                         <a href="${item.image_path}"
+//                            title="${defaultSource}"
+//                            data-gallery="portfolio-gallery-app"
+//                            class="glightbox preview-link">
+//                             <i class="bi bi-zoom-in"></i>
+//                         </a>
+//                         <a href="${item.link_target}"
+//                            title="More Details"
+//                            class="details-link">
+//                             <i class="bi bi-link-45deg"></i>
+//                         </a>
+//                     </div>
+//                 </div>
+//             </div> `;
+//         itemsContainer.innerHTML += itemHTML;
+//     });
+//
+//     // 5. CRITICAL FIX: Reinitialize Isotope and GLightbox
+//     // This is required to make filtering and lightbox work on newly inserted content.
+//
+//     if (typeof Isotope !== 'undefined' && typeof imagesLoaded !== 'undefined') {
+//         const isoContainer = section.querySelector('.isotope-layout');
+//         if (isoContainer) {
+//             // Reinitialize Isotope to apply filters and layout to new elements
+//             imagesLoaded(isoContainer, function() {
+//                 // Ensure we only re-run initialization logic if it exists in main.js
+//                 // This common structure re-initializes the Isotope filter grid
+//                 new Isotope(isoContainer.querySelector('.isotope-container'), {
+//                     itemSelector: '.isotope-item',
+//                     layoutMode: 'masonry'
+//                 });
+//             });
+//             // Reinitialize GLightbox for new gallery links
+//             if (typeof GLightbox === 'function') {
+//                 GLightbox({ selector: '.glightbox' });
+//             }
+//         }
+//     }
+// }
+
+
+
+
 /**
  * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
- * for the main index page, using the filterable portfolio/gallery layout.
- * FIX: Uses the correct JSON key 'coursestrainingscertificates'.
- * @param {object} coursesData
+ * for the main index page.
+ * Handles the flat data structure: data.coursestrainingscertificates is the main array.
+ * Filters items based on 'serial_no' and sorts them accordingly.
+ * @param {object} coursesTrainingsCertificatesData // The wrapper object
  */
-function renderCoursesTrainingsCertificates(coursesData) {
-    // Helper function defined locally for reliability
-    const ArrayOfObjects = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'object' && item !== null);
-
-    // 1. Guard check uses the correct 'coursestrainingscertificates' key
-    if (!coursesData || !ArrayOfObjects(coursesData.coursestrainingscertificates)) return;
+function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
+    if (!coursesTrainingsCertificatesData || !coursesTrainingsCertificatesData.coursestrainingscertificates) {
+        console.error("renderCoursesTrainingsCertificates: Missing or invalid data structure. Expected 'coursestrainingscertificates' array.");
+        return;
+    }
 
     const section = document.getElementById('coursesTrainingsCertificates');
     if (!section) return;
 
-    const sectionInfo = coursesData.section_info;
-    // Use the correct key for the main data array
-    const courses = coursesData.coursestrainingscertificates;
+    const sectionInfo = coursesTrainingsCertificatesData.section_info;
+    // CRITICAL FIX: Get the flat array of items from the correct key
+    const rawItems = coursesTrainingsCertificatesData.coursestrainingscertificates;
 
-    // Target the section title area and the items container
     const sectionTitleContainer = section.querySelector('.section-title');
-    const itemsContainer = section.querySelector('.row.gy-4.isotope-container');
+    const filtersContainer = section.querySelector('.portfolio-filters');
+    const contentContainer = section.querySelector('.isotope-container');
 
-    if (!sectionTitleContainer || !itemsContainer) return;
+    if (!sectionTitleContainer || !filtersContainer || !contentContainer) {
+        console.error("renderCoursesTrainingsCertificates: Target containers not found for Index page.");
+        return;
+    }
 
-    // --- 2. Render Section Title and Description ---
+    // 1. Render Section Title and Description
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
-    const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6'); // Index page uses H6 for description
+    const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6');
 
     if (sectionTitleH2 && sectionInfo) {
         sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
@@ -1669,61 +1769,79 @@ function renderCoursesTrainingsCertificates(coursesData) {
         sectionDescriptionH6.textContent = sectionInfo.details;
     }
 
-    // 3. Clear existing static content
-    itemsContainer.innerHTML = '';
+    // --- 2. Aggregate, Filter, and Sort Items ---
+    let allItems = [];
+    let filterTags = new Set(['*']);
 
-    // 4. Generate and Append Course/Certificate Items
-    courses.forEach(item => {
-        // Concatenate filter tags into a single string for the class attribute
-        const filterClasses = item.filter_tags ? item.filter_tags.join(' ') : '';
-        const defaultTitle = item.title;
-        const defaultSource = item.source;
+    rawItems.forEach(item => {
+        // Filter: Include only items with a non-empty serial_no
+        if (item.serial_no && item.serial_no.toString().trim() !== "") {
+            // Synthesize filter tags from the item's array of tags
+            if (Array.isArray(item.filter_tags)) {
+                item.filter_tags.forEach(tag => {
+                    filterTags.add(tag);
+                });
+            }
 
-        const itemHTML = `
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterClasses}" data-aos="fade-up" data-aos-delay="200">
-                <div class="portfolio-content h-100">
-                    <img src="${item.image_path}" class="img-fluid" alt="Emran Ali - Certificate: ${defaultTitle}">
-                    <div class="portfolio-info">
-                        <h4>${defaultTitle} </h4>
-                        <p>${defaultSource}</p>
-                        <a href="${item.image_path}" 
-                           title="${defaultSource}" 
-                           data-gallery="portfolio-gallery-app"
-                           class="glightbox preview-link">
-                            <i class="bi bi-zoom-in"></i>
-                        </a>
-                        <a href="${item.link_target}" 
-                           title="More Details" 
-                           class="details-link">
-                            <i class="bi bi-link-45deg"></i>
-                        </a>
-                    </div>
-                </div>
-            </div> `;
-        itemsContainer.innerHTML += itemHTML;
+            // Store the item with its filter tags as a space-separated string (for class attribute)
+            allItems.push({
+                ...item,
+                filter_classes_raw: Array.isArray(item.filter_tags) ? item.filter_tags.join(' ') : ''
+            });
+        }
     });
 
-    // 5. CRITICAL FIX: Reinitialize Isotope and GLightbox
-    // This is required to make filtering and lightbox work on newly inserted content.
+    // Sort: Numerically based on the 'serial_no' key
+    allItems.sort((a, b) => parseInt(a.serial_no) - parseInt(b.serial_no));
 
-    if (typeof Isotope !== 'undefined' && typeof imagesLoaded !== 'undefined') {
-        const isoContainer = section.querySelector('.isotope-layout');
-        if (isoContainer) {
-            // Reinitialize Isotope to apply filters and layout to new elements
-            imagesLoaded(isoContainer, function() {
-                // Ensure we only re-run initialization logic if it exists in main.js
-                // This common structure re-initializes the Isotope filter grid
-                new Isotope(isoContainer.querySelector('.isotope-container'), {
-                    itemSelector: '.isotope-item',
-                    layoutMode: 'masonry'
-                });
-            });
-            // Reinitialize GLightbox for new gallery links
-            if (typeof GLightbox === 'function') {
-                GLightbox({ selector: '.glightbox' });
-            }
-        }
-    }
+    // --- 3. Render Filters (Categories) ---
+    filtersContainer.innerHTML = '';
+
+    const filterNames = {
+        '*': 'All',
+        'filter-cert': 'Certificate',
+        'filter-train': 'Training',
+        'filter-cour': 'Course',
+        'filter-conf': 'Conference',
+        'filter-boot': 'Bootcamp'
+        // Add other filters as needed
+    };
+
+    filterTags.forEach(tag => {
+        const displayName = filterNames[tag] || tag;
+        const isActive = tag === '*' ? 'filter-active' : '';
+        filtersContainer.innerHTML += `<li data-filter=".${tag}" class="${isActive}">${displayName}</li>`;
+    });
+
+    // --- 4. Render Filtered and Sorted Items ---
+    contentContainer.innerHTML = '';
+
+    allItems.forEach(item => {
+        // The tags are already prefixed with 'filter-' in your JSON (e.g., "filter-cert")
+        const finalFilterClasses = item.filter_classes_raw;
+        const imageSrc = item.image_path; // Using image_path directly
+        const sourceShort = item.source.split(' - ').slice(-1)[0]; // Using the Source field for the short description
+
+        const itemHTML = `
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${finalFilterClasses}" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-content h-100">
+                    <img src="${imageSrc}" class="img-fluid" alt="Emran Ali - ${item.title} Certificate">
+                    <div class="portfolio-info">
+                        <h4>${item.title} </h4>
+                        <p>${sourceShort}</p>
+                        <a href="${item.image_path}"
+                           title="${item.title}"
+                           data-gallery="portfolio-gallery-app"
+                           class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                        <a href="${item.link_target}"
+                           title="More Details"
+                           class="details-link"><i class="bi bi-link-45deg"></i></a>
+                    </div>
+                </div>
+            </div>`;
+
+        contentContainer.innerHTML += itemHTML;
+    });
 }
 
 

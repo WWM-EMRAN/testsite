@@ -9,6 +9,7 @@
     {
       "id_ref": "cert_berudand608genAI",
       "title": "Generative AI_XX",
+      "serial_no": "1",
       "source": "_XXBertelsmann Udacity - Generative AI (Nanodegree)",
       "image_path": "assets/img/courseandcertificate/ber-uda-nd608-genAI.jpg",
       "filter_tags": ["filter-cert", "filter-cour", "filter-train"],
@@ -35,6 +36,7 @@
     {
       "id_ref": "train_akkodisMsMsfsAgntCopilot",
       "title": "Building Agents with Copilot Studio_XX",
+      "serial_no": "2",
       "source": "_XXAkkodis Microsoft - Building Agents with Copilot Studio",
       "image_path": "assets/img/courseandcertificate/akkodis-ms-msfs-agntCopilot.jpg",
       "filter_tags": ["filter-cert", "filter-train"],
@@ -57,6 +59,7 @@
     {
       "id_ref": "cert_berudand608foundGenAI",
       "title": "Foundation of Generative AI",
+      "serial_no": "",
       "source": "Bertelsmann Udacity - Foundation of Generative AI (Nanodegree)",
       "image_path": "assets/img/courseandcertificate/ber-uda-nd608-foundGenAI.jpg",
       "filter_tags": ["filter-cert", "filter-cour", "filter-train"],
@@ -83,6 +86,7 @@
     {
       "id_ref": "cert_awsudand189mlFun",
       "title": "AWS Machine Learning Fundamentals",
+      "serial_no": "3",
       "source": "AWS Udacity - AWS Machine Learning Fundamentals (Nanodegree)",
       "image_path": "assets/img/courseandcertificate/aws-uda-nd189-mlFun.jpg",
       "filter_tags": ["filter-cert", "filter-cour", "filter-train"],
@@ -109,6 +113,7 @@
     {
       "id_ref": "cert_awsudand089aiProPy",
       "title": "AI Programming with Python",
+      "serial_no": "4",
       "source": "AWS Udacity - AI Programming with Python (Nanodegree)",
       "image_path": "assets/img/courseandcertificate/aws-uda-nd089-aiProPy.jpg",
       "filter_tags": ["filter-cert", "filter-cour", "filter-train"],
@@ -135,6 +140,7 @@
     {
       "id_ref": "cert_mscertai900",
       "title": "Microsoft Certified: Azure AI Fundamental",
+      "serial_no": "5",
       "source": "Microsoft - Microsoft Certified: Azure AI Fundamental (AI900)",
       "image_path": "assets/img/courseandcertificate/ms-cert-fund-ai900.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -157,6 +163,7 @@
     {
       "id_ref": "cert_mscertdp900",
       "title": "Microsoft Certified: Azure Data Fundamental",
+      "serial_no": "6",
       "source": "Microsoft - Microsoft Certified: Azure Data Fundamental (DP900)",
       "image_path": "assets/img/courseandcertificate/ms-cert-fund-dp900.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -179,6 +186,7 @@
     {
       "id_ref": "cert_gtecsprschl2022",
       "title": "BCI & Neurotechnology Spring School",
+      "serial_no": "7",
       "source": "g·tec - BCI & Neurotechnology Spring School 2022",
       "image_path": "assets/img/courseandcertificate/gtec-neurotechSprSchool2022.jpg",
       "filter_tags": ["filter-conf", "filter-boot"],
@@ -202,6 +210,7 @@
     {
       "id_ref": "cert_embssumschl2022",
       "title": "EMBS - Summer Camp",
+      "serial_no": "8",
       "source": "IEEE EMBS - Summer Camp 2022",
       "image_path": "assets/img/courseandcertificate/ieeeembs-summschl2022.jpg",
       "filter_tags": ["filter-boot"],
@@ -226,6 +235,7 @@
     {
       "id_ref": "cert_llcritdecmakprobsolv2023",
       "title": "LinkedIn Learning - Critical-Thinking and Problem-Solving Course",
+      "serial_no": "9",
       "source": "LinkedIn Learning - Develop Critical-Thinking, Decision-Making, and Problem-Solving Skills",
       "image_path": "assets/img/courseandcertificate/linkedInLearn-critThinkProbSolv.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -250,6 +260,7 @@
     {
       "id_ref": "cert_atndigfutdatana2023",
       "title": "ATN Frontiers - Digital Futures: Data Analytics Advanced and Applied",
+      "serial_no": "10",
       "source": "ATN Frontiers - Digital Futures: Data Analytics Advanced and Applied",
       "image_path": "assets/img/courseandcertificate/atn-digitFut.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -268,6 +279,7 @@
     {
       "id_ref": "cert_atnfutdatana2023",
       "title": "ATN Frontiers - The Future of Data - Data Analytics: Concepts, Principles and Practice",
+      "serial_no": "11",
       "source": "ATN Frontiers - The Future of Data - Data Analytics: Concepts, Principles and Practice",
       "image_path": "assets/img/courseandcertificate/atn-futDat.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -286,6 +298,7 @@
     {
       "id_ref": "cert_keggleintml",
       "title": "Kaggle - Intermediate Machine Learning",
+      "serial_no": "12",
       "source": "Kaggle - Intermediate Machine Learning Course",
       "image_path": "assets/img/courseandcertificate/kaggle-int-ml.png",
       "filter_tags": ["filter-cour"],
@@ -309,6 +322,7 @@
     {
       "id_ref": "cert_stanfordcip2023",
       "title": "Section Leader - Code in Place 2023",
+      "serial_no": "",
       "source": "Section Leader - Code in Place 2023",
       "image_path": "assets/img/courseandcertificate/stanford-cip-2023.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -332,6 +346,7 @@
     {
       "id_ref": "cert_gcldfnd2022",
       "title": "AppsBroker Academy - Google Cloud Fundamentals: Core Intrastructures",
+      "serial_no": "",
       "source": "AppsBroker Academy - Google Cloud Fundamentals: Core Intrastructures",
       "image_path": "assets/img/courseandcertificate/gCloudFund-ConInfra.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -356,6 +371,7 @@
     {
       "id_ref": "cert_gldsfound2022",
       "title": "Great Learning Academy - Datascience Foundation",
+      "serial_no": "",
       "source": "Great Learning Academy - Datascience Foundation",
       "image_path": "assets/img/courseandcertificate/glearn-datSciFound.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -379,6 +395,7 @@
     {
       "id_ref": "cert_glpy4ml2022",
       "title": "Great Learning Academy - Python for Machine Learning",
+      "serial_no": "",
       "source": "Great Learning Academy - Python for Machine Learning",
       "image_path": "assets/img/courseandcertificate/glearn-py4ML.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -402,6 +419,7 @@
     {
       "id_ref": "cert_glmlalgo2022",
       "title": "Great Learning Academy - Machine Learning Algorithms",
+      "serial_no": "",
       "source": "Great Learning Academy - Machine Learning Algorithms",
       "image_path": "assets/img/courseandcertificate/glearn-MLalgo.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -425,6 +443,7 @@
     {
       "id_ref": "cert_glintr2dl2022",
       "title": "Great Learning Academy - Introduction to Deep Learning",
+      "serial_no": "",
       "source": "Great Learning Academy - Introduction to Deep Learning",
       "image_path": "assets/img/courseandcertificate/glearn-intro2DL.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -448,6 +467,7 @@
     {
       "id_ref": "cert_glintr2tfkr2022",
       "title": "Great Learning Academy - Introduction to Tensorflow and Keras",
+      "serial_no": "",
       "source": "Great Learning Academy - Introduction to Tensorflow and Keras",
       "image_path": "assets/img/courseandcertificate/glearn-intro2TFandKeras.jpg",
       "filter_tags": ["filter-cert", "filter-cour"],
@@ -471,6 +491,7 @@
     {
       "id_ref": "cert_intdatman2022",
       "title": "Intersect Australia - Data Manipulation with Python",
+      "serial_no": "",
       "source": "Intersect Australia - Data Manipulation with Python",
       "image_path": "assets/img/courseandcertificate/intersect-dataManPy.jpg",
       "filter_tags": ["filter-cert", "filter-train"],
@@ -493,6 +514,7 @@
     {
       "id_ref": "cert_intdatvis2022",
       "title": "Intersect Australia - Data Visualisation with Python_XX",
+      "serial_no": "",
       "source": "_XXIntersect Australia - Data Visualisation with Python",
       "image_path": "assets/img/courseandcertificate/intersect-datVisPy.jpg",
       "filter_tags": ["filter-cert", "filter-train"],

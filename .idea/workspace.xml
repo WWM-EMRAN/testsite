@@ -4,59 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Initial commit: with all upto professional_experience complete">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/testsite.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/data/expertise_achievements.json" afterDir="false" />
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: with all upto Publication section is complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/copyright.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/diary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/ea-logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/ea-logo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/general-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/general-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/honorsAndAwards-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/honorsAndAwards-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/languages-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/languages-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/memberships-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/memberships-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/portfolios-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/portfolios-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/printable_cv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/projects-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/projects-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/publications-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/publications-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/sessionsAndEvents-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/sessionsAndEvents-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra2/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/volunteerings-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra3/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/honors_awards.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/honors_awards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/languages.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/languages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/memberships.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/memberships.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/portfolios.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/portfolios.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/projects.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/publications.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/publications.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/sessions_events.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/sessions_events.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/skills.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/skills.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/volunteerings.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/volunteerings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/copyright.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/diary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ea-logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ea-logo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/general-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/honorsAndAwards-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/honorsAndAwards-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/languages-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memberships-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/memberships-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolios-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolios-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/printable_cv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/publications-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/publications-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sessionsAndEvents-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sessionsAndEvents-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/skillsAndTools-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/volunteerings-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,7 +219,7 @@
       <workItem from="1765715623810" duration="848000" />
       <workItem from="1765719030151" duration="3192000" />
       <workItem from="1765776013101" duration="1796000" />
-      <workItem from="1765783120125" duration="34478000" />
+      <workItem from="1765783120125" duration="36110000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -334,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765719553175</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Main contents commit: with all upto Publication section is complete">
+      <option name="closed" value="true" />
+      <created>1765828744089</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765828744089</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +321,7 @@
     <MESSAGE value="JSON integration: upto Professional experiences done" />
     <MESSAGE value="JSON: data loading for index page with full menue and hero." />
     <MESSAGE value="Initial commit: with all upto professional_experience complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit: with all upto professional_experience complete" />
+    <MESSAGE value="Main contents commit: with all upto Publication section is complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: with all upto Publication section is complete" />
   </component>
 </project>
