@@ -1,164 +1,135 @@
-[
-  {
-    "id_ref": "mem_acsassmem",
-    "title": "ACS Associate Member",
-    "organization": "Australian Computer Society (ACS)",
-    "timeframe": "Aug. 2023 - Dec. 2024",
-    "icon_class": "bx bx-group",
-    "description_short": "Associate Member, Australian Computer Society · Aug. 2023 - Dec. 2024",
-    "details": {
-      "role": "Associate Member",
-      "institute": "Australian Computer Society (ACS)",
-      "location": "Melbourne, Australia",
-      "has_expiry": true,
-      "validity_period_full": "Aug. 1, 2023 - Nov. 30, 2024",
-      "description": "The ACS is the professional association for Australia's information and communication technology (ICT) sector, driving technological excellence and professional standards."
-    },
-    "image_path": "",
-    "url_link": ""
+{
+  "section_info": {
+    "title": "Memberships_XX",
+    "details": "_XXMemberships held as a student and professional, including voluntary and organisational affiliations.",
+    "icon_class": "bx bx-group"
   },
-  {
-    "id_ref": "mem_dusamem",
-    "title": "DUSA Member",
-    "organization": "Deakin University Student Association (DUSA)",
-    "timeframe": "Jan. 2023 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "Deakin University Student Association Member - Deakin University · Apr. 2020 - Dec. 2023",
-    "details": {
+  "memberships": [
+    {
+      "id_ref": "mem_acsassmem",
+      "title": "ACS Associate Member_XX",
+      "icon_class": "bx bx-group",
+      "role": "Associate Member_XX",
+      "organization_name": "Australian Computer Society (ACS)_XX",
+      "timeframe": "Aug. 1, 2023 - Nov. 30, 2024_XX",
+      "location": "Melbourne, Australia_XX",
+      "has_expiry": true,
+      "description_short": "Associate Member, Australian Computer Society_XX",
+      "description_full": "_XXThe ACS is the professional association for Australia's information and communication technology (ICT) sector, driving technological excellence and professional standards.",
+      "image_path": "",
+      "url_link": ""
+    },
+    {
+      "id_ref": "mem_dusamem",
+      "title": "DUSA Member_XX",
+      "icon_class": "bx bx-group",
       "role": "Student Member",
-      "institute": "Deakin University",
+      "organization_name": "Deakin University Student Association (DUSA)_XX",
+      "timeframe": "Jan. 1, 2023 - Dec. 31, 2023_XX",
+      "location": "Burwood, Melbourne, VIC-3125, Australia_XX",
+      "has_expiry": true,
+      "description_short": "Deakin University Student Association Member - Deakin University_XX",
+      "description_full": "_XXDUSA provides student support, advocacy, and a range of services and clubs across all Deakin University campuses.",
+      "image_path": "",
+      "url_link": ""
+    },
+    {
+      "id_ref": "mem_descmem",
+      "title": "DSEC Member",
+      "icon_class": "bx bx-group",
+      "role": "Student Member",
+      "organization_name": "Deakin University Software Engineering Club (DSEC)",
+      "timeframe": "Jan. 1, 2023 - Dec. 31, 2023",
       "location": "Burwood, Melbourne, VIC-3125, Australia",
       "has_expiry": true,
-      "validity_period_full": "Jan. 1, 2023 - Dec. 31, 2023",
-      "description": "DUSA provides student support, advocacy, and a range of services and clubs across all Deakin University campuses."
+      "description_short": "Deakin University Software Engineering Club Member - Deakin University",
+      "description_full": "Member of the Deakin University Software Engineering Club (DSEC), actively participating in coding events, workshops, and technical seminars focused on software development and engineering best practices.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_descmem",
-    "title": "DSEC Member",
-    "organization": "Deakin University Software Engineering Club (DSEC)",
-    "timeframe": "Jan. 2023 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "Deakin University Software Engineering Club Member - Deakin University · Jan. 2023 - Dec. 2023",
-    "details": {
+    {
+      "id_ref": "mem_daismem",
+      "title": "DAIS Member",
+      "icon_class": "bx bx-group",
       "role": "Student Member",
-      "institute": "Deakin University",
+      "organization_name": "Deakin AI Society (DAIS)",
+      "timeframe": "Jan. 1, 2023 - Dec. 31, 2023",
       "location": "Burwood, Melbourne, VIC-3125, Australia",
       "has_expiry": true,
-      "validity_period_full": "Jan. 1, 2023 - Dec. 31, 2023",
-      "description": "Member of the Deakin University Software Engineering Club (DSEC), actively participating in coding events, workshops, and technical seminars focused on software development and engineering best practices."
+      "description_short": "Deakin AI Society Member - Deakin University",
+      "description_full": "Member of the Deakin AI Society (DAIS), involved in activities aimed at promoting the understanding and application of Artificial Intelligence and Machine Learning among students and researchers.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_daismem",
-    "title": "DAIS Member",
-    "organization": "Deakin AI Society (DAIS)",
-    "timeframe": "Jan. 2023 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "Deakin AI Society Member - Deakin University · Jan. 2023 - Dec. 2023",
-    "details": {
+    {
+      "id_ref": "mem_ieeestumem",
+      "title": "IEEE Student Member",
+      "icon_class": "bx bx-group",
       "role": "Student Member",
-      "institute": "Deakin University",
+      "organization_name": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "timeframe": "Jul. 1, 2022 - Dec. 31, 2023",
       "location": "Burwood, Melbourne, VIC-3125, Australia",
       "has_expiry": true,
-      "validity_period_full": "Jan. 1, 2023 - Dec. 31, 2023",
-      "description": "Member of the Deakin AI Society (DAIS), involved in activities aimed at promoting the understanding and application of Artificial Intelligence and Machine Learning among students and researchers."
+      "description_short": "IEEE Student Member - IEEE",
+      "description_full": "Student Member of the Institute of Electrical and Electronics Engineers (IEEE), the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_ieeestumem",
-    "title": "IEEE Student Member",
-    "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
-    "timeframe": "Jul. 2022 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "IEEE Student Member - IEEE · Jan. 2022 - Present",
-    "details": {
+    {
+      "id_ref": "mem_embsstumem",
+      "title": "EMBS Student Member",
+      "icon_class": "bx bx-group",
       "role": "Student Member",
-      "institute": "Deakin University",
+      "organization_name": "IEEE Engineering in Medicine and Biology Society (EMBS)",
+      "timeframe": "Jul. 1, 2022 - Dec. 31, 2023",
       "location": "Burwood, Melbourne, VIC-3125, Australia",
       "has_expiry": true,
-      "validity_period_full": "Jul. 1, 2022 - Dec. 31, 2023",
-      "description": "Student Member of the Institute of Electrical and Electronics Engineers (IEEE), the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity."
+      "description_short": "IEEE Engineering in Medicine and Biology Society (EMBS) Student Member - IEEE",
+      "description_full": "Student Member of the IEEE Engineering in Medicine and Biology Society (EMBS), focusing on advancing the application of engineering sciences and technology to biology, medicine, and healthcare.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_embsstumem",
-    "title": "EMBS Student Member",
-    "organization": "IEEE Engineering in Medicine and Biology Society (EMBS)",
-    "timeframe": "Jul. 2022 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "IEEE Engineering in Medicine and Biology Society (EMBS) Student Member - IEEE · Jan. 2022 - Dec. 2023",
-    "details": {
-      "role": "Student Member",
-      "institute": "Deakin University",
-      "location": "Burwood, Melbourne, VIC-3125, Australia",
-      "has_expiry": true,
-      "validity_period_full": "Jul. 1, 2022 - Dec. 31, 2023",
-      "description": "Student Member of the IEEE Engineering in Medicine and Biology Society (EMBS), focusing on advancing the application of engineering sciences and technology to biology, medicine, and healthcare."
-    },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_ieeeyoungprof",
-    "title": "IEEE Young Professionals",
-    "organization": "Institute of Electrical and Electronics Engineers (IEEE)",
-    "timeframe": "Jul. 2022 - Dec. 2023",
-    "icon_class": "bx bx-group",
-    "description_short": "IEEE Young Professionals - IEEE · Jan. 2022 - Dec. 2023",
-    "details": {
+    {
+      "id_ref": "mem_ieeeyoungprof",
+      "title": "IEEE Young Professionals",
+      "icon_class": "bx bx-group",
       "role": "Member",
-      "institute": "Deakin University",
+      "organization_name": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "timeframe": "Jul. 1, 2022 - Dec. 31, 2023",
       "location": "Burwood, Melbourne, VIC-3125, Australia",
       "has_expiry": true,
-      "validity_period_full": "Jul. 1, 2022 - Dec. 31, 2023",
-      "description": "Member of the IEEE Young Professionals affinity group, dedicated to helping engineers and scientists transition into successful professional careers."
+      "description_short": "IEEE Young Professionals - IEEE",
+      "description_full": "Member of the IEEE Young Professionals affinity group, dedicated to helping engineers and scientists transition into successful professional careers.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_progarenaadv",
-    "title": "Advisor and Founding Member",
-    "organization": "Programmers Arena - HSTU",
-    "timeframe": "Sep. 2014 - Present",
-    "icon_class": "bx bx-group",
-    "description_short": "Programmers Arena - HSTU · Sep. 2014 - Present",
-    "details": {
+    {
+      "id_ref": "mem_progarenaadv",
+      "title": "Advisor and Founding Member",
+      "icon_class": "bx bx-group",
       "role": "Advisor and Founding Member",
-      "institute": "Hajee Mohammad Danesh Science and Technology University (HSTU)",
+      "organization_name": "Programmers Arena - HSTU",
+      "timeframe": "Sep. 1, 2014 - Present",
       "location": "HSTU, Dinajpur-5200, Bangladesh",
       "has_expiry": false,
-      "validity_period_full": "Sep. 1, 2014 - Present",
-      "description": "Advisor and Founding Member of Programmers Arena at Hajee Mohammad Danesh Science and Technology University (HSTU), supporting competitive programming and software development skills among students."
+      "description_short": "Programmers Arena - HSTU",
+      "description_full": "Advisor and Founding Member of Programmers Arena at Hajee Mohammad Danesh Science and Technology University (HSTU), supporting competitive programming and software development skills among students.",
+      "image_path": "",
+      "url_link": ""
     },
-    "image_path": "",
-    "url_link": ""
-  },
-  {
-    "id_ref": "mem_cseclubadv",
-    "title": "Advisor",
-    "organization": "CSE Club - HSTU",
-    "timeframe": "Sep. 2014 - Present",
-    "icon_class": "bx bx-group",
-    "description_short": "CSE Club - HSTU · Sep. 2014 - Present",
-    "details": {
-      "role": "Advisor",
-      "institute": "Hajee Mohammad Danesh Science and Technology University (HSTU)",
-      "location": "HSTU, Dinajpur-5200, Bangladesh",
+    {
+      "id_ref": "mem_cseclubadv",
+      "title": "Advisor_XX",
+      "icon_class": "bx bx-group",
+      "role": "Advisor_XX",
+      "organization_name": "CSE Club - HSTU_XX",
+      "timeframe": "Sep. 1, 2014 - Present_XX",
+      "location": "HSTU, Dinajpur-5200, Bangladesh_XX",
       "has_expiry": false,
-      "validity_period_full": "Sep. 1, 2014 - Present",
-      "description": "Advisor for the Computer Science and Engineering (CSE) Club at HSTU, guiding students in academic and co-curricular activities, including technical workshops and events."
-    },
-    "image_path": "",
-    "url_link": ""
-  }
-]
+      "description_short": "CSE Club - HSTU_XX",
+      "description_full": "_XXAdvisor for the Computer Science and Engineering (CSE) Club at HSTU, guiding students in academic and co-curricular activities, including technical workshops and events.",
+      "image_path": "",
+      "url_link": ""
+    }
+  ]
+}

@@ -1,23 +1,30 @@
-[
-  {
-    "id_ref": "port_git_dihcdown",
-    "title": "DIHC_Downloader",
-    "icon_class": "bx bxl-github",
-    "portfolio_url": "https://github.com/WWM-EMRAN/DIHC_Downloader",
-    "description": "A fully Python-based utility library to recursively download the contents from a web directory including subdirectories and files."
+{
+  "section_info": {
+    "title": "Portfolios_XX",
+    "details": "_XXPublicly available GitHub repositories demonstrating projects with my core contributions.",
+    "icon_class": "bi-images"
   },
-  {
-    "id_ref": "port_git_dihcfeatman",
-    "title": "DIHC_FeatureManager",
-    "icon_class": "bx bxl-github",
-    "portfolio_url": "https://github.com/WWM-EMRAN/DIHC_FeatureManager",
-    "description": "A python (and Matlab) based library for advanced feature extraction and feature engineering related task for Machine Learning."
-  },
-  {
-    "id_ref": "port_git_awsaiml_nanodeg",
-    "title": "AWS_Udacity_AIML_Scholarship_Program",
-    "icon_class": "bx bxl-github",
-    "portfolio_url": "https://github.com/WWM-EMRAN/AWS_Udacity_AIML_Scholarship_Program",
-    "description": "A python Machine Learning and Deep Learning repository containing all the projects completed in AWS AI/ML Scholarship (Phase 1 and 2) programs. It contains a collection of 6 end-to-end projects from 2 Udacity nanodegree."
-  }
-]
+  "portfolios": [
+    {
+      "id_ref": "port_git_dihcdown",
+      "title": "DIHC_Downloader_XX",
+      "icon_class": "bx bxl-github",
+      "portfolio_url": "https://github.com/WWM-EMRAN/DIHC_Downloader",
+      "description": "_XXA fully Python-based utility library to recursively download the contents from a web directory including subdirectories and files."
+    },
+    {
+      "id_ref": "port_git_dihcfeatman",
+      "title": "DIHC_FeatureManager_XX",
+      "icon_class": "bx bxl-github",
+      "portfolio_url": "https://github.com/WWM-EMRAN/DIHC_FeatureManager",
+      "description": "_XXA python (and Matlab) based library for advanced feature extraction and feature engineering related task for Machine Learning."
+    },
+    {
+      "id_ref": "port_git_awsaiml_nanodeg",
+      "title": "AWS_Udacity_AIML_Scholarship_Program_XX",
+      "icon_class": "bx bxl-github",
+      "portfolio_url": "https://github.com/WWM-EMRAN/AWS_Udacity_AIML_Scholarship_Program",
+      "description": "_XXA python Machine Learning and Deep Learning repository containing all the projects completed in AWS AI/ML Scholarship (Phase 1 and 2) programs. It contains a collection of 6 end-to-end projects from 2 Udacity nanodegree."
+    }
+  ]
+}

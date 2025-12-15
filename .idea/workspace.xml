@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="JSON: data loading for index page with full menue and hero.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/myjsonjssite.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra/diary-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/diary-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra/index - 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/index - 1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra/printable_cv - 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/printable_cv - 1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra/test-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extra/test5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test5.html" afterDir="false" />
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Initial commit: with all upto professional_experience complete">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/testsite.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/data/expertise_achievements.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra2/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/copyright.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/coursesTrainingsAndCertificates-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra2/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/diary.html" afterDir="false" />
@@ -35,12 +29,16 @@
       <change beforePath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/skillsAndTools-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra2/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra2/volunteerings-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Extra3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/education.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/education.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/data/honors_awards.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/honors_awards.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/key_metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/key_metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/personal_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/personal_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/professional_experience.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/professional_experience.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/site.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/languages.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/languages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/memberships.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/memberships.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/portfolios.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/portfolios.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/publications.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/publications.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/sessions_events.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/sessions_events.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/skills.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/skills.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/volunteerings.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/volunteerings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/copyright.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" afterDir="false" />
@@ -92,12 +90,12 @@
     &quot;assignee&quot;: &quot;WWM-EMRAN&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/WWM-EMRAN/myjsonjssite.git&quot;,
-    &quot;accountId&quot;: &quot;4d0c55dd-3583-452a-8225-97edb8aacd5a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/WWM-EMRAN/testsite.git",
+    "accountId": "b8da6c50-fc0b-42a7-855d-04d5de691bff"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -106,24 +104,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aliem/Desktop/aliem/myjsonjssite/Extra3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "ignore_missing_gitignore": "true",
+    "last_opened_file_path": "C:/Users/aliem/Desktop/aliem/myjsonjssite/Extra3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aliem\Desktop\aliem\myjsonjssite\Extra3" />
@@ -244,7 +242,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-PY-252.23892.439" />
+        <option value="bundled-python-sdk-b3ae9b5d7125-f0eec537fc84-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.23892.439" />
       </set>
     </attachedChunks>
   </component>
@@ -267,7 +266,9 @@
       <workItem from="1765715332940" duration="54000" />
       <workItem from="1765715404741" duration="107000" />
       <workItem from="1765715623810" duration="848000" />
-      <workItem from="1765719030151" duration="242000" />
+      <workItem from="1765719030151" duration="3192000" />
+      <workItem from="1765776013101" duration="1796000" />
+      <workItem from="1765783120125" duration="34478000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -325,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765527647214</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Initial commit: with all upto professional_experience complete">
+      <option name="closed" value="true" />
+      <created>1765719553175</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765719553175</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +361,7 @@
     <MESSAGE value="JSON: files added | new image added" />
     <MESSAGE value="JSON integration: upto Professional experiences done" />
     <MESSAGE value="JSON: data loading for index page with full menue and hero." />
-    <option name="LAST_COMMIT_MESSAGE" value="JSON: data loading for index page with full menue and hero." />
+    <MESSAGE value="Initial commit: with all upto professional_experience complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit: with all upto professional_experience complete" />
   </component>
 </project>

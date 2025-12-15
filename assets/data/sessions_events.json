@@ -1,24 +1,31 @@
-[
-  {
-    "id_ref": "sessevnt_spkr",
-    "title": "Seminar Speaker",
-    "type": "Seminar",
-    "icon_class": "bi bi-mic",
-    "organization": "CSE Club, HSTU",
-    "date": "Sep. 2022",
-    "description": "Presented a talk at a seminar on Higher Studies in Abroad - Journey to Australia and Research Experiences.",
-    "image_path": "",
-    "url_link": ""
+{
+  "section_info": {
+    "title": "Sessions and Events_XX",
+    "details": "_XXExperience as a keynote speaker and session chair.",
+    "icon_class": "bi bi-calendar-event"
   },
-  {
-    "id_ref": "sessevnt_knspkr",
-    "title": "Keynote Speaker",
-    "type": "Seminar/Keynote",
-    "icon_class": "bi bi-mic",
-    "organization": "AFCSE, HSTU",
-    "date": "Apr. 2015",
-    "description": "Delivered a keynote at a seminar on career development and the future of mobile app development in Bangladesh.",
-    "image_path": "",
-    "url_link": ""
-  }
-]
+  "sessionsevents": [
+    {
+      "id_ref": "sessevnt_spkr",
+      "title": "Seminar Speaker_XX",
+      "type": "Seminar_XX",
+      "icon_class": "bi bi-mic",
+      "organization": "CSE Club, HSTU_XX",
+      "date": "Sep. 2022",
+      "description": "_XXPresented a talk at a seminar on Higher Studies in Abroad - Journey to Australia and Research Experiences.",
+      "image_path": "",
+      "url_link": ""
+    },
+    {
+      "id_ref": "sessevnt_knspkr",
+      "title": "Keynote Speaker_XX",
+      "type": "Seminar/Keynote_XX",
+      "icon_class": "bi bi-mic",
+      "organization": "AFCSE, HSTU_XX",
+      "date": "Apr. 2015_XX",
+      "description": "_XXDelivered a keynote at a seminar on career development and the future of mobile app development in Bangladesh.",
+      "image_path": "",
+      "url_link": ""
+    }
+  ]
+}

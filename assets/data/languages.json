@@ -1,44 +1,89 @@
-[
-  {
-    "id_ref": "lan_ben",
-    "language": "Bengali",
-    "status": "Native",
-    "proficiency_level": "Excellent",
-    "details": "Native language · Excellent proficiency in Listening, Reading, Writing, and Speaking (LRWS).",
-    "proficiency_breakdown": {
-      "listening": "Excellent",
-      "reading": "Excellent",
-      "writing": "Excellent",
-      "speaking": "Excellent"
-    },
-    "url_link": ""
+{
+  "section_info": {
+    "title": "Languages_XX",
+    "details": "_XXLanguage proficiency levels in Listening (L), Reading (R), Writing (W), and Speaking (S).",
+    "icon_class": "bx bx-conversation"
   },
-  {
-    "id_ref": "lan_eng",
-    "language": "English",
-    "status": "Professional",
-    "proficiency_level": "Professional level",
-    "details": "Medium of instruction at HSTU and Deakin University · IELTS (6.5) - LRWS (6.0, 6.5, 6.5, 7.0) - 2019.",
-    "proficiency_breakdown": {
-      "listening": "6.0",
-      "reading": "6.5",
-      "writing": "6.5",
-      "speaking": "7.0"
+  "languages": [
+    {
+      "id_ref": "lan_ben",
+      "language": "Bengali_XX",
+      "icon_class": "fi fi-bd",
+      "status": "Native_XX",
+      "proficiency_level": "Excellent_XX",
+      "details": "_XXNative language · Excellent proficiency in Listening, Reading, Writing, and Speaking (LRWS).",
+      "test_scores": [
+        {
+          "test_name": "",
+          "test_year": "" ,
+          "test_score": "" ,
+          "proficiency_breakdown": {
+            "listening": "Excellent",
+            "reading": "Excellent",
+            "writing": "Excellent",
+            "speaking": "Excellent"
+          }
+        }
+      ],
+      "image_path": "",
+      "url_link": ""
     },
-    "url_link": ""
-  },
-  {
-    "id_ref": "lan_spn",
-    "language": "Spanish",
-    "status": "Beginner",
-    "proficiency_level": "Beginner-level",
-    "details": "Beginner-level self-learner with foundational vocabulary and expressions.",
-    "proficiency_breakdown": {
-      "listening": "Beginner",
-      "reading": "Beginner",
-      "writing": "Beginner",
-      "speaking": "Beginner"
+    {
+      "id_ref": "lan_eng",
+      "language": "English",
+      "icon_class": "fi fi-gb",
+      "status": "Professional",
+      "proficiency_level": "Professional level",
+      "details": "Professional · Medium of instruction at HSTU and Deakin University.",
+      "test_scores": [
+        {
+          "test_name": "IELTS",
+          "test_year": "2019" ,
+          "test_score": "6.5" ,
+          "proficiency_breakdown": {
+            "listening": "6.0",
+            "reading": "6.5",
+            "writing": "6.5",
+            "speaking": "7.0"
+          }
+        },
+        {
+          "test_name": "IELTS",
+          "test_year": "2019" ,
+          "test_score": "6.0" ,
+          "proficiency_breakdown": {
+            "listening": "6.0",
+            "reading": "5.5",
+            "writing": "6.5",
+            "speaking": "6.5"
+          }
+        }
+      ],
+      "image_path": "",
+      "url_link": ""
     },
-    "url_link": ""
-  }
-]
+    {
+      "id_ref": "lan_spn",
+      "language": "Spanish_XX",
+      "icon_class": "fi fi-es",
+      "status": "Beginner_XX",
+      "proficiency_level": "Beginner-level_XX",
+      "details": "_XXBeginner-level · Self-learner with foundational vocabulary and expressions.",
+      "test_scores": [
+        {
+          "test_name": "",
+          "test_year": "" ,
+          "test_score": "" ,
+          "proficiency_breakdown": {
+            "listening": "Beginner",
+            "reading": "Beginner",
+            "writing": "Beginner",
+            "speaking": "Beginner"
+          }
+        }
+      ],
+      "image_path": "",
+      "url_link": ""
+    }
+  ]
+}

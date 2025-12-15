@@ -1,32 +1,39 @@
-[
-  {
-    "id_ref": "vol_secleadcip",
-    "title": "Section Leader - Code in Place (CIP)",
-    "organization": "Stanford Online",
-    "timeframe_details": "Apr 2023 - Jun 2024",
-    "icon_class": "bx bxs-chalkboard",
-    "summary_text": "Facilitated student learning in Python through Stanford's global volunteer-driven Code in Place program · Stanford Online · Apr 2023 - Apr 2024",
-    "details": {
-      "cause": "Social impact and education",
-      "period": "Apr 2023 - Jun 2024",
-      "description_full": "Participated as a Section Leader in Stanford’s global volunteer-driven Code in Place program, aimed at democratizing access to computer science education. The initiative involved guiding and supporting a small cohort of learners through Python programming fundamentals as part of Stanford's renowned CS106A course. The program combines human-centered teaching with scalable online learning, recruiting and training volunteer instructors worldwide to create an inclusive and engaging learning environment.",
-      "image_path": "assets/img/volunteering/vol-stanford-cip-2023.jpg",
-      "url_link": "https://digitalcredential.stanford.edu/check/3AB800648525EE445912F5275AE78CFDB5C8E71BB33E7E2AF5501C649FAD837EL2x5NlgxQ0txV1QzR3VjTjBSckd0YkN3SzZtbzJpOURDbXdJYmxaR3BkbW9LaGxp"
-    }
+{
+  "section_info": {
+    "title": "Volunteering_XX",
+    "details": "_XXVolunteering works and activities done for different organisations.",
+    "icon_class": "bx bxs-donate-heart"
   },
-  {
-    "id_ref": "vol_scienjrrev",
-    "title": "Scientific Journal Reviewer",
-    "organization": "European Alliance of Medical and Biological Engineering and Science (EAMBES)",
-    "timeframe_details": "Aug 2023 - Present",
-    "icon_class": "bi bi-binoculars",
-    "summary_text": "Actively involved in peer-review of scientific manuscripts for journals affiliated with EAMBES · European Alliance of Medical and Biological Engineering and Science (EAMBES) · Aug 2023 - Present",
-    "details": {
-      "cause": "Research and scientific contribution",
-      "period": "Aug 2023 - Present",
-      "description_full": "Contributed to the scientific community by critically reviewing research manuscripts submitted to prestigious journals under the EAMBES umbrella. Key journals include: 1. Biomedical Signal Processing and Control (BSPC) – ISSN: 1746-8094 [link] 2. Computers & Electrical Engineering – ISSN: 0045-7906 [link] Reviews were conducted with an emphasis on scientific merit, originality, and clarity, contributing to the integrity and advancement of biomedical and engineering research.",
-      "image_path": "",
-      "url_link": "https://eambes.org/"
+  "volunteerings": [
+    {
+      "id_ref": "vol_secleadcip",
+      "title": "Section Leader - Code in Place (CIP)_XX",
+      "organization": "Stanford Online_XX",
+      "timeframe_details": "Apr 2023 - Jun 2024",
+      "icon_class": "bx bxs-chalkboard",
+      "summary_text": "_XXFacilitated student learning in Python through Stanford's global volunteer-driven Code in Place program · Stanford Online · Apr 2023 - Apr 2024",
+      "details": {
+        "cause": "Social impact and education_XX",
+        "period": "Apr 2023 - Jun 2024",
+        "description_full": "_XXParticipated as a Section Leader in Stanford’s global volunteer-driven Code in Place program, aimed at democratizing access to computer science education. The initiative involved guiding and supporting a small cohort of learners through Python programming fundamentals as part of Stanford's renowned CS106A course. The program combines human-centered teaching with scalable online learning, recruiting and training volunteer instructors worldwide to create an inclusive and engaging learning environment.",
+        "image_path": "assets/img/volunteering/vol-stanford-cip-2023.jpg",
+        "url_link": "https://digitalcredential.stanford.edu/check/3AB800648525EE445912F5275AE78CFDB5C8E71BB33E7E2AF5501C649FAD837EL2x5NlgxQ0txV1QzR3VjTjBSckd0YkN3SzZtbzJpOURDbXdJYmxaR3BkbW9LaGxp"
+      }
+    },
+    {
+      "id_ref": "vol_scienjrrev",
+      "title": "Scientific Journal Reviewer_XX",
+      "organization": "_XXEuropean Alliance of Medical and Biological Engineering and Science (EAMBES)",
+      "timeframe_details": "Aug 2023 - Present",
+      "icon_class": "bi bi-binoculars",
+      "summary_text": "_XXActively involved in peer-review of scientific manuscripts for journals affiliated with EAMBES · European Alliance of Medical and Biological Engineering and Science (EAMBES) · Aug 2023 - Present",
+      "details": {
+        "cause": "Research and scientific contribution_XX",
+        "period": "Aug 2023 - Present",
+        "description_full": "_XXContributed to the scientific community by critically reviewing research manuscripts submitted to prestigious journals under the EAMBES umbrella. Key journals include: 1. Biomedical Signal Processing and Control (BSPC) – ISSN: 1746-8094 [link] 2. Computers & Electrical Engineering – ISSN: 0045-7906 [link] Reviews were conducted with an emphasis on scientific merit, originality, and clarity, contributing to the integrity and advancement of biomedical and engineering research.",
+        "image_path": "",
+        "url_link": "https://eambes.org/"
+      }
     }
-  }
-]
+  ]
+}

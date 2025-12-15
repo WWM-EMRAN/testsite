@@ -1,52 +1,70 @@
-[
-  {
-    "category": "Programming",
-    "description": "Python, Java, Swift, Objective-C, C, C++, C#, SQL, PHP, R",
-    "level": 100
+{
+  "section_info": {
+    "title": "Skills and Tools_XX",
+    "details": "_XXThrough self-assessment and practical experience, I am proficient in modern data analytics tools, machine learning frameworks, and essential soft skills.",
+    "icon_class": "bx bxs-wrench",
+    "table_headers": ["Area", "Subjects", "Expertise Level"]
   },
-  {
-    "category": "Datascience",
-    "description": "Data Collection, Cleaning, Preprocessing, EDA, Analysis, Feature Engineering, Numpy, Pandas, Matplotlib",
-    "level": 90
-  },
-  {
-    "category": "Machine Learning",
-    "description": "Concept and Application, Scikit-learn, Auto-ML",
-    "level": 90
-  },
-  {
-    "category": "Deep Learning",
-    "description": "Concept and Application, Pytorch, Tensorflow, Keras",
-    "level": 85
-  },
-  {
-    "category": "Generative & Agentic AI",
-    "description": "(Gemini & Huggingface): Multi-Agent, Tools & MCP, Session & Memory, Observability, A2A",
-    "level": 60
-  },
-  {
-    "category": "Cloud Platforms",
-    "description": "AWS, AWS Sagemaker, MS Azure, Azure ML Designer",
-    "level": 85
-  },
-  {
-    "category": "Health Informatics and Signal Processing",
-    "description": "Disorder detection, Epilepsy, Sleep disorders, EEG",
-    "level": 85
-  },
-  {
-    "category": "Teaching and Training",
-    "description": "Demonstration, Communication, Supervision",
-    "level": 100
-  },
-  {
-    "category": "Management and Leadership",
-    "description": "Project Management, Team Lead, Client Management",
-    "level": 90
-  },
-  {
-    "category": "Soft Skills",
-    "description": "Critical Thinking, Problem Solving, Communication, Collaboration",
-    "level": 90
-  }
-]
+  "skills": [
+    {
+      "category": "_XXProgramming",
+      "short_description": "_XXPython, Java, Swift, Objective-C, C, C++, C#, SQL, PHP, R",
+      "level": 100,
+      "details_description": "_XXPython: Used extensively in research and development during Masters and PhD at Deakin and Coventry University. Java: Utilized in B.Sc. thesis work and mobile application development at HSTU. Swift, Objective-C: Industrial-level development experience. C, C++, C#: Academic and professional (teaching) experience. SQL: Applied in both academic settings and teaching roles. PHP: Gained experience through academic and collaborative personal/team-based projects."
+    },
+    {
+      "category": "Datascience",
+      "short_description": "Data Collection, Cleaning, Preprocessing, EDA, Analysis, Feature Engineering, Numpy, Pandas, Matplotlib",
+      "level": 90,
+      "details_description": "Data Cleaning: Identifying, removing, and imputing missing values. EDA: Performing univariate, bivariate, and multivariate analysis with visualizations. Data Preprocessing: Data type conversion, encoding, scaling, and data splitting. Feature Engineering: Feature removal and derivation for optimal model input. Data Analytics: Conducting statistical, distribution, and significance analysis using p-values, AUC, chi-square tests, correlation, and mutual information. Numpy: Manipulating 1D and 2D arrays using various array operations. Pandas: Data manipulation and visualization using dataframes and built-in functions. Matplotlib: Creating a variety of visualizations including scatter plots, line plots, histograms, bar charts, box plots, violin plots, spider plots, area plots, and grouped plots."
+    },
+    {
+      "category": "Machine Learning",
+      "short_description": "Concept and Application, Scikit-learn, Auto-ML",
+      "level": 95,
+      "details_description": "Concept and Application: Covers fundamentals of ML including supervised, unsupervised, semi-supervised, and reinforcement learning. Also includes understanding of algorithms, ensemble methods, data leakage prevention, performance metrics, cross-validation, model pipelining, and post-model analysis. Scikit-learn: Used for implementing various ML concepts. Auto-ML: Tools such as PyCaret, Auto-sklearn, AutoGluon, lazypredict, and TPOT. Darts: Applied in time series data analysis."
+    },
+    {
+      "category": "Deep Learning_XX",
+      "short_description": "_XXConcept and Application, Pytorch, Tensorflow, Keras",
+      "level": 85,
+      "details_description": "_XXConcept and Application: In-depth understanding of neural network architecture and optimization including ANN, CNN (1D/2D), RNN, LSTM, transfer learning, transformer models, and architectures like VGG, ResNet, and AlexNet. Pytorch: Used for image classification projects. Tensorflow and Keras: Used for both image classification and time series analysis."
+    },
+    {
+      "category": "Generative & Agentic AI_XX",
+      "short_description": "_XX(Gemini & Huggingface): Multi-Agent, Tools & MCP, Session & Memory, Observability, A2A",
+      "level": 60,
+      "details_description": "Concept and Application: Experience building single and multi-agent systems with parallel, loop, and human-in-the-loop (HITL) capabilities. Context Management: Session-based, database, and persistent vector store context handling. Tools and MCP: Hands-on with built-in tools, function tools, sub-agents, and MCP structure. Observability: Debugging and tracing agent behavior. A2A Communication: Agent-to-agent communication and agent deployment workflows."
+    },
+    {
+      "category": "Health Informatics and Signal Processing",
+      "short_description": "Disorder detection, Epilepsy, Sleep disorders, EEG",
+      "level": 95,
+      "details_description": "Disorder Detection: Focus on conditions related to epilepsy, sleep, and aging. Epilepsy: Detection of epileptic seizures using time series and EEG data analysis. Sleep Disorders: Analysis of various sleep-related conditions such as bruxism, insomnia, breathing and movement disorders, REM behavior disorders, hypersomnia, and nervous system impairments. EEG Signals: Preprocessing and segmenting EEG data, extracting features, and optimizing channels for specific applications."
+    },
+    {
+      "category": "Cloud Platforms",
+      "short_description": "AWS, AWS Sagemaker, MS Azure, Azure ML Designer",
+      "level": 80,
+      "details_description": "AWS: Experience with EC2, S3, ETL pipelines, task scheduling, and Sagemaker including AutoGluon integration. AWS Sagemaker: Proficient in Sagemaker Studio, notebooks, and Lambda functions. MS Azure: Hands-on with virtual machines and virtual networks. Azure ML Designer: Familiar with designing and deploying ML models using Azure ML tools."
+    },
+    {
+      "category": "Teaching and Training_XX",
+      "short_description": "_XXDemonstration, Communication, Supervision",
+      "level": 100,
+      "details_description": "_XXDemonstration: Delivering concepts with real-life examples and intuitive explanations. Communication: Effective knowledge transfer with continuous feedback for student growth. Supervision: Overseeing projects and theses, providing career guidance. Evaluation: Assessing performance, giving constructive feedback, and suggesting personalized improvement strategies."
+    },
+    {
+      "category": "Management and Leadership",
+      "short_description": "Project Management, Team Lead, Client Management",
+      "level": 90,
+      "details_description": "Project Management: Managing software projects, scheduling tasks, milestone tracking, and reporting. Team Lead: Coordinating team tasks, managing testing, and integrating feedback. Client Management: Gathering requirements, communicating progress, and ensuring milestone deliveries."
+    },
+    {
+      "category": "Soft Skills_XX",
+      "short_description": "_XXCritical Thinking, Problem Solving, Communication, Collaboration",
+      "level": 90,
+      "details_description": "_XXCritical Thinking: Identifying, interpreting, evaluating, and analyzing problems. Problem Solving: Planning and designing structured solutions, prioritizing steps, and integrating components. Communication: Clearly presenting ideas and insights. Collaboration: Working effectively in team environments."
+    }
+  ]
+}
