@@ -1,15 +1,25 @@
-[
-  {
-    "id_ref": "lifeandloss",
-    "title": "Life and loss",
-    "image_path": "assets/img/diary/lifeandloss-1.png",
-    "image_caption": "Take the wealth and the fame, also, take my youth...<br>give me back my childhood, the rain, and the paper boat...",
-    "paragraphs": [
-      "We think we are free! We can do whatever we want. Actually, we pretend to be independent; we pretend to be free. We have become the slaves of our desires, the servants of our choices; and we know this is a losing deal. If we choose not to use the other eye when we have them both, one is not enough to see everything at once.",
-      "The loss is that we are breaking our existence with our own breaths. We always think that we are getting seasoned, experienced, and veterans. Yes, we are, but if we ever stop at any moment and just wink at the time; we'll see it is counting itself down. When we see the countdown, we can see how fast it comes down to zero, to its origin. We are getting older and gaining age, but we are losing our lives. The depletion is that we gain something, but we don't even realise what we lost to achieve that. Gaining never makes us full.",
-      "A beautiful flower has fragrances, eye-catching colours, and pure freshness; but if you ask it, it will say, \"I'm in a scarcity of lights; my beauty can't be seen in the dark.\". The blazing sun has lights but is deficient in alluring fragrances. The beautiful moon doesn't have beautiful colours. There, you will find out what the loss is. Ask kids, and they will tell you, \"I have the innocence but not the strength of youth.\". Ask young people, and they will tell you, \"I have the excitement and enthusiasm but haven't the wisdom as old.\". Ask the elders, and they will tell you; \"What to do, I have the wisdom but don't have the same joy that I felt in childhood. In those days, watching the frogs jump would give so much joy that shows nowadays don't give. I didn't have the fear of getting burned those days, used to tease the fire but was peeved with intense lights these days. I used to cry for no reason, but tears have become perky these days. Now we are trying to reach the moon, but there was a time when we used to be the moons. The paper boats, the rains, and the scene... we wished...\"",
-      "\"Take the wealth and the fame, also, take my youth...<br>give me back my childhood, the rain, and the paper boat...\"",
-      "And in the end, you will see, what the real loss is."
+{
+  "section_info": {
+    "title": "Diary_XX",
+    "icon_class": "bi bi-journal-text",
+    "description": "Snippets of life_XX"
+  },
+  "diaryentries": {
+    "life": [
+      {
+        "id_ref": "lifeandloss",
+        "title": "Life and loss_XX",
+        "tags": "life, spirituality, philosophy_XX",
+        "image_path": "assets/img/diary/lifeandloss-1.png",
+        "image_caption": "_XXTake the wealth and the fame, also, take my youth...<br>give me back my childhood, the rain, and the paper boat...",
+        "paragraphs": [
+          "_XXWe think we are free! We can do whatever we want. Actually, we pretend to be independent; we pretend to be free. We have become the slaves of our desires, the servants of our choices; and we know this is a losing deal. If we choose not to use the other eye when we have them both, one is not enough to see everything at once.",
+          "The loss is that we are breaking our existence with our own breaths. We always think that we are getting seasoned, experienced, and veterans. Yes, we are, but if we ever stop at any moment and just wink at the time; we'll see it is counting itself down. When we see the countdown, we can see how fast it comes down to zero, to its origin. We are getting older and gaining age, but we are losing our lives. The depletion is that we gain something, but we don't even realise what we lost to achieve that. Gaining never makes us full.",
+          "A beautiful flower has fragrances, eye-catching colours, and pure freshness; but if you ask it, it will say, \"I'm in a scarcity of lights; my beauty can't be seen in the dark.\". The blazing sun has lights but is deficient in alluring fragrances. The beautiful moon doesn't have beautiful colours. There, you will find out what the loss is. Ask kids, and they will tell you, \"I have the innocence but not the strength of youth.\". Ask young people, and they will tell you, \"I have the excitement and enthusiasm but haven't the wisdom as old.\". Ask the elders, and they will tell you; \"What to do, I have the wisdom but don't have the same joy that I felt in childhood. In those days, watching the frogs jump would give so much joy that shows nowadays don't give. I didn't have the fear of getting burned those days, used to tease the fire but was peeved with intense lights these days. I used to cry for no reason, but tears have become perky these days. Now we are trying to reach the moon, but there was a time when we used to be the moons. The paper boats, the rains, and the scene... we wished...\"",
+          "\"Take the wealth and the fame, also, take my youth...<br>give me back my childhood, the rain, and the paper boat...\"",
+          "And in the end, you will see, what the real loss is."
+        ]
+      }
     ]
   }
-]
+}

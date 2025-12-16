@@ -4,10 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: with all upto Publication section is complete">
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: courses_trainings_certificates is modified for serial numbers to be shown in the index page">
+      <change afterPath="$PROJECT_DIR$/assets/data/contacts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/test4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Extra/test5.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extra/test5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/additional-icon.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/extra_stylesAndIcons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/copyright.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/copyright.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/diary.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/diary.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/ea_logo.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/ea_logo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/gallery.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/gallery.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/personal_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/personal_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/site.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/copyright.html" beforeDir="false" afterPath="$PROJECT_DIR$/copyright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/coursesTrainingsAndCertificates-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diary.html" beforeDir="false" afterPath="$PROJECT_DIR$/diary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ea-logo.html" beforeDir="false" afterPath="$PROJECT_DIR$/ea-logo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/general-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/general-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/honorsAndAwards-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/honorsAndAwards-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/languages-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memberships-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/memberships-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolios-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolios-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/printable_cv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publications-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/publications-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sessionsAndEvents-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/sessionsAndEvents-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skillsAndTools-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/skillsAndTools-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/volunteerings-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/volunteerings-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +245,7 @@
       <workItem from="1765715623810" duration="848000" />
       <workItem from="1765719030151" duration="3192000" />
       <workItem from="1765776013101" duration="1796000" />
-      <workItem from="1765783120125" duration="36110000" />
+      <workItem from="1765783120125" duration="48850000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -293,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765828744089</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Main contents commit: courses_trainings_certificates is modified for serial numbers to be shown in the index page">
+      <option name="closed" value="true" />
+      <created>1765830369792</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765830369792</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +356,7 @@
     <MESSAGE value="JSON: data loading for index page with full menue and hero." />
     <MESSAGE value="Initial commit: with all upto professional_experience complete" />
     <MESSAGE value="Main contents commit: with all upto Publication section is complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: with all upto Publication section is complete" />
+    <MESSAGE value="Main contents commit: courses_trainings_certificates is modified for serial numbers to be shown in the index page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: courses_trainings_certificates is modified for serial numbers to be shown in the index page" />
   </component>
 </project>

@@ -43,7 +43,7 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/additional-icon.css" rel="stylesheet">
+    <link href="assets/css/extra_stylesAndIcons.css" rel="stylesheet">
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
@@ -2640,6 +2640,7 @@
     </section><!-- /Publications Section -->
 
 
+
     <!-- Contact Section -->
     <section id="contacts" class="contact section light-background">
 
@@ -2652,102 +2653,50 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row gy-4">
-
-                <div class="col-lg-5">
-
-                    <div class="info-wrap">
-
-                        <h6>Find my contact details below:</h6>
-
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                            <i class="bi bi-geo-alt flex-shrink-0"></i>
-                            <div>
-                                <h3>Address</h3>
-                                <p>Melbourne, Australia</p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                        <!--              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">-->
-                        <!--                <i class="bi bi-telephone flex-shrink-0"></i>-->
-                        <!--                <div>-->
-                        <!--                  <h3>Cell</h3>-->
-                        <!--                  <p><a href="tel:+61480248845">+61 480 248 845</a></p>-->
-                        <!--                </div>-->
-                        <!--              </div>-->
-                        <!-- End Info Item -->
-
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                            <i class="bi bi-envelope-at flex-shrink-0"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>
-                                    <a href="mailto:emran.ali@research.deakin.edu.au">emran.ali@research.deakin.edu.au</a>
-                                </p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                            <!-- <i class="bi bi-skype flex-shrink-0"></i> -->
-                            <i class="bi bi-microsoft-teams"></i>
-                            <div>
-                                <!-- <h3>Skype</h3>
-                                <p><a href="skype:wwm.emran?chat">wwm.emran</a></p> -->
-                                <h3>MS Teams</h3>
-                                <p><a href="https://teams.microsoft.com/l/chat/0/0?users=wwm.emran@hotmail.com"
-                                      target="_blank">wwm.emran@hotmail.com</a></p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                        <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12602.012715173229!2d145.10485949475074!3d-37.84851528214272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405e68fe18f5%3A0x5045675218cda10!2sBurwood%20VIC%203125!5e0!3m2!1sen!2sau!4v1661434978451!5m2!1sen!2sau"
-                                frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <div class="col-lg-4">
+                    <i class="bi bi-geo-alt"></i>
+                    <strong>Location:</strong>
+                    <span><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12602.012715173229!2d145.10485949475074!3d-37.84851528214272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405e68fe18f5%3A0x5045675218cda10!2sBurwood%20VIC%203125!5e0!3m2!1sen!2sau!4v1661434978451!5m2!1sen!2sau" target="contact-iframe">Melbourne, Australia_XX</a></span>
                 </div>
 
-                <div class="col-lg-7">
-                    <!-- <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200"> -->
-                    <form action="" onsubmit="SendEmail()" method="post" class="php-email-form" data-aos="fade-up"
-                          data-aos-delay="200">
-                        <h6>This will open you default email client to check and send the email finally.</h6>
+                <div class="col-lg-4">
+                    <i class="bx bx-envelope"></i>
+                    <strong>Email:</strong>
+                    <span><a href="mailto:emran.ali@research.deakin.edu.au">emran.ali@research.deakin.edu.au</a></span>
+                </div>
 
-                        <div class="row gy-4">
+                <div class="col-lg-4">
+                    <i class="bi bi-microsoft-teams"></i>
+                    <strong>Teams:</strong>
+                    <span><a href="https://teams.microsoft.com/l/chat/0/0?users=wwm.emran@hotmail.com" target="_blank">wwm.emran@hotmail.com</a></span>
+                </div>
 
-                            <div class="col-md-6">
-                                <label for="name-field" class="pb-2">Your Name</label>
-                                <input type="text" name="name" id="name-field" class="form-control" required="">
-                            </div>
+                <div class="col-lg-4">
+                    <i class="bx bxl-linkedin"></i>
+                    <strong>Linkedin:</strong>
+                    <span><a href="https://www.linkedin.com/in/wwmemran" target="_blank">@wwmemran</a></span>
+                </div>
 
-                            <div class="col-md-6">
-                                <label for="email-field" class="pb-2">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="email-field" required="">
-                            </div>
+                <div class="col-lg-4">
+                    <i class="g-scholar-icon-black"></i>
+                    <strong>Google scholar:</strong>
+                    <span><a href="https://scholar.google.com.au/citations?hl=en&amp;user=ej8d6LkAAAAJ" target="_blank">@ej8d6LkAAAAJ</a></span>
+                </div>
 
-                            <div class="col-md-12">
-                                <label for="subject-field" class="pb-2">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="subject-field" required="">
-                            </div>
-
-                            <div class="col-md-12">
-                                <label for="message-field" class="pb-2">Message</label>
-                                <textarea class="form-control" name="message" rows="10" id="message-field"
-                                          required=""></textarea>
-                            </div>
-
-                            <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                <button type="submit">Send Message</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div><!-- End Contact Form -->
-
+                <div class="col-lg-4">
+                    <i class="researchgate-icon-black"></i>
+                    <strong>Researchgate:</strong>
+                    <span><a href="https://www.researchgate.net/profile/Emran-Ali-2" target="_blank">@Emran-Ali-2</a></span>
+                </div>
             </div>
+
+            <p></p>
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12602.012715173229!2d145.10485949475074!3d-37.84851528214272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6405e68fe18f5%3A0x5045675218cda10!2sBurwood%20VIC%203125!5e0!3m2!1sen!2sau!4v1661434978451!5m2!1sen!2sau"
+                    frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 
         </div>
 

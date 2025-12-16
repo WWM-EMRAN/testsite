@@ -1,4 +1,8 @@
 {
+  "section_info": {
+    "title": "Gallery_XX",
+    "icon_class": "bi bi-images"
+  },
   "categories": [
     {
       "tag": "nature",
@@ -13,128 +17,138 @@
     {
       "id_ref": "gal_moonlight",
       "category": "nature",
+      "tags": "moon, night, sky, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg1.jpg",
-      "title": "Moonlight",
+      "title": "Moonlight_XX",
       "description": "The glittering new moon in the evening @ Burwood, Victoria, Australia"
     },
     {
       "id_ref": "gal_elements_earth",
       "category": "nature",
+      "tags": "ocean, island, rocks, earth, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg2.jpg",
-      "title": "Elements of the earth",
+      "title": "Elements of the earth_XX",
       "description": "Ocean, wind, land and rock meet with each other @ Cows, Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_reflection",
       "category": "nature",
+      "tags": "ocean, sunlight, reflection, water, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg3.jpg",
-      "title": "The reflection",
+      "title": "The reflection_XX",
       "description": "Sunlight reflection on the ocean water @ Cows, Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_road_infinite",
       "category": "nature",
+      "tags": "road, field, green, infinite, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg4.jpg",
-      "title": "The road to infinite",
-      "description": "A journey through the mountains and the ocean @ Teddy's lookout, Great ocean road, Victoria, Australia"
+      "title": "The road to infinite_XX",
+      "description": "A long road in a green field @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_last_light",
-      "category": "city",
+      "id_ref": "gal_unseen_path",
+      "category": "nature",
+      "tags": "stairs, path, wood, ocean, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg5.jpg",
-      "title": "The last light",
-      "description": "Sundown with color over the colorful Melbourne @ Mount Dandinong, Victoria, Australia"
+      "title": "The unseen path_XX",
+      "description": "A wooden stairs to the ocean @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_broken_bridge",
+      "id_ref": "gal_depth_ocean",
       "category": "nature",
+      "tags": "ocean, water, blue, depth, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg6.jpg",
-      "title": "The broken bridge",
-      "description": "A natural rocky bridge in the ocean @ Port Campbell, Great ocean road, Victoria, Australia"
+      "title": "Depth of the ocean_XX",
+      "description": "The deep blue ocean water @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_setting_sun",
+      "id_ref": "gal_shores_island",
       "category": "nature",
+      "tags": "ocean, waves, island, shores, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg7.jpg",
-      "title": "The setting sun",
-      "description": "The sun sets in the ocean horizon @ Twelve apostles, Great ocean road, Victoria, Australia"
+      "title": "Shores of the island_XX",
+      "description": "The ocean waves touching the island shores @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_witness_millenniums",
+      "id_ref": "gal_meeting_point",
       "category": "nature",
+      "tags": "sky, ocean, land, landscape, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg8.jpg",
-      "title": "A witness of millenniums",
-      "description": "The stones stand tall to fight and survive the ocean @ Twelve apostles, Great ocean road, Victoria, Australia"
+      "title": "The meeting point_XX",
+      "description": "The ocean, the sky and the land meet @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_uncertainty",
+      "id_ref": "gal_ocean_breeze",
       "category": "nature",
+      "tags": "breeze, waves, ocean, air, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg9.jpg",
-      "title": "The uncertainty",
-      "description": "Another true face of the ocean @ Separation Creek, Great ocean road, Victoria, Australia"
+      "title": "The ocean breeze_XX",
+      "description": "The ocean breeze and the waves @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_last_survivors",
+      "id_ref": "gal_rocky_shores",
       "category": "nature",
+      "tags": "rocks, ocean, shores, geology, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg10.jpg",
-      "title": "The last survivors",
-      "description": "Showing beauty in the struggles @ Twelve apostles, Great ocean road, Victoria, Australia"
+      "title": "The rocky shores_XX",
+      "description": "The rocky shores of the ocean @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_heavenly_valley",
+      "id_ref": "gal_silent_ocean",
       "category": "nature",
+      "tags": "ocean, water, silent, calm, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg11.jpg",
-      "title": "A heavenly valley",
-      "description": "Greenery and beauty of the mountain and valley @ Baas Valley, Bass, Victoria, Australia"
+      "title": "The silent ocean_XX",
+      "description": "The silent ocean water @ Phillip Island, Victoria, Australia"
     },
     {
-      "id_ref": "gal_road_ocean",
+      "id_ref": "gal_layers_nature",
       "category": "nature",
+      "tags": "sky, ocean, land, layers, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg12.jpg",
-      "title": "A road to the ocean",
-      "description": "Diving into the ocean @ Wilsons Promontory National Park, Victoria, Australia"
+      "title": "Layers of the nature_XX",
+      "description": "The sky, the ocean and the land layers @ Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_blues",
       "category": "nature",
+      "tags": "blue, sky, ocean, horizon, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg13.jpg",
-      "title": "The blues",
-      "description": "The blue ocean meats the blue sky @ Phillip Island, Victoria, Australia"
+      "title": "The blues_XX",
+      "description": "The blue ocean meets the blue sky @ Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_protectors",
       "category": "nature",
+      "tags": "rocks, land, barrier, protection, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg14.jpg",
-      "title": "The protectors",
+      "title": "The protectors_XX",
       "description": "The rocks to protect the land @ Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_warrior",
       "category": "nature",
+      "tags": "rock, ocean, tides, strength, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg15.jpg",
-      "title": "The warrior",
+      "title": "The warrior_XX",
       "description": "A rock overcoming the tides @ Phillip Island, Victoria, Australia"
     },
     {
       "id_ref": "gal_golden_sun",
       "category": "city",
+      "tags": "sun, cloud, golden, sky, burwood, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg16.jpg",
-      "title": "The golden sun",
+      "title": "The golden sun_XX",
       "description": "The golden sun in a hot cloudy day @ Burwood, Victoria, Australia"
     },
     {
       "id_ref": "gal_finding_roots",
       "category": "city",
+      "tags": "city, melbourne, aerial, cityscape, roots, australia, victoria",
       "image_path": "assets/img/gallery/emran-bg17.jpg",
-      "title": "Finding roots",
-      "description": "Connecting roots in the city light @ Melbourne CBD, Victoria, Australia"
-    },
-    {
-      "id_ref": "gal_city_lights",
-      "category": "city",
-      "image_path": "assets/img/gallery/emran-bg18.jpg",
-      "title": "The city lights",
-      "description": "Midnight city lights of Melbourne @ Melbourne CBD, Victoria, Australia"
+      "title": "Finding roots_XX",
+      "description": "The Melbourne city from the top @ Melbourne, Victoria, Australia"
     }
   ]
 }

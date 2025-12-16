@@ -20,7 +20,12 @@ const JSON_FILES = [
     'languages.json',
     'portfolios.json',
     'volunteerings.json',
-    'publications.json'
+    'publications.json',
+    'contacts.json',
+    'ea_logo.json',
+    'copyright.json',
+    'diary.json',
+    'gallery.json'
 ];
 
 // Stores all fetched data keyed by filename (e.g., 'personal_info' : {...})
@@ -29,19 +34,78 @@ let SITE_DATA = {};
 
 // --- 2. CORE FETCHING FUNCTION ---
 
+// /**
+//  * Fetches all JSON files and stores the data in the global SITE_DATA object.
+//  * @returns {Promise<void>} Resolves when all data is loaded.
+//  */
+// async function loadAllData() {
+//     console.log('Starting data loading...');
+//     const fetchPromises = JSON_FILES.map(fileName =>
+//         fetch(BASE_DATA_PATH + fileName)
+//             .then(response => {
+//                 if (!response.ok) {
+//                     // Log the exact file that failed to load (e.g., due to 404 or bad path)
+//                     throw new Error(`Failed to load ${fileName}: ${response.statusText || 'Network or Path Error'}`);
+//                 }
+//                 return response.json();
+//             })
+//             .then(data => {
+//                 const baseName = fileName.replace('.json', '');
+//                 SITE_DATA[baseName] = data;
+//             })
+//     );
+//
+//     try {
+//         await Promise.all(fetchPromises);
+//         console.log('All core data loaded successfully.', SITE_DATA);
+//     } catch (error) {
+//         console.error('Error during data loading:', error);
+//         // Fallback or error message for the user:
+//         document.body.innerHTML = '<h1>Error loading site data. Please check console.</h1>';
+//     }
+// }
+
+
+
 /**
  * Fetches all JSON files and stores the data in the global SITE_DATA object.
  * @returns {Promise<void>} Resolves when all data is loaded.
+ * Fetches all JSON files with a caching strategy defined in site.json (in seconds).
  */
 async function loadAllData() {
-    console.log('Starting data loading...');
+    const CACHE_KEY = 'site_data_cache';
+    const TIMESTAMP_KEY = 'site_data_timestamp';
+
+    // 1. Check if cache exists
+    let cachedData = localStorage.getItem(CACHE_KEY);
+    let lastFetch = localStorage.getItem(TIMESTAMP_KEY);
+    let now = new Date().getTime();
+
+    if (cachedData && lastFetch) {
+        try {
+            const tempSiteData = JSON.parse(cachedData);
+
+            // 2. Extract expiration from site.json (default to 86400 if missing)
+            const expirationSeconds = tempSiteData.site?.cache_settings?.expiration_seconds || 86400;
+            const expirationMs = expirationSeconds * 1000;
+
+            // 3. If within time limit, load from cache
+            if (now - lastFetch < expirationMs) {
+                console.log(`Loading data from ${expirationSeconds}s cache...`);
+                SITE_DATA = tempSiteData;
+                return;
+            }
+        } catch (e) {
+            console.warn("Cache parsing failed, performing fresh fetch.");
+        }
+    }
+
+    // 4. Perform fresh fetch if cache is expired or missing
+    console.log('Cache expired or missing. Starting fresh data loading...');
     const fetchPromises = JSON_FILES.map(fileName =>
         fetch(BASE_DATA_PATH + fileName)
             .then(response => {
-                if (!response.ok) {
-                    // Log the exact file that failed to load (e.g., due to 404 or bad path)
-                    throw new Error(`Failed to load ${fileName}: ${response.statusText || 'Network or Path Error'}`);
-                }
+                if (!response.ok) throw new Error(`Failed to load ${fileName}`);
                 return response.json();
             })
             .then(data => {
@@ -50,16 +114,13 @@ async function loadAllData() {
             })
     );
 
-    try {
-        await Promise.all(fetchPromises);
-        console.log('All core data loaded successfully.', SITE_DATA);
-    } catch (error) {
-        console.error('Error during data loading:', error);
-        // Fallback or error message for the user:
-        document.body.innerHTML = '<h1>Error loading site data. Please check console.</h1>';
-    }
-}
+    await Promise.all(fetchPromises);
 
+    // 5. Save fresh data to localStorage
+    localStorage.setItem(CACHE_KEY, JSON.stringify(SITE_DATA));
+    localStorage.setItem(TIMESTAMP_KEY, now.toString());
+    console.log('All core data loaded and cached successfully.');
+}
 
 
 
@@ -1629,103 +1690,6 @@ function renderHonorsAwardsDetails(honorsData) {
     // Append all generated content once
     detailsContainer.innerHTML = allAwardsHTML;
 }
-
-
-
-// /**
-//  * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
-//  * for the main index page, using the filterable portfolio/gallery layout.
-//  * FIX: Uses the correct JSON key 'coursestrainingscertificates'.
-//  * @param {object} coursesData
-//  */
-// function renderCoursesTrainingsCertificates(coursesData) {
-//     // Helper function defined locally for reliability
-//     const ArrayOfObjects = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'object' && item !== null);
-//
-//     // 1. Guard check uses the correct 'coursestrainingscertificates' key
-//     if (!coursesData || !ArrayOfObjects(coursesData.coursestrainingscertificates)) return;
-//
-//     const section = document.getElementById('coursesTrainingsCertificates');
-//     if (!section) return;
-//
-//     const sectionInfo = coursesData.section_info;
-//     // Use the correct key for the main data array
-//     const courses = coursesData.coursestrainingscertificates;
-//
-//     // Target the section title area and the items container
-//     const sectionTitleContainer = section.querySelector('.section-title');
-//     const itemsContainer = section.querySelector('.row.gy-4.isotope-container');
-//
-//     if (!sectionTitleContainer || !itemsContainer) return;
-//
-//     // --- 2. Render Section Title and Description ---
-//     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
-//     const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6'); // Index page uses H6 for description
-//
-//     if (sectionTitleH2 && sectionInfo) {
-//         sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
-//     }
-//     if (sectionDescriptionH6 && sectionInfo) {
-//         sectionDescriptionH6.textContent = sectionInfo.details;
-//     }
-//
-//     // 3. Clear existing static content
-//     itemsContainer.innerHTML = '';
-//
-//     // 4. Generate and Append Course/Certificate Items
-//     courses.forEach(item => {
-//         // Concatenate filter tags into a single string for the class attribute
-//         const filterClasses = item.filter_tags ? item.filter_tags.join(' ') : '';
-//         const defaultTitle = item.title;
-//         const defaultSource = item.source;
-//
-//         const itemHTML = `
-//             <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${filterClasses}" data-aos="fade-up" data-aos-delay="200">
-//                 <div class="portfolio-content h-100">
-//                     <img src="${item.image_path}" class="img-fluid" alt="Emran Ali - Certificate: ${defaultTitle}">
-//                     <div class="portfolio-info">
-//                         <h4>${defaultTitle} </h4>
-//                         <p>${defaultSource}</p>
-//                         <a href="${item.image_path}"
-//                            title="${defaultSource}"
-//                            data-gallery="portfolio-gallery-app"
-//                            class="glightbox preview-link">
-//                             <i class="bi bi-zoom-in"></i>
-//                         </a>
-//                         <a href="${item.link_target}"
-//                            title="More Details"
-//                            class="details-link">
-//                             <i class="bi bi-link-45deg"></i>
-//                         </a>
-//                     </div>
-//                 </div>
-//             </div> `;
-//         itemsContainer.innerHTML += itemHTML;
-//     });
-//
-//     // 5. CRITICAL FIX: Reinitialize Isotope and GLightbox
-//     // This is required to make filtering and lightbox work on newly inserted content.
-//
-//     if (typeof Isotope !== 'undefined' && typeof imagesLoaded !== 'undefined') {
-//         const isoContainer = section.querySelector('.isotope-layout');
-//         if (isoContainer) {
-//             // Reinitialize Isotope to apply filters and layout to new elements
-//             imagesLoaded(isoContainer, function() {
-//                 // Ensure we only re-run initialization logic if it exists in main.js
-//                 // This common structure re-initializes the Isotope filter grid
-//                 new Isotope(isoContainer.querySelector('.isotope-container'), {
-//                     itemSelector: '.isotope-item',
-//                     layoutMode: 'masonry'
-//                 });
-//             });
-//             // Reinitialize GLightbox for new gallery links
-//             if (typeof GLightbox === 'function') {
-//                 GLightbox({ selector: '.glightbox' });
-//             }
-//         }
-//     }
-// }
-
 
 
 
@@ -3694,6 +3658,512 @@ function renderPublicationsDetails(publicationsData) {
 
 
 
+/**
+ * Renders the Contacts section (ID: #contacts) for the main index page.
+ * Dynamically populates the 6-column grid and updates the map iframe.
+ * @param {object} contactsData - Data from contacts.json
+ */
+function renderContacts(contactsData) {
+    if (!contactsData || !contactsData.section_info || !contactsData.contacts) {
+        console.error("renderContacts: Missing required data.");
+        return;
+    }
+
+    const section = document.getElementById('contacts');
+    if (!section) return;
+
+    const sectionInfo = contactsData.section_info;
+    const contactList = contactsData.contacts;
+
+    // 1. Update Section Title and Description
+    const sectionTitleH2 = section.querySelector('.section-title h2');
+    const sectionDescriptionH6 = section.querySelector('.section-title h6');
+
+    if (sectionTitleH2) sectionTitleH2.innerHTML = sectionInfo.title;
+    if (sectionDescriptionH6) sectionDescriptionH6.textContent = sectionInfo.details;
+
+    // 2. Target the grid container and the iframe
+    const gridContainer = section.querySelector('.row.gy-4');
+    const mapIframe = section.querySelector('iframe');
+
+    if (!gridContainer) return;
+
+    // 3. Rebuild the grid dynamically
+    gridContainer.innerHTML = ''; // Clear static content
+
+    // Define the display order based on your preferred layout
+    const order = ['location', 'email', 'teams', 'linkedin', 'google_scholar', 'researchgate'];
+
+    order.forEach(key => {
+        const item = contactList[key];
+        if (item && item.text) {
+            // Capitalize key for the Label (e.g., 'google_scholar' -> 'Google scholar')
+            const label = key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
+
+            let targetAttr = '';
+            if (key === 'location') {
+                targetAttr = 'target="contact-iframe"'; // Targets the map iframe
+            } else if (key !== 'email') {
+                targetAttr = 'target="_blank"'; // Opens socials in new tab
+            }
+
+            const itemHTML = `
+                <div class="col-lg-4">
+                    <i class="${item.icon_class}"></i>
+                    <strong>${label}:</strong>
+                    <span><a href="${item.link || '#'}" ${targetAttr}>${item.text}</a></span>
+                </div>`;
+
+            gridContainer.innerHTML += itemHTML;
+        }
+    });
+
+    // 4. Update the Map Iframe if a location link exists
+    if (mapIframe && contactList.location && contactList.location.link) {
+        mapIframe.src = contactList.location.link;
+        mapIframe.name = "contact-iframe"; // Ensure the name matches the link targets
+    }
+}
+
+
+
+/**
+ * Renders the Contacts section (ID: #contacts) for the printable_cv.html page.
+ * FIX: The 'Location' link now targets the map iframe using target="contact-iframe".
+ * @param {object} contactsData
+ */
+function renderContactsCV(contactsData) {
+    if (!contactsData || !contactsData.section_info || !contactsData.contacts) {
+        console.error("renderContactsCV: Missing 'section_info' or 'contacts' data.");
+        return;
+    }
+
+    const sectionTitleDiv = document.getElementById('contacts');
+    if (!sectionTitleDiv) return;
+
+    const details = contactsData.contacts;
+    const sectionInfo = contactsData.section_info;
+
+    // 1. Render Section Title and Description
+    const sectionTitleH2 = sectionTitleDiv.querySelector('h2');
+    const sectionDescriptionP = sectionTitleDiv.querySelector('p');
+
+    if (sectionTitleH2 && sectionInfo) {
+        sectionTitleH2.innerHTML = sectionInfo.title;
+    }
+
+    if (sectionDescriptionP && sectionInfo) {
+        sectionDescriptionP.textContent = sectionInfo.details;
+    }
+
+    // 2. Target the container row that follows the #contacts div.
+    const containerAfterTitle = sectionTitleDiv.nextElementSibling;
+    const contactsContainer = containerAfterTitle ? containerAfterTitle.querySelector('.row.gy-4') : null;
+
+    if (!contactsContainer) {
+        console.error("renderContactsCV: Contacts content container (.row.gy-4) not found.");
+        return;
+    }
+
+    // 3. Define the order of items for the CV view
+    const cvOrderKeys = ['location', 'email', 'teams', 'linkedin', 'google_scholar', 'researchgate'];
+
+    contactsContainer.innerHTML = '';
+
+    // 4. Generate HTML for all items
+    let itemsHTML = '';
+
+    cvOrderKeys.forEach(key => {
+        const itemData = details[key];
+
+        if (itemData && itemData.text) {
+            const itemTitle = key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
+
+            let linkTarget = '';
+            // CRITICAL FIX: Target the map iframe for the location link
+            if (key === 'location') {
+                linkTarget = 'target="contact-iframe"';
+            } else if (key !== 'email') {
+                // Other links (except email) open in new tabs
+                linkTarget = 'target="_blank"';
+            }
+
+            const linkHTML = itemData.link
+                ? `<a href="${itemData.link}" ${linkTarget}>${itemData.text}</a>`
+                : itemData.text;
+
+            itemsHTML += `
+                <div class="col-lg-4">
+                    <i class="${itemData.icon_class}"></i> 
+                    <strong>${itemTitle}:</strong> 
+                    <span>${linkHTML}</span>
+                </div>
+            `;
+        }
+    });
+
+    // 5. Inject content
+    contactsContainer.innerHTML = itemsHTML;
+}
+
+
+
+
+/**
+ * Renders the EA Logo gallery page (ea-logo.html).
+ * Aligned with ea_logo.json structure.
+ * @param {object} logoData - Data from ea_logo.json
+ */
+function renderEALogos(logoData) {
+    // 1. Guard check: Validate wrapper and array key 'logos'
+    if (!logoData || !Array.isArray(logoData.logos)) {
+        console.error("renderEALogos: Missing 'logos' array in data structure.");
+        return;
+    }
+
+    const section = document.getElementById('Gallery');
+    if (!section) return;
+
+    const sectionInfo = logoData.section_info;
+    const logos = logoData.logos;
+
+    // 2. Update Page Headers and Breadcrumb
+    if (sectionInfo) {
+        const pageTitleH1 = document.querySelector('.page-title h1');
+        if (pageTitleH1) {
+            pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        }
+
+        const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
+        if (breadcrumbCurrent) {
+            breadcrumbCurrent.textContent = sectionInfo.title;
+        }
+    }
+
+    // 3. Target the gallery container
+    const galleryContainer = section.querySelector('.isotope-container');
+    if (!galleryContainer) {
+        console.error("renderEALogos: Target container '.isotope-container' not found.");
+        return;
+    }
+
+    galleryContainer.innerHTML = ''; // Clear existing static content
+
+    // 4. Generate and Append Logo Items
+    let galleryHTML = '';
+    logos.forEach(item => {
+        // Use image_path directly from JSON
+        galleryHTML += `
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-content h-100">
+                    <a href="${item.image_path}"
+                       title="${item.title}"
+                       data-gallery="portfolio-gallery-app" 
+                       class="glightbox preview-link">
+                        <img src="${item.image_path}" class="portfolio-content" alt="Emran Ali - ${item.title}" width="100%">
+                    </a>
+                    <div class="portfolio-info">
+                        <h4 style="text-align: center">${item.title}</h4>
+                    </div>
+                </div>
+            </div>`;
+    });
+
+    galleryContainer.innerHTML = galleryHTML;
+
+    // 5. Re-initialize GLightbox for the new dynamic images
+    if (typeof GLightbox === 'function') {
+        GLightbox({ selector: '.glightbox' });
+    }
+}
+
+
+
+
+/**
+ * Renders the Copyright Information page (copyright.html).
+ * Handles the finalized object structure with 'section_info' and 'copyrights'.
+ * @param {object} copyrightData - Data from copyright.json
+ */
+function renderCopyright(copyrightData) {
+    // 1. Guard check: Ensure the main data object and the 'copyrights' array exist
+    if (!copyrightData || !Array.isArray(copyrightData.copyrights)) {
+        console.error("renderCopyright: Missing 'copyrights' array in data structure.");
+        return;
+    }
+
+    const section = document.getElementById('Copyright');
+    if (!section) return;
+
+    const sectionInfo = copyrightData.section_info;
+    const entries = copyrightData.copyrights; // Matches your new JSON key
+
+    // 2. Update Page Title, Icon, and Breadcrumb
+    if (sectionInfo) {
+        const pageTitleH1 = document.querySelector('.page-title h1');
+        if (pageTitleH1) {
+            pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        }
+
+        const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
+        if (breadcrumbCurrent) {
+            breadcrumbCurrent.textContent = sectionInfo.title;
+        }
+    }
+
+    // 3. Target the inner content container
+    const detailsContainer = section.querySelector('.row');
+    if (!detailsContainer) {
+        console.error("renderCopyright: Target container '.row' not found inside #Copyright.");
+        return;
+    }
+
+    detailsContainer.innerHTML = ''; // Clear existing static HTML
+
+    // 4. Generate and Append Copyright Entries
+    let copyrightHTML = '';
+
+    entries.forEach(item => {
+        // Build modifications list only if the array has content
+        let modificationsHTML = '';
+        if (Array.isArray(item.modifications) && item.modifications.length > 0) {
+            modificationsHTML = `
+                <p>The following changes have been made:</p>
+                <ul>
+                    ${item.modifications.map(mod => `<li>${mod}</li>`).join('')}
+                </ul>`;
+        }
+
+        copyrightHTML += `
+            <div id="${item.id_ref}" class="general-info" data-aos="fade-up" data-aos-delay="200"> 
+                <h3>${sectionInfo.title}</h3>
+                <p>
+                    <strong>Right to copy: </strong> ${item.right_to_copy} <br>
+                    <strong>Version: </strong> ${item.version} <br>
+                    <strong>Description: </strong> ${item.description}
+                </p>
+                ${modificationsHTML}
+            </div>`;
+    });
+
+    detailsContainer.innerHTML = copyrightHTML;
+}
+
+
+
+/**
+ * Renders the Diary page (diary.html) with a tag-based filtering sidebar.
+ * @param {object} diaryData - Data from diary.json
+ */
+function renderDiary(diaryData) {
+    if (!diaryData || !diaryData.diaryentries) {
+        console.error("renderDiary: Missing 'diaryentries' data object.");
+        return;
+    }
+
+    const section = document.getElementById('Diary');
+    if (!section) return;
+
+    const sectionInfo = diaryData.section_info;
+    const diaryEntriesObj = diaryData.diaryentries;
+
+    // 1. Update Headers
+    if (sectionInfo) {
+        const pageTitleH1 = document.querySelector('.page-title h1');
+        if (pageTitleH1) pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+
+        const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
+        if (breadcrumbCurrent) breadcrumbCurrent.textContent = sectionInfo.title;
+    }
+
+    // 2. Identify Unique Tags for the Sidebar
+    let uniqueTags = new Set();
+    Object.values(diaryEntriesObj).forEach(categoryArray => {
+        categoryArray.forEach(entry => {
+            if (entry.tags) {
+                entry.tags.split(',').forEach(tag => uniqueTags.add(tag.trim()));
+            }
+        });
+    });
+
+    // 3. Target Main Container and Rebuild Structure
+    // We expect a row with col-lg-3 (sidebar) and col-lg-9 (content)
+    const mainRow = section.querySelector('.row');
+    mainRow.innerHTML = `
+        <div class="col-lg-3">
+            <div class="portfolio-filters" data-aos="fade-up">
+                <h4 style="margin-bottom: 20px;">Filters</h4>
+                <ul id="diary-filters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    ${Array.from(uniqueTags).map(tag => `<li data-filter=".tag-${tag.toLowerCase()}">${tag}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9" id="diary-content-container"></div>
+    `;
+
+    const contentContainer = document.getElementById('diary-content-container');
+
+    // 4. Render Categorized Entries
+    let diaryHTML = '';
+    Object.keys(diaryEntriesObj).forEach(category => {
+        const entries = diaryEntriesObj[category];
+
+        // Category Header (Hidden if filtering is active, usually handled by CSS or Isotope)
+        diaryHTML += `<h2 class="category-title" style="margin-top: 30px;">${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+
+        entries.forEach(entry => {
+            const paragraphsHTML = entry.paragraphs.map(p => `<p>${p}</p>`).join('');
+
+            // Generate tag classes for filtering (e.g., "tag-life tag-philosophy")
+            const filterClasses = entry.tags ? entry.tags.split(',').map(t => `tag-${t.trim().toLowerCase()}`).join(' ') : '';
+
+            diaryHTML += `
+                <div id="${entry.id_ref}" class="diary-item ${filterClasses}" data-aos="fade-up">
+                    <div class="general-info" style="margin-bottom: 40px; padding: 20px; border-left: 3px solid #0563af; background: #f9f9f9;">
+                        <h3>${entry.title}</h3>
+                        <img src="${entry.image_path}" class="img-fluid" style="border-radius: 8px; margin: 15px 0;">
+                        <p style="text-align: center; font-style: italic; color: #666;"><small>${entry.image_caption}</small></p>
+                        <div class="description">${paragraphsHTML}</div>
+                        <p><small><em>Tags: ${entry.tags}</em></small></p>
+                    </div>
+                </div>`;
+        });
+    });
+
+    contentContainer.innerHTML = diaryHTML;
+
+    // 5. Logic for Filtering (Basic JS implementation)
+    const filterItems = document.querySelectorAll('#diary-filters li');
+    filterItems.forEach(li => {
+        li.addEventListener('click', function() {
+            // UI Update
+            filterItems.forEach(el => el.classList.remove('filter-active'));
+            this.classList.add('filter-active');
+
+            const filterValue = this.getAttribute('data-filter');
+            const items = document.querySelectorAll('.diary-item');
+
+            items.forEach(item => {
+                if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Hide category titles when a specific filter is active
+            const catTitles = document.querySelectorAll('.category-title');
+            catTitles.forEach(title => title.style.display = filterValue === '*' ? 'block' : 'none');
+        });
+    });
+}
+
+
+
+/**
+ * Renders the Gallery page (gallery.html) with a tag-based filtering sidebar.
+ * @param {object} galleryData - Data from gallery.json
+ */
+function renderGallery(galleryData) {
+    if (!galleryData || !galleryData.items) {
+        console.error("renderGallery: Missing required data.");
+        return;
+    }
+
+    const section = document.getElementById('Gallery');
+    if (!section) return;
+
+    const sectionInfo = galleryData.section_info;
+    const items = galleryData.items;
+
+    // 1. Update Headers and Breadcrumbs based on JSON metadata
+    if (sectionInfo) {
+        const pageTitleH1 = document.querySelector('.page-title h1');
+        if (pageTitleH1) pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+
+        const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
+        if (breadcrumbCurrent) breadcrumbCurrent.textContent = sectionInfo.title;
+    }
+
+    // 2. Extract Unique Tags from all items to build the sidebar
+    let uniqueTags = new Set();
+    items.forEach(item => {
+        if (item.tags) {
+            item.tags.split(',').forEach(tag => uniqueTags.add(tag.trim()));
+        }
+    });
+
+    // 3. Rebuild Main Container Structure (Sidebar + Content Grid)
+    const mainRow = section.querySelector('.container > .row');
+    if (!mainRow) return;
+
+    mainRow.innerHTML = `
+        <div class="col-lg-3">
+            <div class="portfolio-filters" data-aos="fade-up">
+                <h4 style="margin-bottom: 20px;">Filters</h4>
+                <ul id="gallery-filters">
+                    <li data-filter="*" class="filter-active">All</li>
+                    ${Array.from(uniqueTags).sort().map(tag => `<li data-filter=".tag-${tag.toLowerCase()}">${tag}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="row gy-4" id="gallery-content-container"></div>
+        </div>
+    `;
+
+    const contentContainer = document.getElementById('gallery-content-container');
+
+    // 4. Render Gallery Items with dynamic tag classes for filtering
+    let galleryHTML = '';
+    items.forEach(item => {
+        const filterClasses = item.tags ? item.tags.split(',').map(t => `tag-${t.trim().toLowerCase()}`).join(' ') : '';
+
+        galleryHTML += `
+            <div class="col-lg-6 col-md-6 gallery-item ${filterClasses}" data-aos="fade-up">
+                <div class="portfolio-content h-100">
+                    <img src="${item.image_path}" class="img-fluid" alt="${item.title}">
+                    <div class="portfolio-info">
+                        <h4>${item.title}</h4>
+                        <p>${item.description}</p>
+                        <a href="${item.image_path}" title="${item.title}" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
+                            <i class="bi bi-zoom-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>`;
+    });
+
+    contentContainer.innerHTML = galleryHTML;
+
+    // 5. Filtering Logic: Show/Hide items based on selected tag
+    const filterItems = document.querySelectorAll('#gallery-filters li');
+    filterItems.forEach(li => {
+        li.addEventListener('click', function() {
+            // Update UI state
+            filterItems.forEach(el => el.classList.remove('filter-active'));
+            this.classList.add('filter-active');
+
+            const filterValue = this.getAttribute('data-filter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            // Apply visibility logic
+            galleryItems.forEach(item => {
+                if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // 6. Re-initialize Lightbox for the new dynamic image links
+    if (typeof GLightbox === 'function') {
+        GLightbox({ selector: '.glightbox' });
+    }
+}
 
 
 
@@ -3876,6 +4346,9 @@ async function initializeSite() {
 
             // --- ADD THE CV PUBLICATIONS CALL HERE ---
             renderPublicationsCV(SITE_DATA.publications);
+
+            // --- ADD THE CV CONTACTS CALL HERE ---
+            renderContactsCV(SITE_DATA.contacts);
         }
         else if (fileName === 'skillsAndTools-details.html') {
             renderSkillsToolsDetails(SITE_DATA.skills);
@@ -3906,6 +4379,18 @@ async function initializeSite() {
         }
         else if (fileName === 'publications-details.html') {
             if (SITE_DATA.publications) renderPublicationsDetails(SITE_DATA.publications);
+        }
+        else if (fileName === 'ea-logo.html') {
+            if (SITE_DATA.ea_logo) renderEALogos(SITE_DATA.ea_logo);
+        }
+        else if (fileName === 'copyright.html') {
+            renderCopyright(SITE_DATA.copyright);
+        }
+        else if (fileName === 'diary.html') {
+            renderDiary(SITE_DATA.diary);
+        }
+        else if (fileName === 'gallery.html') {
+            renderGallery(SITE_DATA.gallery);
         }
         else {
             // --- INDEX PAGE RENDERING (Default Fallback) ---
@@ -3957,6 +4442,9 @@ async function initializeSite() {
 
             // --- ADD THE INDEX PUBLICATIONS CALL HERE ---
             renderPublications(SITE_DATA.publications);
+
+            // --- ADD THE INDEX CONTACTS CALL HERE ---
+            renderContacts(SITE_DATA.contacts);
         }
 
         // 3. RE-INITIALIZE DYNAMIC LIBRARIES

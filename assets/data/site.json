@@ -5,6 +5,11 @@
     "author": "Emran Ali",
     "title": "Emran Ali_XX - Personal Website"
   },
+  "cache_settings": {
+    "expiration_seconds": 3600,
+    "cache_key": "site_data_cache",
+    "timestamp_key": "site_data_timestamp"
+  },
   "assets": {
     "icons": {
       "favicon_gif": "Emran_Ali_Logo_Fav.gif",

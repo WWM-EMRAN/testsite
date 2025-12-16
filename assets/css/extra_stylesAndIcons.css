@@ -1,3 +1,63 @@
+
+#diary-filters {
+    list-style: none;
+    padding: 0;
+}
+#diary-filters li {
+    cursor: pointer;
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444;
+    transition: 0.3s;
+    background: #f4f4f4;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+#diary-filters li:hover, #diary-filters li.filter-active {
+    color: #fff;
+    background: #0563af;
+}
+.category-title {
+    color: #0563af;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+#gallery-filters {
+    list-style: none;
+    padding: 0;
+}
+#gallery-filters li {
+    cursor: pointer;
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444444;
+    transition: 0.3s;
+    background: #f4f4f4;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+#gallery-filters li:hover, #gallery-filters li.filter-active {
+    color: #fff;
+    background: #0563af;
+}
+
+
+
+
+
+
+/*ICON CLASSES*/
 .g-scholar-icon {
   display: inline-block;
   width: 1.0em; /* Match the size of Boxicons 1.5em = 1.20em;*/
