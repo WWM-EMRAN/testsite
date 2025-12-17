@@ -573,109 +573,92 @@ function renderEducations(educationData) {
     const sectionDescriptionH6 = section.querySelector('.section-title h6');
 
     if (sectionTitleH2 && sectionInfo) {
-        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} <a href="education-details.html"> <i class="bx bx-link"></i></a>`;
     }
     if (sectionDescriptionH6 && sectionInfo) {
         sectionDescriptionH6.textContent = sectionInfo.details;
     }
 
-    // 2. Render Summary Block (Current Status)
-
-    // 2A. CRITICAL FIX: Update the Summary Title (H3)
-    const summaryTitleH3 = section.querySelector('h3.resume-title'); // Targets the first H3 in the section
+    // 2. Render Summary Block
+    const summaryTitleH3 = section.querySelector('h3.resume-title');
     if (summaryTitleH3 && summaryInfo && summaryInfo.title) {
         summaryTitleH3.textContent = summaryInfo.title;
     }
 
-    // 2B. Update the Summary List (UL)
     const summaryListContainer = section.querySelector('.resume-item.pb-0 ul');
-
     if (summaryListContainer && summaryInfo && Array.isArray(summaryInfo.status_list)) {
         summaryListContainer.innerHTML = summaryInfo.status_list.map(item =>
             `<li>${item}</li>`
         ).join('');
     }
 
-    // 3. Setup Columns and Dynamic Headers
+    // 3. Setup Columns
     const columns = section.querySelectorAll('.row > .col-lg-6');
     if (columns.length < 2) return;
 
     const leftColumn = columns[0];
     const rightColumn = columns[1];
 
-    // --- Use JSON data for column headers ---
     const leftColumnTitle = columnTitles.left_column || 'Doctor of Philosophy (PhD)';
     const rightColumnMasterTitle = columnTitles.right_column_master || 'Master of Science (by Research) – MRes';
     const bachelorTitle = columnTitles.right_column_bachelor || 'Bachelor of Science (B.Sc.)';
 
-    // Clear and start column HTML with the dynamic H3 headers
-    // NOTE: This H3 is NOT the summary H3, but the first one inside the columns.
     let leftHTML = `<h3 class="resume-title">${leftColumnTitle}</h3>`;
     let rightHTML = `<h3 class="resume-title">${rightColumnMasterTitle}</h3>`;
 
-    // Track if the Bachelor header has been injected into the right column yet
     let bachelorHeaderInjected = false;
 
     // Helper function to generate HTML for a single education item
     const generateItemHTML = (degree) => {
-        // Thesis title display
+        // Link to the specific detail section
+        const deepDetailsLink = `education-details.html#${degree.degree_id}`;
+
         const thesisInfo = (degree.thesis_title && degree.thesis_length)
             ? `<strong>Thesis:</strong> ${degree.thesis_title} — length ${degree.thesis_length}.<br>`
             : '';
 
-        // Scholarship link
         const scholarshipLinkTag = degree.scholarship_link
             ? `<a class="scrollto" href="${degree.scholarship_link}"><i class="bx bx-link"></i></a>`
             : '';
 
-        // Specialisation
         const specialisationHTML = degree.specialisation
             ? `<strong>Specialisation:</strong> ${degree.specialisation}<br>`
             : '';
 
-        // Scholarship/Fellowship
         const scholarshipHTML = degree.scholarship
             ? `<strong>Scholarship/Fellowship:</strong> ${degree.scholarship} ${scholarshipLinkTag}<br>`
             : '';
 
-        // Research Topic
         const researchTopicHTML = degree.research_topic
             ? `<strong>Research Topic:</strong> ${degree.research_topic} <br>`
             : '';
 
-        // Activities and Involvement
         const activitiesHTML = degree.activities_involvement
             ? `<strong>Activities and Involvement:</strong> ${degree.activities_involvement}<br>`
             : '';
 
-        // Description
         const descriptionHTML = degree.description_full
             ? `<p><strong>Description:</strong> ${degree.description_full}</p>`
             : '';
 
-        // Handle research/projects list
         const projectsList = Array.isArray(degree.research_projects) ? degree.research_projects.map(project => {
             let title = typeof project === 'string' ? project : (project.title || '');
             let link = typeof project === 'object' ? (project.link || '') : '';
             let type = typeof project === 'object' && project.type ? `<strong>${project.type}:</strong> ` : '';
-
-            // Project link
             const linkTag = link ? `<a class="scrollto" href="${link}"><i class="bx bx-link"></i></a>` : '';
-
             return `<li>${type}${title} ${linkTag}</li>`;
         }).join('') : '';
 
-        // Conditional Heading for Projects (Only show if list exists)
-        const projectsHeading = projectsList
-            ? `<p><strong>Research and Projects:</strong></p>`
-            : '';
-
-        // Final list block (only show <ul> if there are project items)
-        const projectsBlock = projectsList ? `<ul>${projectsList}</ul>` : '';
+        const projectsBlock = projectsList ? `<p><strong>Research and Projects:</strong></p><ul>${projectsList}</ul>` : '';
 
         return `
             <div class="resume-item pb-0" data-aos="fade-up" data-aos-delay="200" id="${degree.degree_id}">
-                <h4>${degree.institution_type}</h4>
+                <a href="${deepDetailsLink}" style="text-decoration: none; color: inherit;">
+                    <h4 style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.color='#0563af'" onmouseout="this.style.color='inherit'">
+                        ${degree.institution_type} <i class="bx bx-link-alt" style="font-size: 1rem; vertical-align: middle; opacity: 0.5;"></i>
+                    </h4>
+                </a>
+                
                 <h6>
                     <em>
                         ${degree.institution_name}, ${degree.institution_location}
@@ -691,23 +674,17 @@ function renderEducations(educationData) {
                     ${thesisInfo}
                 </p>
                 ${descriptionHTML}
-                ${projectsHeading} 
                 ${projectsBlock}
             </div>`;
     };
 
-    // --- 4. Sequence-Preserving Placement Logic (remains the same) ---
+    // 4. Sequence Placement
     educationData.degrees.forEach(degree => {
         const itemHTML = generateItemHTML(degree);
 
-        // PHDs always go into the Left Column, preserving JSON order for that column
         if (degree.level.includes('PhD')) {
             leftHTML += itemHTML;
-        }
-        // Masters and Bachelors go into the Right Column, preserving JSON order for that column
-        else if (degree.level.includes('Master') || degree.level.includes('Bachelor')) {
-
-            // Inject the Bachelor header right before the first Bachelor degree item
+        } else if (degree.level.includes('Master') || degree.level.includes('Bachelor')) {
             if (degree.level.includes('Bachelor') && !bachelorHeaderInjected) {
                 rightHTML += `<h3 class="resume-title">${bachelorTitle}</h3>`;
                 bachelorHeaderInjected = true;
@@ -716,18 +693,15 @@ function renderEducations(educationData) {
         }
     });
 
-    // 5. Apply the generated HTML to the columns
     leftColumn.innerHTML = leftHTML;
     rightColumn.innerHTML = rightHTML;
 }
 
 
-
 /**
- * Renders the Education section (ID: #educations) for the printable_cv.html page (table format).
- * FIX: Removes Summary generation entirely, targeting the Tables container as the first sibling element.
- * Preserves JSON data exactly as is (no processing).
- * @param {object} educationData
+ * Renders the Education section (ID: #educations) for the printable_cv.html page.
+ * Features a deep background for Degree Levels and a lighter background for Universities.
+ * The institution_type now links to the education-details.html page.
  */
 function renderEducationsCV(educationData) {
     if (!educationData || !Array.isArray(educationData.degrees)) return;
@@ -744,8 +718,13 @@ function renderEducationsCV(educationData) {
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
     const sectionDescriptionP = sectionTitleContainer.querySelector('p');
 
+    // FIX: Added the link to education-details.html in the H2 header
     if (sectionTitleH2 && sectionInfo) {
-        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        sectionTitleH2.innerHTML = `
+            <i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} 
+            <a href="education-details.html" style="color: inherit; text-decoration: none;">
+                <i class="bx bx-link" style="font-size: 1.2rem; margin-left: 5px; opacity: 0.7;"></i>
+            </a>`;
     }
 
     if (sectionDescriptionP && sectionInfo && sectionInfo.details) {
@@ -754,130 +733,184 @@ function renderEducationsCV(educationData) {
         sectionDescriptionP.textContent = '';
     }
 
-    // --- DOM TRAVERSAL (CRITICAL FIX: Tables Container is the first non-title sibling) ---
-
-    // We target the Tables Container (div.row.ps-3.pe-3) as the first major sibling after #educations.
-    // We use querySelector on the main container to find the first instance of this class pattern
-    // that follows the #educations section title.
     const tableContainer = mainCvContainer.querySelector('#educations ~ .row.ps-3.pe-3');
+    if (!tableContainer) return;
 
-    if (!tableContainer) {
-        // This should only fail if the div.row.ps-3.pe-3 is missing or misnamed immediately after the title container
-        console.error("EducationCV: FATAL ERROR. Could not find the Tables Container (DIV.row.ps-3.pe-3) after the #educations title.");
-        return;
-    }
+    tableContainer.innerHTML = '';
 
-    // 2. Render Detailed Education Items (Tables)
-    tableContainer.innerHTML = ''; // Clear all static tables
+    let lastLevel = '';
 
-    const generateTableHTML = (degree) => {
-        // Helper function for conditional content, showing nothing if empty string
-        const createDetailRow = (label, content, link = '', isThesis = false) => {
-            if (!content) return '';
+    // 2. Helper for conditional rows
+    const createDetailRow = (label, content, link = '', isThesis = false, thesisLength = '') => {
+        if (!content) return '';
+        const finalContent = isThesis && thesisLength ? `${content} — length ${thesisLength}.` : content;
+        const linkTag = link ? `<a class="scrollto" href="${link}"><i class="bx bx-link"></i></a>` : '';
+        return `<p><strong>${label}:</strong> ${finalContent} ${linkTag}</p>`;
+    };
 
-            const thesisLengthText = degree.thesis_length || '';
-            const finalContent = isThesis && thesisLengthText
-                ? `${content} — length ${thesisLengthText}.`
-                : content;
+    // 3. Generate Content
+    degrees.forEach(degree => {
+        let groupHTML = '';
 
-            const linkTag = link
-                ? `<a class="scrollto" href="${link}"><i class="bx bx-link"></i></a>`
-                : '';
+        // Specific link for each degree item
+        const deepDetailsLink = `education-details.html#${degree.degree_id}`;
 
-            return `<p><strong>${label}:</strong> ${finalContent} ${linkTag}</p>`;
-        };
+        // A. Degree Level Header - Deep Background (#d1e7ff)
+        if (degree.level !== lastLevel) {
+            groupHTML += `
+                <h5 style="background-color: #d1e7ff; padding: 8px 15px; border-radius: 4px; margin-top: 25px; margin-bottom: 10px; ">
+                    ${degree.level}
+                </h5>`;
+            lastLevel = degree.level;
+        }
 
-        // Project List: Simplified for CV table view
+        const institutionLinkTag = degree.link ? `<a target="_blank" href="${degree.link}"><i class="bx bx-link-external"></i></a>` : '';
+
         const projectsList = Array.isArray(degree.research_projects) ? degree.research_projects.map(project => {
             let title = typeof project === 'string' ? project : (project.title || '');
             let link = typeof project === 'object' ? (project.link || '') : '';
             let type = typeof project === 'object' && project.type ? `<strong>${project.type}:</strong> ` : '';
-
             const linkTag = link ? `<a class="scrollto" href="${link}"><i class="bx bx-link"></i></a>` : '';
-
             return `<li>${type}${title} ${linkTag}</li>`;
         }).join('') : '';
 
-        const projectsBlock = projectsList
-            ? `<p><strong>Research and Projects:</strong></p><ul>${projectsList}</ul>`
-            : '';
+        const projectsBlock = projectsList ? `<p><strong>Research and Projects:</strong><ul>${projectsList}</ul></p>` : '';
 
-        // Institution link tag
-        const institutionLinkTag = degree.link
-            ? `<a target="_blank" href="${degree.link}"><i class="bx bx-link-external"></i></a>`
-            : '';
-
-        // Only include description/details block if content exists
-        const descriptionHTML = degree.description_full
-            ? `<p>${degree.description_full}</p>`
-            : '';
-
-        // Thesis row check: ensures the row is only built if the title exists
-        const thesisRow = degree.thesis_title ? createDetailRow('Thesis', degree.thesis_title, '', true) : '';
-
-        // Degree details
-        const degreeDetailsHTML = `
-            ${createDetailRow('Specialisation', degree.specialisation)}
-            ${createDetailRow('Scholarship/Fellowship', degree.scholarship, degree.scholarship_link)}
-            ${createDetailRow('Research Topic', degree.research_topic)}
-            ${createDetailRow('Activities and Involvement', degree.activities_involvement)}
-            ${thesisRow}
-        `;
-
-        return `
-            <table>
+        // B. University Table Header - Lighter Background (#e1efff)
+        groupHTML += `
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                 <thead>
                     <tr>
-                        <td>${degree.level}</td>
+                        <td style="border: 1px solid #dee2e6; padding: 10px; background-color: #e1efff;">
+                            <a href="${deepDetailsLink}" style="text-decoration: none; color: inherit;">
+                                <em style="transition: 0.3s; cursor: pointer;" onmouseover="this.style.color='#0563af'" onmouseout="this.style.color='inherit'">
+                                    ${degree.institution_type} <i class="bx bx-link-alt" style="font-size: 0.9rem; opacity: 0.5;"></i>
+                                </em>
+                            </a>
+                            <br>
+                            <strong>${degree.institution_name}</strong>, ${degree.institution_location} ${institutionLinkTag} <br>
+                            <em>${degree.timeframe_details}</em>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
-                            <h6>${degree.institution_type}</h6>
-                            ${degree.institution_name}, ${degree.institution_location}
-                            ${institutionLinkTag} <br>
-                            <em>${degree.timeframe_details}</em>
-                            
-                            ${descriptionHTML}
-
-                            ${degreeDetailsHTML}
-
+                        <td style="border: 1px solid #dee2e6; padding: 15px;">
+                            ${createDetailRow('Collaboration', degree.collaboration)}
+                            ${createDetailRow('Specialisation', degree.specialisation)}
+                            ${createDetailRow('Scholarship/Fellowship', degree.scholarship, degree.scholarship_link)}
+                            ${createDetailRow('Research Topic', degree.research_topic)}
+                            ${createDetailRow('Thesis', degree.thesis_title, '', true, degree.thesis_length)}
                             ${projectsBlock}
                         </td>
                     </tr>
                 </tbody>
             </table>
         `;
-    };
 
-    // Append all generated tables in JSON order
-    degrees.forEach(degree => {
-        tableContainer.innerHTML += generateTableHTML(degree);
+        tableContainer.innerHTML += groupHTML;
     });
 }
 
 
 
 /**
+ * Renders the Education details for the education-details.html page.
+ * Targets the #educationDetails_main container.
+ * @param {object} educationData - Data from education.json
+ */
+function renderEducationDetails(educationData) {
+    if (!educationData || !Array.isArray(educationData.degrees)) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const degreeId = params.get('id');
+
+    const container = document.getElementById('educationDetails_main');
+    if (!container) return;
+
+    const detailsContainer = container.querySelector('.row');
+    if (!detailsContainer) return;
+
+    detailsContainer.innerHTML = '';
+
+    // 1. DYNAMIC TITLE & BREADCRUMBS
+    const dynamicTitle = educationData.section_info.title || "Education";
+
+    // Update H1 Page Title
+    const pageTitleH1 = document.querySelector('.page-title h1');
+    if (pageTitleH1) {
+        pageTitleH1.innerHTML = `<i class="bx bxs-graduation"></i> ${dynamicTitle} Details`;
+    }
+
+    // Update Breadcrumbs (targets the second <li> in the <ol>)
+    const breadcrumbList = document.querySelector('.breadcrumbs ol');
+    if (breadcrumbList) {
+        const breadcrumbItems = breadcrumbList.querySelectorAll('li');
+        if (breadcrumbItems.length >= 2) {
+            // Keep "Home" link, update the current page text
+            breadcrumbItems[1].textContent = `${dynamicTitle} Details`;
+        }
+    }
+
+    const degreesToRender = degreeId
+        ? educationData.degrees.filter(d => d.degree_id === degreeId)
+        : educationData.degrees;
+
+    if (degreesToRender.length === 0) {
+        detailsContainer.innerHTML = `<div class="col-12"><h3>Degree details not found.</h3></div>`;
+        return;
+    }
+
+    let allDetailsHTML = '';
+
+    degreesToRender.forEach(degree => {
+        const projectsList = (Array.isArray(degree.research_projects) && degree.research_projects.length > 0)
+            ? degree.research_projects.map(p => `<li><strong>${p.type}:</strong> ${p.title}</li>`).join('')
+            : '<li>N/A</li>';
+
+        const uniLinkIcon = degree.link
+            ? `<a target="_blank" href="${degree.link}"><i class="bx bx-link-external"></i></a>`
+            : '';
+
+        allDetailsHTML += `
+            <div id="${degree.degree_id}" class="general-info" data-aos="fade-up">
+                <h3>${degree.level} — ${degree.institution_type}</h3> 
+                <p class="description">
+                    <strong>University:</strong> ${degree.institution_name} ${uniLinkIcon} <br>
+                    <strong>Location:</strong> ${degree.institution_location} <br>
+                    <strong>Period:</strong> ${degree.timeframe_details} <br>
+                    <strong>Specialisation:</strong> ${degree.specialisation} <br>
+                    <strong>Research Topic:</strong> ${degree.research_topic} <br>
+                    ${degree.thesis_title ? `<strong>Thesis:</strong> ${degree.thesis_title} (${degree.thesis_length}) <br>` : ''}
+                    <strong>Activities:</strong> ${degree.activities_involvement} <br>
+                    <strong>Description:</strong> ${degree.description_full} <br>
+                </p>
+                <div class="mt-3">
+                    <strong>Research and Projects:</strong>
+                    <ul>${projectsList}</ul>
+                </div>
+                <hr>
+            </div> `;
+    });
+
+    detailsContainer.innerHTML = allDetailsHTML;
+}
+
+
+
+/**
  * Renders the Professional Experiences section (ID: #professionalExperiences)
- * for the main index page (two-column resume style).
- * FIX: Fully consolidated, debugged version incorporating helper functions for robust array checking
- * and verified targeting of all headers and content blocks.
- * @param {object} profExpData
+ * with deep links to the details page for the section header and individual roles.
  */
 function renderProfessionalExperiences(profExpData) {
-    // Helper functions must be defined locally for reliability
     const ArrayOfObjects = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'object' && item !== null);
     const ArrayOfStrings = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'string');
 
-    // --- Guard Check ---
     if (!profExpData || !ArrayOfObjects(profExpData.experiences)) return;
 
     const section = document.getElementById('professionalExperiences');
     if (!section) return;
 
-    // Find the section title container and the content container
     const sectionTitleContainer = section.querySelector('.container.section-title');
     const contentContainer = sectionTitleContainer ? sectionTitleContainer.nextElementSibling : null;
 
@@ -887,30 +920,32 @@ function renderProfessionalExperiences(profExpData) {
     const summaryInfo = profExpData.summary;
     const experiences = profExpData.experiences;
 
-    // 1. Render Section Title and Description
+    // 1. Render Section Title and Description + HEADER LINK
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
     const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6');
 
     if (sectionTitleH2 && sectionInfo) {
-        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        // ADDED: Link wrapping the section title
+        sectionTitleH2.innerHTML = `
+            <i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}
+            <a href="professionalExprience-details.html" title="View Full Details">
+                <i class="bx bx-link" style="font-size: 1.2rem; opacity: 0.6;"></i>
+            </a>`;
     }
     if (sectionDescriptionH6 && sectionInfo) {
         sectionDescriptionH6.textContent = sectionInfo.details;
     }
 
-    // --- 2. Render Summary Blocks (Areas of Expertise and Research Interests) ---
-
+    // --- 2. Render Summary Blocks ---
     const allH3Titles = contentContainer.querySelectorAll('h3.resume-title');
     const allResumeItems = contentContainer.querySelectorAll('div.resume-item.pb-0');
 
-    // Target 1: The Summary (Areas of Expertise) block (Index 0)
     const expertiseTitleH3 = allH3Titles[0];
     const expertiseItem = allResumeItems[0];
     const expertiseListContainer = expertiseItem ? expertiseItem.querySelector('ul') : null;
     const expertiseH4 = expertiseItem ? expertiseItem.querySelector('h4') : null;
 
     if (expertiseTitleH3 && summaryInfo) {
-        // H3 (Main Summary Title)
         expertiseTitleH3.textContent = summaryInfo.title;
     }
 
@@ -918,39 +953,29 @@ function renderProfessionalExperiences(profExpData) {
         const expertiseListItem = summaryInfo.expertise_list[0];
         const expertiseData = expertiseListItem.areas_of_expertise;
 
-        // H4 (Areas of Expertise Title)
-        if (expertiseH4) {
-            expertiseH4.textContent = expertiseListItem.title;
-        }
+        if (expertiseH4) expertiseH4.textContent = expertiseListItem.title;
 
         if (ArrayOfStrings(expertiseData)) {
             expertiseListContainer.innerHTML = expertiseData.map(item => `<li>${item}</li>`).join('');
         }
     }
 
-    // Target 2: The Research Interests block (Index 1)
     const researchItem = allResumeItems[1];
     const researchTitleH4 = researchItem ? researchItem.querySelector('h4') : null;
-
-    // We assume the H3 title for Research Interests is the element immediately preceding the research item DIV
     const researchTitleH3 = researchItem ? researchItem.previousElementSibling : null;
 
     if (researchItem && summaryInfo && ArrayOfObjects(summaryInfo.expertise_list) && summaryInfo.expertise_list.length > 1) {
-
         const researchListItem = summaryInfo.expertise_list[1];
 
-        // H3 (Research Interests Title) - If the H3 is not commented out, load it
         if (researchTitleH3 && researchTitleH3.tagName === 'H3') {
             researchTitleH3.textContent = researchListItem.title;
         }
 
-        // H4 (Research Description/H4) - Loads the descriptive text
         if (researchTitleH4 && summaryInfo.details_research_interests) {
             researchTitleH4.textContent = summaryInfo.details_research_interests;
         }
 
-        // --- CRITICAL FIX: Populate the three columns (ULs) ---
-        const researchColumns = researchItem ? researchItem.querySelectorAll('.col-lg-4 ul') : [];
+        const researchColumns = researchItem.querySelectorAll('.col-lg-4 ul');
         const columnData = researchListItem.research_interests_columns;
 
         if (researchColumns.length >= 3 && Array.isArray(columnData)) {
@@ -961,7 +986,6 @@ function renderProfessionalExperiences(profExpData) {
             });
         }
     }
-
 
     // --- 3. Setup Columns for Detailed Experiences ---
     const columns = contentContainer.querySelectorAll('.row > .col-lg-6');
@@ -978,24 +1002,27 @@ function renderProfessionalExperiences(profExpData) {
 
     // Helper function to generate HTML for a single role
     const generateRoleHTML = (role) => {
+        // Deep Link using role_id
+        const deepDetailsLink = `professionalExprience-details.html#${role.role_id}`;
 
-        // Helper to format lists - CONDITIONAL RENDERING
         const listToHTML = (list, prefix) => {
             if (!ArrayOfStrings(list) || list.length === 0) return '';
-
             const items = list.map(item => `<li>${item}</li>`).join('');
             return `<p><strong>${prefix}:</strong><ul>${items}</ul></p>`;
         };
 
         const courseInvolvementHTML = listToHTML(role.course_involvement, 'Course Involvement');
-
-        const skillsHTML = role.related_skills
-            ? `<p><strong>Related Skills:</strong> ${role.related_skills}</p>`
-            : '';
+        const skillsHTML = role.related_skills ? `<p><strong>Related Skills:</strong> ${role.related_skills}</p>` : '';
 
         return `
             <div class="resume-item pb-0" data-aos="fade-up" data-aos-delay="200">
-                <h4>${role.title}</h4>
+                <a href="${deepDetailsLink}" style="text-decoration: none; color: inherit;">
+                    <h4 style="transition: 0.3s; cursor: pointer;" 
+                        onmouseover="this.style.color='#0563af'" 
+                        onmouseout="this.style.color='inherit'">
+                        ${role.title} <i class="bx bx-link-alt" style="font-size: 0.9rem; opacity: 0.4;"></i>
+                    </h4>
+                </a>
                 <h5>${role.timeframe_details}</h5>
                 
                 ${listToHTML(role.description_list, 'Description')}
@@ -1005,21 +1032,16 @@ function renderProfessionalExperiences(profExpData) {
             </div>`;
     };
 
-    // --- 4. Populate Columns with Grouped Experience ---
-
+    // --- 4. Populate Columns ---
     experiences.forEach(experience => {
         let groupContent = '';
         const category = experience.category;
         const targetColumn = (category.includes('Research') || category.includes('Training')) ? 'left' : 'right';
         let currentInstitutionTracker = targetColumn === 'left' ? currentInstitutionLeft : currentInstitutionRight;
 
-        // 4a. Render Section Group Header
         groupContent += `<h3 class="resume-title"><i class="${experience.icon_class}"></i> ${category}</h3>`;
 
-        // 4b. Render Roles
         experience.roles.forEach(role => {
-
-            // Render Institution Header only if it's the first role in this institution/group
             if (experience.organization !== currentInstitutionTracker) {
                 groupContent += `
                     <h3 class="resume-title" data-aos="fade-up" data-aos-delay="100">${experience.organization}</h3>
@@ -1029,29 +1051,18 @@ function renderProfessionalExperiences(profExpData) {
                                 <i class="bx bx-link-external"></i>
                             </a> 
                         </em>
-                    </h6> <br>
-                `;
-                // Update tracker for the current column
-                if (targetColumn === 'left') {
-                    currentInstitutionLeft = experience.organization;
-                } else {
-                    currentInstitutionRight = experience.organization;
-                }
-            }
+                    </h6> <br>`;
 
-            // Render the specific role item
+                if (targetColumn === 'left') currentInstitutionLeft = experience.organization;
+                else currentInstitutionRight = experience.organization;
+            }
             groupContent += generateRoleHTML(role);
         });
 
-        // 4c. Append to the correct column
-        if (targetColumn === 'left') {
-            leftHTML += groupContent;
-        } else {
-            rightHTML += groupContent;
-        }
+        if (targetColumn === 'left') leftHTML += groupContent;
+        else rightHTML += groupContent;
     });
 
-    // 5. Apply the generated HTML to the columns
     leftColumn.innerHTML = leftHTML;
     rightColumn.innerHTML = rightHTML;
 }
@@ -1060,9 +1071,7 @@ function renderProfessionalExperiences(profExpData) {
 
 /**
  * Renders the Professional Experiences section (ID: #professionalExperiences)
- * for the printable_cv.html page (table format).
- * FIX: Consolidates roles under the same institution and category into a single header block.
- * @param {object} profExpData
+ * for the printable_cv.html page with deep links to the details page.
  */
 function renderProfessionalExperiencesCV(profExpData) {
     if (!profExpData || !Array.isArray(profExpData.experiences)) return;
@@ -1075,15 +1084,19 @@ function renderProfessionalExperiencesCV(profExpData) {
     const sectionInfo = profExpData.section_info;
     const experiences = profExpData.experiences;
 
-    // Helper to validate list is an array of strings
     const ArrayOfStrings = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'string');
 
-    // 1. Render Section Title and Description
+    // 1. Render Section Title and Description + HEADER LINK
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
     const sectionDescriptionP = sectionTitleContainer.querySelector('p');
 
     if (sectionTitleH2 && sectionInfo) {
-        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
+        // ADDED: Link in the section header
+        sectionTitleH2.innerHTML = `
+            <i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}
+            <a href="professionalExprience-details.html" style="color: inherit; text-decoration: none;">
+                <i class="bx bx-link" style="font-size: 1.2rem; margin-left: 5px; opacity: 0.7;"></i>
+            </a>`;
     }
 
     if (sectionDescriptionP && sectionInfo && sectionInfo.details) {
@@ -1092,104 +1105,83 @@ function renderProfessionalExperiencesCV(profExpData) {
         sectionDescriptionP.textContent = '';
     }
 
-    // --- DOM TRAVERSAL (Find Tables Container) ---
     const tableContainer = mainCvContainer.querySelector('#professionalExperiences ~ .row.ps-3.pe-3');
+    if (!tableContainer) return;
 
-    if (!tableContainer) {
-        console.error("ProfessionalExperiencesCV: FATAL ERROR. Could not find the Tables Container (DIV.row.ps-3.pe-3) after the #professionalExperiences title.");
-        return;
-    }
-
-    // 2. Clear static content
     tableContainer.innerHTML = '';
 
-    // Tracks the last category printed to ensure the blue header prints only once per category
     let lastCategory = '';
-    // Tracks the last institution printed to group roles under a single institution header
     let lastInstitution = '';
 
-    // Helper function to format lists - with conditional rendering
     const listToHTML = (list, prefix) => {
         if (!ArrayOfStrings(list) || list.length === 0) return '';
-
         const items = list.map(item => `<li>${item}</li>`).join('');
         return `<p><strong>${prefix}:</strong><ul>${items}</ul></p>`;
     };
 
-    // 3. Generate and Append Experience Tables
+    // 3. Generate Content with 3-Level Background Hierarchy
     experiences.forEach(experience => {
         const currentCategory = experience.category;
         const currentInstitution = experience.organization;
 
         let groupHTML = '';
 
-        // A. Print Category Header (Blue H5 line) only if it changes
+        // LEVEL 1: Category Header - Deepest Background (#d1e7ff)
         if (currentCategory !== lastCategory) {
             const iconClass = experience.icon_class || 'bx bx-briefcase';
             groupHTML += `
-                <h5><i class="${iconClass}"></i> ${currentCategory}<hr></h5>
+                <h5 style="background-color: #d1e7ff; padding: 8px 15px; border-radius: 4px; margin-top: 25px; margin-bottom: 10px;">
+                    <i class="${iconClass}"></i> ${currentCategory}
+                </h5>
             `;
             lastCategory = currentCategory;
-            // Reset institution tracker when category changes, forcing the first institution header to print
             lastInstitution = '';
         }
 
-        // B. Print Institution Header (Table Header/Thead) only if it changes from the previous one
+        // LEVEL 2: Institution Header - Medium Background (#e1efff)
         if (currentInstitution !== lastInstitution) {
             const institutionLinkTag = experience.link
                 ? `<a target="_blank" href="${experience.link}"><i class="bx bx-link-external"></i></a>`
                 : '';
 
             groupHTML += `
-                <table>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                     <thead>
                         <tr>
-                            <td>
-                                ${experience.organization} <br>
-                                <em>${experience.location} ${institutionLinkTag}</em>
+                            <td style="border: 1px solid #dee2e6; padding: 10px; background-color: #e1efff;">
+                                <strong>${experience.organization}, ${experience.location} ${institutionLinkTag}</strong> 
                             </td>
                         </tr>
                     </thead>
                     <tbody>
             `;
-            // Note: We leave the <tbody> open here and close it after all roles for this institution are processed.
             lastInstitution = currentInstitution;
         }
 
-        // C. Generate Table Rows for ALL Roles under this institution
+        // LEVEL 3: Roles and Responsibilities Only
         experience.roles.forEach(role => {
-            const courseInvolvementHTML = listToHTML(role.course_involvement, 'Training Course Involvement');
-            const skillsHTML = role.related_skills
-                ? `<p><strong>Related Skills:</strong> ${role.related_skills}</p>`
-                : '';
+            // Construct deep details link using role_id
+            const deepDetailsLink = `professionalExprience-details.html#${role.role_id}`;
 
-            // Add the role content row (tr)
             groupHTML += `
                 <tr>
-                    <td>
-                        <h6>${role.title}</h6>
-                        <em>${role.timeframe_details}</em>
-                        
-                        ${listToHTML(role.description_list, 'Description')}
+                    <td style="border: 1px solid #dee2e6; padding: 15px;">
+                        <div style="background-color: #f1f8ff; padding: 5px 10px; border-radius: 2px;">
+                            <a href="${deepDetailsLink}" style="text-decoration: none; color: inherit;">
+                                <h6 style="margin-bottom: 5px; transition: 0.3s; cursor: pointer;" 
+                                    onmouseover="this.style.color='#0563af'" 
+                                    onmouseout="this.style.color='inherit'">
+                                    ${role.title} <i class="bx bx-link-alt" style="font-size: 0.8rem; opacity: 0.5;"></i>
+                                </h6>
+                            </a>
+                            <em style="display: block; font-size: 0.9rem;">${role.timeframe_details}</em>
+                        </div>
                         ${listToHTML(role.responsibilities_list, 'Responsibilities')}
-                        ${courseInvolvementHTML}
-                        ${skillsHTML}
                     </td>
                 </tr>
             `;
         });
 
-        // D. Close the table if the next experience is a different institution or category
-        // This is complex because we are iterating through an array that groups items by category first, but then by institution.
-        // The simple fix is to check the *next* item. Since we are in the middle of the loop, this is difficult.
-
-        // Instead of complex look-ahead logic, we'll rely on the JSON order (Category > Institution)
-        // and force the table closure only if the *entire* experience block is processed,
-        // which means the table must be closed after all roles in the current experience block are done.
-
-        // CRITICAL: We need to ensure the </tbody> and </table> tags are closed.
-        // Since the current iteration handles one 'experience' object, and an experience object groups
-        // roles under a single institution/category (per your JSON structure), we must close the table here.
         groupHTML += `
                 </tbody>
             </table>
@@ -1197,6 +1189,111 @@ function renderProfessionalExperiencesCV(profExpData) {
 
         tableContainer.innerHTML += groupHTML;
     });
+}
+
+
+
+/**
+ * Renders the Professional Experience details for the professionalExprience-details.html page.
+ * Targets the #professionalExperienceDetails_main container.
+ * CORRECTED: Now uses 'role_id' from the JSON structure.
+ */
+function renderProfessionalExperiencesDetails(profExpData) {
+    if (!profExpData || !Array.isArray(profExpData.experiences)) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const targetRoleId = params.get('id'); // This is the ID passed in the URL (?id=res_du_rgp)
+
+    const container = document.getElementById('professionalExperienceDetails_main');
+    if (!container) return;
+
+    const detailsContainer = container.querySelector('.row');
+    if (!detailsContainer) return;
+
+    detailsContainer.innerHTML = '';
+
+    // 1. DYNAMIC TITLE & BREADCRUMBS
+    const dynamicTitle = profExpData.section_info.title || "Professional Experiences";
+
+    const pageTitleH1 = document.querySelector('.page-title h1');
+    if (pageTitleH1) {
+        pageTitleH1.innerHTML = `<i class="${profExpData.section_info.icon_class}"></i> ${dynamicTitle} Details`;
+    }
+
+    const breadcrumbList = document.querySelector('.breadcrumbs ol');
+    if (breadcrumbList) {
+        const breadcrumbItems = breadcrumbList.querySelectorAll('li');
+        if (breadcrumbItems.length >= 2) {
+            breadcrumbItems[1].textContent = `${dynamicTitle} Details`;
+        }
+    }
+
+    // 2. DATA PROCESSING
+    let experiencesToRender = [];
+
+    if (targetRoleId) {
+        // Find the organization that contains the role with the matching 'role_id'
+        profExpData.experiences.forEach(exp => {
+            const matchingRole = exp.roles.find(r => r.role_id === targetRoleId);
+            if (matchingRole) {
+                // Create a temporary experience object with ONLY the matching role
+                experiencesToRender.push({
+                    ...exp,
+                    roles: [matchingRole]
+                });
+            }
+        });
+    } else {
+        experiencesToRender = profExpData.experiences;
+    }
+
+    if (experiencesToRender.length === 0) {
+        detailsContainer.innerHTML = `<div class="col-12"><h3>Experience details for ID "${targetRoleId}" not found.</h3></div>`;
+        return;
+    }
+
+    // 3. RENDER CONTENT
+    let allDetailsHTML = '';
+    let lastCategory = '';
+
+    experiencesToRender.forEach(exp => {
+        // Category Header (Rendered only if category changes)
+        if (exp.category !== lastCategory) {
+            allDetailsHTML += `
+                <div class="col-12 mt-4">
+                    <h3 style="color: #45505b; font-weight: 700;">${exp.category}</h3>
+                    <hr>
+                </div>`;
+            lastCategory = exp.category;
+        }
+
+        const orgLink = exp.link ? `<a target="_blank" href="${exp.link}"><i class="bx bx-link-external"></i></a>` : '';
+
+        exp.roles.forEach(role => {
+            // Helper to generate list items
+            const descItems = Array.isArray(role.description_list) ? role.description_list.map(i => `<li>${i}</li>`).join('') : '';
+            const respItems = Array.isArray(role.responsibilities_list) ? role.responsibilities_list.map(i => `<li>${i}</li>`).join('') : '';
+            const courseItems = Array.isArray(role.course_involvement) ? role.course_involvement.map(i => `<li>${i}</li>`).join('') : '';
+
+            allDetailsHTML += `
+                <div id="${role.role_id}" class="col-12 mb-5 general-info" data-aos="fade-up">
+                    <div style="background-color: #f1f8ff; padding: 20px; border-radius: 5px; border-left: 5px solid #0563af;">
+                        <h4>${role.title}</h4>
+                        <p class="mb-1"><strong>${exp.organization}</strong> | ${exp.location} ${orgLink}</p>
+                        <p class="mb-0 text-muted"><em><i class="bx bx-calendar"></i> ${role.timeframe_details}</em></p>
+                    </div>
+                    
+                    <div class="description mt-3" style="padding-left: 15px;">
+                        ${descItems ? `<h5>Overview</h5><ul>${descItems}</ul>` : ''}
+                        ${respItems ? `<h5>Key Responsibilities</h5><ul>${respItems}</ul>` : ''}
+                        ${courseItems ? `<h5>Course Involvement</h5><ul>${courseItems}</ul>` : ''}
+                        ${role.related_skills ? `<p class="mt-3"><strong>Related Skills:</strong> ${role.related_skills}</p>` : ''}
+                    </div>
+                </div>`;
+        });
+    });
+
+    detailsContainer.innerHTML = allDetailsHTML;
 }
 
 
@@ -1400,7 +1497,7 @@ function renderSkillsToolsCV(skillsData) {
     // 4. Prepare the main table structure
     let tableHTML = `
         <table>
-            <thead>
+            <thead style="background-color: #d1e7ff">
                 <tr>
                     ${headerHTML}
                 </tr>
@@ -1702,7 +1799,7 @@ function renderHonorsAwardsDetails(honorsData) {
  */
 function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
     if (!coursesTrainingsCertificatesData || !coursesTrainingsCertificatesData.coursestrainingscertificates) {
-        console.error("renderCoursesTrainingsCertificates: Missing or invalid data structure. Expected 'coursestrainingscertificates' array.");
+        console.error("Data structure invalid: Missing 'coursestrainingscertificates' array.");
         return;
     }
 
@@ -1710,44 +1807,36 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
     if (!section) return;
 
     const sectionInfo = coursesTrainingsCertificatesData.section_info;
-    // CRITICAL FIX: Get the flat array of items from the correct key
     const rawItems = coursesTrainingsCertificatesData.coursestrainingscertificates;
 
     const sectionTitleContainer = section.querySelector('.section-title');
     const filtersContainer = section.querySelector('.portfolio-filters');
     const contentContainer = section.querySelector('.isotope-container');
 
-    if (!sectionTitleContainer || !filtersContainer || !contentContainer) {
-        console.error("renderCoursesTrainingsCertificates: Target containers not found for Index page.");
-        return;
-    }
+    if (!sectionTitleContainer || !filtersContainer || !contentContainer) return;
 
-    // 1. Render Section Title and Description
+    // 1. Render Section Title and Details Link
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
     const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6');
 
     if (sectionTitleH2 && sectionInfo) {
-        sectionTitleH2.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
+        sectionTitleH2.innerHTML = `
+            <i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} 
+            <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
     }
     if (sectionDescriptionH6 && sectionInfo) {
         sectionDescriptionH6.textContent = sectionInfo.details;
     }
 
-    // --- 2. Aggregate, Filter, and Sort Items ---
+    // 2. Filter, Sort, and Aggregate Items
     let allItems = [];
     let filterTags = new Set(['*']);
 
     rawItems.forEach(item => {
-        // Filter: Include only items with a non-empty serial_no
         if (item.serial_no && item.serial_no.toString().trim() !== "") {
-            // Synthesize filter tags from the item's array of tags
             if (Array.isArray(item.filter_tags)) {
-                item.filter_tags.forEach(tag => {
-                    filterTags.add(tag);
-                });
+                item.filter_tags.forEach(tag => filterTags.add(tag));
             }
-
-            // Store the item with its filter tags as a space-separated string (for class attribute)
             allItems.push({
                 ...item,
                 filter_classes_raw: Array.isArray(item.filter_tags) ? item.filter_tags.join(' ') : ''
@@ -1755,12 +1844,9 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
         }
     });
 
-    // Sort: Numerically based on the 'serial_no' key
     allItems.sort((a, b) => parseInt(a.serial_no) - parseInt(b.serial_no));
 
-    // --- 3. Render Filters (Categories) ---
-    filtersContainer.innerHTML = '';
-
+    // 3. Render Navigation Filters
     const filterNames = {
         '*': 'All',
         'filter-cert': 'Certificate',
@@ -1768,44 +1854,62 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
         'filter-cour': 'Course',
         'filter-conf': 'Conference',
         'filter-boot': 'Bootcamp'
-        // Add other filters as needed
     };
 
+    filtersContainer.innerHTML = '';
     filterTags.forEach(tag => {
         const displayName = filterNames[tag] || tag;
         const isActive = tag === '*' ? 'filter-active' : '';
         filtersContainer.innerHTML += `<li data-filter=".${tag}" class="${isActive}">${displayName}</li>`;
     });
 
-    // --- 4. Render Filtered and Sorted Items ---
+    // 4. Render Items with Lightbox Integration
     contentContainer.innerHTML = '';
 
     allItems.forEach(item => {
-        // The tags are already prefixed with 'filter-' in your JSON (e.g., "filter-cert")
-        const finalFilterClasses = item.filter_classes_raw;
-        const imageSrc = item.image_path; // Using image_path directly
-        const sourceShort = item.source.split(' - ').slice(-1)[0]; // Using the Source field for the short description
+        const imageSrc = item.image_path;
+        const sourceShort = item.source.split(' - ').slice(-1)[0];
 
+        // We use 'portfolio-lightbox' to ensure compatibility with your theme's GLightbox setup
         const itemHTML = `
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${finalFilterClasses}" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${item.filter_classes_raw}" data-aos="fade-up" data-aos-delay="200">
                 <div class="portfolio-content h-100">
-                    <img src="${imageSrc}" class="img-fluid" alt="Emran Ali - ${item.title} Certificate">
+                    <img src="${imageSrc}" class="img-fluid" alt="${item.title}">
                     <div class="portfolio-info">
-                        <h4>${item.title} </h4>
+                        <h4>${item.title}</h4>
                         <p>${sourceShort}</p>
-                        <a href="${item.image_path}"
-                           title="${item.title}"
-                           data-gallery="portfolio-gallery-app"
-                           class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                        <a href="${item.link_target}"
-                           title="More Details"
-                           class="details-link"><i class="bi bi-link-45deg"></i></a>
+                        
+                        <a href="${imageSrc}" 
+                           title="${item.title}" 
+                           data-gallery="portfolio-gallery-cert" 
+                           class="portfolio-lightbox preview-link">
+                           <i class="bi bi-zoom-in"></i>
+                        </a>
+
+                        <a href="${item.link_target}" 
+                           title="More Details" 
+                           class="details-link">
+                           <i class="bi bi-link-45deg"></i>
+                        </a>
                     </div>
                 </div>
             </div>`;
 
         contentContainer.innerHTML += itemHTML;
     });
+
+    // 5. CRITICAL: Re-initialize Lightbox for dynamic content
+    // This allows the newly added HTML to open in the preview overlay
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+            selector: '.portfolio-lightbox'
+        });
+    }
+
+    // Refresh AOS animations if applicable
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 }
 
 
@@ -1857,7 +1961,7 @@ function renderCoursesTrainingsCertificatesCV(coursesData) {
     // 4. Start building the table HTML structure
     let tableHTML = `
         <table>
-            <thead>
+            <thead style="background-color: #d1e7ff">
                 <tr>
                     ${headerHTML}
                 </tr>
@@ -1883,8 +1987,10 @@ function renderCoursesTrainingsCertificatesCV(coursesData) {
             : item.title;
 
         const descriptionContent = `
-            ${item.source} (${details.date}) <br>
-            ${details.description} 
+<!--            ${item.title} <br> -->
+            ${item.source} (${details.date}) 
+            <br> <a target="_blank" href="${details.certificate_link}">Credential Link <i class="bx bx-link-external"></i></a>
+            
         `;
 
         // const descriptionContent = `
@@ -2167,7 +2273,6 @@ function renderProjectsCV(projectsData) {
 function renderProjectsDetails(projectsData) {
     const ArrayOfObjects = (arr) => Array.isArray(arr) && arr.every(item => typeof item === 'object' && item !== null);
 
-    // 1. Guard check uses the correct 'projects' key
     if (!projectsData || !ArrayOfObjects(projectsData.projects)) return;
 
     const projects = projectsData.projects;
@@ -2176,49 +2281,53 @@ function renderProjectsDetails(projectsData) {
 
     if (!container) return;
 
-    // --- 2. Update Page Title, H1, and Breadcrumb ---
+    // --- 1. Update Page Title, H1, and Breadcrumb ---
     if (sectionInfo) {
-        // Update Document Title (<title> tag)
         document.title = `Emran Ali - ${sectionInfo.title} Details`;
 
-        // Update H1 Page Title (targets .page-title h1)
         const pageTitleH1 = document.querySelector('.page-title h1');
         if (pageTitleH1) {
             pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} Details`;
         }
 
-        // Update Breadcrumb (targets .breadcrumbs li.current)
         const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
         if (breadcrumbCurrent) {
             breadcrumbCurrent.textContent = `${sectionInfo.title} Details`;
         }
     }
 
-    // 3. Render Details Content
+    // --- 2. Render Details Content ---
     const detailsContainer = container.querySelector('.row');
     if (!detailsContainer) return;
 
-    detailsContainer.innerHTML = ''; // Clear existing static content
+    detailsContainer.innerHTML = '';
 
     let allProjectsHTML = '';
 
     projects.forEach(project => {
-        // Check for collaboration org to display the most relevant organization icon/image
         const orgsDisplay = project.collaboration_organization || project.organization;
 
         const detailsHTML = `
-            <div id="${project.id_ref}" class="general-info" data-aos="fade-up" data-aos-delay="200">
-                <h3>${project.role} </h3>
+            <div id="${project.id_ref}" class="general-info mb-5" data-aos="fade-up" data-aos-delay="200">
+                <h3>${project.role}</h3>
                 
                 ${project.image_path ? 
-                    `<div>
-                        <img src="${project.image_path}" alt="Project Image" class="img-fluid" style="max-height: 150px;">
+                    `<div class="project-img-wrapper mb-3">
+                        <a href="${project.image_path}" 
+                           class="portfolio-lightbox" 
+                           data-gallery="project-details-gallery" 
+                           title="${project.title}">
+                            <img src="${project.image_path}" 
+                                 alt="${project.title}" 
+                                 class="img-fluid rounded shadow-sm" 
+                                 style="max-height: 250px; cursor: zoom-in;">
+                        </a>
                     </div>` : ''
                 }
 
                 <p class="description">
                     <strong>Title: </strong> ${project.title} <br>
-                    <strong>Basi Details: </strong> ${project.basic_details} <br>
+                    <strong>Basic Details: </strong> ${project.basic_details} <br>
                     <strong>Description: </strong> ${project.long_description} <br>
                     <strong>Fund: </strong> ${project.funding} <br>
                     <strong>Funding Organisation: </strong> ${project.funding_organization || 'N/A'} <br>
@@ -2226,11 +2335,25 @@ function renderProjectsDetails(projectsData) {
                     <strong>Period: </strong> ${project.timeframe_details} <br>
                     ${project.url_link ? `<strong>Link: </strong> <a target="_blank" href="${project.url_link}">View Link <i class="bx bx-link-external"></i></a>` : ''}
                 </p>
+                <hr>
             </div> `;
         allProjectsHTML += detailsHTML;
     });
 
     detailsContainer.innerHTML = allProjectsHTML;
+
+    // --- 3. RE-INITIALIZE LIGHTBOX ---
+    // This is required to make the newly added images clickable
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+            selector: '.portfolio-lightbox'
+        });
+    }
+
+    // Optional: Refresh AOS for new content
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 }
 
 
@@ -3211,7 +3334,7 @@ function renderVolunteeringsCV(volunteeringsData) {
 
 /**
  * Renders the Volunteerings section for the volunteerings-details.html page.
- * DEFENSIVE FIX: Reverts to col-lg-6/6 and adds defensive CSS to force proper rendering.
+ * Includes Lightbox image preview for volunteering images.
  * @param {object} volunteeringsData
  */
 function renderVolunteeringsDetails(volunteeringsData) {
@@ -3254,14 +3377,14 @@ function renderVolunteeringsDetails(volunteeringsData) {
         return;
     }
 
-    outerRowContainer.innerHTML = ''; // Clear existing static content
+    outerRowContainer.innerHTML = ''; // Clear existing content
 
     let allVolunteeringsHTML = '';
 
     volunteerings.forEach(item => {
         const itemDetails = item.details || {};
 
-        // 1. Build the Description content
+        // Build the Description content
         const descriptionHTML = `
             <p class="description" style="margin-top: 0;">
                 <strong>Involvement:</strong> ${item.summary_text} <br>
@@ -3273,21 +3396,21 @@ function renderVolunteeringsDetails(volunteeringsData) {
             </p>
         `;
 
-        // 2. Handle image and layout structure (FORCING STACKING)
         let contentColumns = '';
 
         if (itemDetails.image_path) {
-            // Case 1: Image exists -> Force Image to be 70% wide and span 12 columns
+            // UPDATED: Added Lightbox wrapper around the image
             contentColumns = `
                 <div class="col-lg-12 mb-3">
-                    <img src="${itemDetails.image_path}" class="img-fluid" alt="Volunteering Image" style="max-width: 70%; height: auto; display: block;">
+                    <a href="${itemDetails.image_path}" class="portfolio-lightbox" data-gallery="volunteering-gallery" title="${item.title}">
+                        <img src="${itemDetails.image_path}" class="img-fluid rounded shadow-sm" alt="Volunteering Image" style="max-width: 70%; height: auto; display: block; cursor: zoom-in;">
+                    </a>
                 </div>
                 <div class="col-lg-12">
                     ${descriptionHTML}
                 </div>
             `;
         } else {
-            // Case 2: No image -> Use single 12-column span for text
             contentColumns = `
                 <div class="col-lg-12">
                     ${descriptionHTML}
@@ -3295,19 +3418,31 @@ function renderVolunteeringsDetails(volunteeringsData) {
             `;
         }
 
-        // 3. Combine into the final item structure
         const finalItemHTML = `
-            <div id="${item.id_ref}" class="general-info" data-aos="fade-up" data-aos-delay="200">
+            <div id="${item.id_ref}" class="general-info mb-5" data-aos="fade-up" data-aos-delay="200">
                 <h3>${item.title} </h3>
                 <div class="row">
                     ${contentColumns}
                 </div>
+                <hr>
             </div> `;
 
         allVolunteeringsHTML += finalItemHTML;
     });
 
     outerRowContainer.innerHTML = allVolunteeringsHTML;
+
+    // --- 4. RE-INITIALIZE LIGHTBOX ---
+    // This allows the newly added volunteering images to be clickable for preview
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({
+            selector: '.portfolio-lightbox'
+        });
+    }
+
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh();
+    }
 }
 
 
@@ -3506,7 +3641,7 @@ function renderPublicationsCV(publicationsData) {
 
         let tableHTML = `
             <table>
-                <thead>
+                <thead style="background-color: #d1e7ff">
                     <tr>
                         <td>
                             <h6><a href="publications-details.html#pub_${categoryKey}"><i class="${categoryData.icon_class}"></i> 
@@ -3953,6 +4088,7 @@ function renderCopyright(copyrightData) {
 
 /**
  * Renders the Diary page (diary.html) with a tag-based filtering sidebar.
+ * Includes Lightbox image preview for diary entries.
  * @param {object} diaryData - Data from diary.json
  */
 function renderDiary(diaryData) {
@@ -3967,7 +4103,7 @@ function renderDiary(diaryData) {
     const sectionInfo = diaryData.section_info;
     const diaryEntriesObj = diaryData.diaryentries;
 
-    // 1. Update Headers
+    // 1. Update Headers and Breadcrumbs
     if (sectionInfo) {
         const pageTitleH1 = document.querySelector('.page-title h1');
         if (pageTitleH1) pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
@@ -3976,7 +4112,7 @@ function renderDiary(diaryData) {
         if (breadcrumbCurrent) breadcrumbCurrent.textContent = sectionInfo.title;
     }
 
-    // 2. Identify Unique Tags for the Sidebar
+    // 2. Identify Unique Tags for the Dropdown
     let uniqueTags = new Set();
     Object.values(diaryEntriesObj).forEach(categoryArray => {
         categoryArray.forEach(entry => {
@@ -3986,46 +4122,56 @@ function renderDiary(diaryData) {
         });
     });
 
-    // 3. Target Main Container and Rebuild Structure
-    // We expect a row with col-lg-3 (sidebar) and col-lg-9 (content)
+    // 3. Rebuild Structure to Full Width with Top Dropdown
     const mainRow = section.querySelector('.row');
+    if (!mainRow) return;
+
     mainRow.innerHTML = `
-        <div class="col-lg-3">
-            <div class="portfolio-filters" data-aos="fade-up">
-                <h4 style="margin-bottom: 20px;">Filters</h4>
-                <ul id="diary-filters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    ${Array.from(uniqueTags).map(tag => `<li data-filter=".tag-${tag.toLowerCase()}">${tag}</li>`).join('')}
-                </ul>
+        <div class="col-lg-12">
+            <div class="filter-dropdown-container" data-aos="fade-up" style="display: flex; justify-content: center; margin-bottom: 40px;">
+                <select id="diary-filter-select" class="filter-select" style="padding: 10px 20px; border-radius: 50px; border: 2px solid #0563af; min-width: 250px; font-weight: 600;">
+                    <option value="*">All Topics / Tags</option>
+                    ${Array.from(uniqueTags).sort().map(tag => 
+                        `<option value=".tag-${tag.toLowerCase()}">${tag}</option>`
+                    ).join('')}
+                </select>
             </div>
         </div>
-        <div class="col-lg-9" id="diary-content-container"></div>
+        <div class="col-lg-12" id="diary-content-container"></div>
     `;
 
     const contentContainer = document.getElementById('diary-content-container');
 
-    // 4. Render Categorized Entries
+    // 4. Render Categorized Entries (Full Width)
     let diaryHTML = '';
     Object.keys(diaryEntriesObj).forEach(category => {
         const entries = diaryEntriesObj[category];
 
-        // Category Header (Hidden if filtering is active, usually handled by CSS or Isotope)
-        diaryHTML += `<h2 class="category-title" style="margin-top: 30px;">${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
+        // Category Header
+        diaryHTML += `<h2 class="category-title" style="margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">${category.charAt(0).toUpperCase() + category.slice(1)}</h2>`;
 
         entries.forEach(entry => {
             const paragraphsHTML = entry.paragraphs.map(p => `<p>${p}</p>`).join('');
-
-            // Generate tag classes for filtering (e.g., "tag-life tag-philosophy")
             const filterClasses = entry.tags ? entry.tags.split(',').map(t => `tag-${t.trim().toLowerCase()}`).join(' ') : '';
 
             diaryHTML += `
                 <div id="${entry.id_ref}" class="diary-item ${filterClasses}" data-aos="fade-up">
-                    <div class="general-info" style="margin-bottom: 40px; padding: 20px; border-left: 3px solid #0563af; background: #f9f9f9;">
-                        <h3>${entry.title}</h3>
-                        <img src="${entry.image_path}" class="img-fluid" style="border-radius: 8px; margin: 15px 0;">
+                    <div class="general-info" style="margin-bottom: 50px; padding: 30px; border-left: 5px solid #0563af; background: #fdfdfd; shadow: 0px 5px 15px rgba(0,0,0,0.05);">
+                        <h3 style="color: #45505b; font-weight: 700;">${entry.title}</h3>
+                        
+                        <div class="diary-img-wrapper" style="max-width: 800px; margin: 20px auto;">
+                            <a href="${entry.image_path}" class="portfolio-lightbox" data-gallery="diary-gallery" title="${entry.image_caption}">
+                                <img src="${entry.image_path}" class="img-fluid rounded" style="cursor: zoom-in; width: 100%;">
+                            </a>
+                        </div>
+                        
                         <p style="text-align: center; font-style: italic; color: #666;"><small>${entry.image_caption}</small></p>
-                        <div class="description">${paragraphsHTML}</div>
-                        <p><small><em>Tags: ${entry.tags}</em></small></p>
+                        <div class="description" style="font-size: 1.1rem; line-height: 1.8; color: #444;">
+                            ${paragraphsHTML}
+                        </div>
+                        <div class="mt-4" style="border-top: 1px solid #eee; padding-top: 15px;">
+                            <small class="text-muted"><strong><i class="bx bx-tag"></i> Tags:</strong> ${entry.tags}</small>
+                        </div>
                     </div>
                 </div>`;
         });
@@ -4033,43 +4179,44 @@ function renderDiary(diaryData) {
 
     contentContainer.innerHTML = diaryHTML;
 
-    // 5. Logic for Filtering (Basic JS implementation)
-    const filterItems = document.querySelectorAll('#diary-filters li');
-    filterItems.forEach(li => {
-        li.addEventListener('click', function() {
-            // UI Update
-            filterItems.forEach(el => el.classList.remove('filter-active'));
-            this.classList.add('filter-active');
+    // 5. Dropdown Filtering Logic
+    const selectEl = document.getElementById('diary-filter-select');
+    selectEl.addEventListener('change', function() {
+        const filterValue = this.value;
+        const items = document.querySelectorAll('.diary-item');
+        const catTitles = document.querySelectorAll('.category-title');
 
-            const filterValue = this.getAttribute('data-filter');
-            const items = document.querySelectorAll('.diary-item');
-
-            items.forEach(item => {
-                if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            // Hide category titles when a specific filter is active
-            const catTitles = document.querySelectorAll('.category-title');
-            catTitles.forEach(title => title.style.display = filterValue === '*' ? 'block' : 'none');
+        items.forEach(item => {
+            if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
         });
+
+        // Hide category headers when a specific tag is selected
+        catTitles.forEach(title => {
+            title.style.display = (filterValue === '*') ? 'block' : 'none';
+        });
+
+        // Refresh AOS animations
+        if (typeof AOS !== 'undefined') AOS.refresh();
     });
+
+    // 6. RE-INITIALIZE LIGHTBOX
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.portfolio-lightbox' });
+    }
 }
 
 
 
+
 /**
- * Renders the Gallery page (gallery.html) with a tag-based filtering sidebar.
- * @param {object} galleryData - Data from gallery.json
+ * Renders the Gallery page (gallery.html) with a top-level dropdown filter.
  */
 function renderGallery(galleryData) {
-    if (!galleryData || !galleryData.items) {
-        console.error("renderGallery: Missing required data.");
-        return;
-    }
+    if (!galleryData || !galleryData.items) return;
 
     const section = document.getElementById('Gallery');
     if (!section) return;
@@ -4077,16 +4224,15 @@ function renderGallery(galleryData) {
     const sectionInfo = galleryData.section_info;
     const items = galleryData.items;
 
-    // 1. Update Headers and Breadcrumbs based on JSON metadata
+    // 1. Headers & Breadcrumbs
     if (sectionInfo) {
         const pageTitleH1 = document.querySelector('.page-title h1');
         if (pageTitleH1) pageTitleH1.innerHTML = `<i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title}`;
-
         const breadcrumbCurrent = document.querySelector('.breadcrumbs li.current');
         if (breadcrumbCurrent) breadcrumbCurrent.textContent = sectionInfo.title;
     }
 
-    // 2. Extract Unique Tags from all items to build the sidebar
+    // 2. Extract Unique Tags
     let uniqueTags = new Set();
     items.forEach(item => {
         if (item.tags) {
@@ -4094,74 +4240,66 @@ function renderGallery(galleryData) {
         }
     });
 
-    // 3. Rebuild Main Container Structure (Sidebar + Content Grid)
+    // 3. Rebuild Main Container to Full Width with Top Dropdown
     const mainRow = section.querySelector('.container > .row');
     if (!mainRow) return;
 
     mainRow.innerHTML = `
-        <div class="col-lg-3">
-            <div class="portfolio-filters" data-aos="fade-up">
-                <h4 style="margin-bottom: 20px;">Filters</h4>
-                <ul id="gallery-filters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    ${Array.from(uniqueTags).sort().map(tag => `<li data-filter=".tag-${tag.toLowerCase()}">${tag}</li>`).join('')}
-                </ul>
+        <div class="col-lg-12">
+            <div class="filter-dropdown-container" data-aos="fade-up">
+                <select id="gallery-filter-select" class="filter-select">
+                    <option value="*">All Categories</option>
+                    ${Array.from(uniqueTags).sort().map(tag => 
+                        `<option value=".tag-${tag.toLowerCase()}">${tag}</option>`
+                    ).join('')}
+                </select>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-12">
             <div class="row gy-4" id="gallery-content-container"></div>
         </div>
     `;
 
     const contentContainer = document.getElementById('gallery-content-container');
 
-    // 4. Render Gallery Items with dynamic tag classes for filtering
-    let galleryHTML = '';
-    items.forEach(item => {
+    // 4. Render Gallery Items (Click-to-Preview Logic)
+    contentContainer.innerHTML = items.map(item => {
         const filterClasses = item.tags ? item.tags.split(',').map(t => `tag-${t.trim().toLowerCase()}`).join(' ') : '';
-
-        galleryHTML += `
-            <div class="col-lg-6 col-md-6 gallery-item ${filterClasses}" data-aos="fade-up">
-                <div class="portfolio-content h-100">
-                    <img src="${item.image_path}" class="img-fluid" alt="${item.title}">
+        return `
+            <div class="col-lg-4 col-md-6 gallery-item ${filterClasses}" data-aos="fade-up">
+                <div class="portfolio-content h-100" style="border-radius: 8px; overflow: hidden; position: relative;">
+                    <a href="${item.image_path}" class="portfolio-lightbox" data-gallery="portfolio-gallery-main" title="${item.title}">
+                        <img src="${item.image_path}" class="img-fluid" alt="${item.title}" style="cursor: pointer; width: 100%;">
+                    </a>
                     <div class="portfolio-info">
                         <h4>${item.title}</h4>
                         <p>${item.description}</p>
-                        <a href="${item.image_path}" title="${item.title}" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
-                            <i class="bi bi-zoom-in"></i>
-                        </a>
                     </div>
                 </div>
             </div>`;
-    });
+    }).join('');
 
-    contentContainer.innerHTML = galleryHTML;
+    // 5. Dropdown Filtering Logic
+    const selectEl = document.getElementById('gallery-filter-select');
+    selectEl.addEventListener('change', function() {
+        const filterValue = this.value;
+        const galleryItems = document.querySelectorAll('.gallery-item');
 
-    // 5. Filtering Logic: Show/Hide items based on selected tag
-    const filterItems = document.querySelectorAll('#gallery-filters li');
-    filterItems.forEach(li => {
-        li.addEventListener('click', function() {
-            // Update UI state
-            filterItems.forEach(el => el.classList.remove('filter-active'));
-            this.classList.add('filter-active');
-
-            const filterValue = this.getAttribute('data-filter');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            // Apply visibility logic
-            galleryItems.forEach(item => {
-                if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+        galleryItems.forEach(item => {
+            if (filterValue === '*' || item.classList.contains(filterValue.substring(1))) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
         });
+
+        // Refresh AOS to ensure animations work on filtered items
+        if (typeof AOS !== 'undefined') AOS.refresh();
     });
 
-    // 6. Re-initialize Lightbox for the new dynamic image links
-    if (typeof GLightbox === 'function') {
-        GLightbox({ selector: '.glightbox' });
+    // 6. Re-initialize Lightbox
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.portfolio-lightbox' });
     }
 }
 
@@ -4349,6 +4487,12 @@ async function initializeSite() {
 
             // --- ADD THE CV CONTACTS CALL HERE ---
             renderContactsCV(SITE_DATA.contacts);
+        }
+        else if (fileName === 'education-details.html') {
+            renderEducationDetails(SITE_DATA.education);
+        }
+        else if (fileName === 'professionalExprience-details.html') {
+            renderProfessionalExperiencesDetails(SITE_DATA.professional_experience);
         }
         else if (fileName === 'skillsAndTools-details.html') {
             renderSkillsToolsDetails(SITE_DATA.skills);

@@ -38,6 +38,7 @@
       "link": "https://www.deakin.edu.au/",
       "roles": [
         {
+          "role_id": "res_du_rgp",
           "title": "Graduate Researcher (PhD Student)_XX",
           "timeframe_details": "Jan. 2023 – Present | Full-time | 3 years_XX",
           "description_list": [
@@ -54,6 +55,7 @@
           "related_skills": "_XXResearch · Health Informatics · Machine Learning · Deep Learning · Biomedical Sciences · Signal Processing · Data Science · Data Analysis · Deep Learning · Python (Programming Language) · Biomedical Engineering · LaTeX · Programming · Algorithms · GitHub"
         },
         {
+          "role_id": "res_du_ra3",
           "title": "Research Assistant_XX",
           "timeframe_details": "Oct. 2024 – Nov. 2024, Oct. 2023 – Dec. 2023 | Casual/Contract | 2+3 months_XX",
           "description_list": [
@@ -68,6 +70,7 @@
           "related_skills": "_XXResearch · Health Informatics · Machine Learning · Deep Learning · Biomedical Sciences · Signal Processing · Data Science · Data Analysis · Deep Learning · Python (Programming Language) · Biomedical Engineering · LaTeX · Programming · Algorithms · GitHub"
         },
         {
+          "role_id": "res_du_grm",
           "title": "Graduate Researcher (MRes Student)",
           "timeframe_details": "Feb. 2020 – Oct. 2022 | Full-time | ~2.75 years",
           "description_list": [
@@ -84,6 +87,7 @@
           "related_skills": "Research · Health Informatics · Machine Learning · Biomedical Sciences · Signal Processing · Data Science · Data Analysis · Deep Learning · Python (Programming Language) · Biomedical Engineering · LaTeX · Programming · Algorithms · GitHub"
         },
         {
+          "role_id": "res_du_ra2",
           "title": "Research Assistant",
           "timeframe_details": "Aug. 2020 – Sep. 2022 | Casual/Contract | 2 years",
           "description_list": [
@@ -99,6 +103,7 @@
           "related_skills": "Research · Health Informatics · Machine Learning · Biomedical Sciences · Signal Processing · Data Science · Data Analysis · Deep Learning · Python (Programming Language) · Biomedical Engineering · LaTeX · Programming · Algorithms · GitHub"
         },
         {
+          "role_id": "res_du_ra1",
           "title": "Research Assistant",
           "timeframe_details": "Mar. 2022 – Sep. 2022 | Casual/Contract | approximately 2.5 years",
           "description_list": [
@@ -126,6 +131,7 @@
       "link": "https://www.hstu.ac.bd/",
       "roles": [
         {
+          "role_id": "res_hstu_rs",
           "title": "Research Supervisor",
           "timeframe_details": "Sep. 2014 – Jan. 2025 | Full-time | ~12 years",
           "description_list": [],
@@ -147,6 +153,7 @@
       "link": "https://www.intersect.org.au/",
       "roles": [
         {
+          "role_id": "trn_ia_drt",
           "title": "Digital Research Trainer_XX",
           "timeframe_details": "Mar. 2023 – Present | Casual/Contract | ~3 years_XX",
           "description_list": [],
@@ -176,6 +183,7 @@
       "link": "https://www.deakin.edu.au/",
       "roles": [
         {
+          "role_id": "tch_du_grtf",
           "title": "Graduate Reserach Teaching Fellow (GRTF)_XX",
           "timeframe_details": "Feb. 2025 – Present | Part-time/Contract | ~1 years_XX",
           "description_list": [],
@@ -192,6 +200,7 @@
           "related_skills": "_XXMachine Learning · Data Science · Deep Learning · Python (Programming Language) · Programming · Security · Computer Security · Data Security · Database · SQL · Teaching · Database Design · Educational Technology · University Teaching"
         },
         {
+          "role_id": "tch_du_sas",
           "title": "Sessional Academic Staff_XX",
           "timeframe_details": "Mar. 2020 – Present | Casual/Contract | ~5 years_XX",
           "description_list": [],
@@ -220,6 +229,7 @@
       "link": "https://www.hstu.ac.bd/",
       "roles": [
         {
+          "role_id": "tch_hstu_astp",
           "title": "Assistant Professor_XX",
           "timeframe_details": "Sep. 2017 – Present | Full-time | ~9 years_XX",
           "description_list": [],
@@ -231,6 +241,7 @@
           "related_skills": "_XXResearch · Machine Learning · Programming · Algorithms · Teaching · OOP · Database Design · Educational Technology · C · C++ · Java · University Teaching · Public Speaking · Programming Languages"
         },
         {
+          "role_id": "tch_hstu_lect",
           "title": "Lecturer_XX",
           "timeframe_details": "Sep. 2014 – Aug. 2017 | Full-time | 3 years",
           "description_list": [],
@@ -244,13 +255,14 @@
     },
 
     {
-      "category": "Industrial (Software Development) Experiences_XX",
+      "category": "Industrial (Software Development) Experiences",
       "icon_class": "bi bi-terminal",
       "organization": "Advanced Apps Bangladesh (AAPBD) Ltd._XX",
       "location": "Dhaka, Bangladesh_XX",
       "link": "https://www.aapbd.com/",
       "roles": [
         {
+          "role_id": "dev_aapbd_ssepm",
           "title": "Project Development Manager & Senior Software Engineer_XX",
           "timeframe_details": "Jan. 2014 – Aug. 2014 | Full-time | 8 months_XX",
           "description_list": [],
@@ -267,13 +279,14 @@
     },
 
     {
-      "category": "Industrial (Software Development) Experiences_XX",
+      "category": "Industrial (Software Development) Experiences",
       "icon_class": "bi bi-terminal",
       "organization": "Droid Bangladesh (DROIDBD) Ltd._XX",
       "location": "Dhaka, Bangladesh_XX",
       "link": "https://www.linkedin.com/company/droid-bangladesh-limited/",
       "roles": [
         {
+          "role_id": "dev_drbd_sse",
           "title": "Senior Software Engineer_XX",
           "timeframe_details": "May. 2012 – Dec. 2013 | Full-time | 1.75 years",
           "description_list": [],
@@ -296,7 +309,8 @@
       "link": "https://www.linkedin.com/company/kento-studios-ltd./",
       "roles": [
         {
-          "title": "Programmer",
+          "role_id": "dev_ks_jp",
+          "title": "Junior Programmer",
           "timeframe_details": "Feb. 2012 – May. 2012 | Full-time | 4 months",
           "description_list": [],
           "responsibilities_list": [

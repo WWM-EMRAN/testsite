@@ -55,6 +55,36 @@
 
 
 
+/* Top Filter Dropdown Styling */
+.filter-dropdown-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filter-select {
+    padding: 10px 20px;
+    border-radius: 50px;
+    /*border: 2px solid #0563af;*/
+    border: 2px solid #d1e7ff;
+    background-color: #fff;
+    color: #444;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    min-width: 200px;
+}
+
+.filter-select:hover {
+    /*background-color: #0563af;*/
+    background-color: #d1e7ff;
+    color: #090000;
+}
+
+
+
 
 
 /*ICON CLASSES*/
