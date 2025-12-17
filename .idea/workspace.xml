@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: all dynamic content generation done. also the data chaching is implemented">
-      <change afterPath="$PROJECT_DIR$/Readme2.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/education-details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/professionalExprience-details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/extra_stylesAndIcons.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/extra_stylesAndIcons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/education.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/education.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/professional_experience.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/professional_experience.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +47,12 @@
     &quot;assignee&quot;: &quot;WWM-EMRAN&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/WWM-EMRAN/testsite.git",
-    "accountId": "b8da6c50-fc0b-42a7-855d-04d5de691bff"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/WWM-EMRAN/testsite.git&quot;,
+    &quot;accountId&quot;: &quot;b8da6c50-fc0b-42a7-855d-04d5de691bff&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -55,24 +61,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "ignore_missing_gitignore": "true",
-    "last_opened_file_path": "C:/Users/aliem/Desktop/aliem/testsite",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore_missing_gitignore&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/aliem/Desktop/aliem/testsite&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aliem\Desktop\aliem\testsite" />
@@ -220,7 +226,8 @@
       <workItem from="1765715623810" duration="848000" />
       <workItem from="1765719030151" duration="3192000" />
       <workItem from="1765776013101" duration="1796000" />
-      <workItem from="1765783120125" duration="50921000" />
+      <workItem from="1765783120125" duration="51603000" />
+      <workItem from="1765919183192" duration="24783000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -310,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765874581030</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Main contents commit: all dynamic content generation done. also the data chaching is implemented">
+      <option name="closed" value="true" />
+      <created>1765876872024</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765876872024</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,7 +355,8 @@
     <MESSAGE value="Initial commit: with all upto professional_experience complete" />
     <MESSAGE value="Main contents commit: with all upto Publication section is complete" />
     <MESSAGE value="Main contents commit: courses_trainings_certificates is modified for serial numbers to be shown in the index page" />
-    <MESSAGE value="Main contents commit: all dynamic content generation done. also the data chaching is implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: all dynamic content generation done. also the data chaching is implemented" />
+    <MESSAGE value="Main contents commit: readme changed" />
+    <MESSAGE value="Main contents commit: readme changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: readme changed" />
   </component>
 </project>
