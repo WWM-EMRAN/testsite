@@ -7,6 +7,32 @@
   },
   "coursestrainingscertificates": [
     {
+      "id_ref": "cert_kaggleGoogleAgAI",
+      "title": "AI Agents Intensive Course with Google (5-Day)_XX",
+      "serial_no": "1",
+      "source": "Google Kaggle - AI Agents Intensive Course with Google (5-Day)_XX",
+      "image_path": "assets/img/courseandcertificate/kaggle-agAI-5day.png",
+      "filter_tags": ["filter-cert", "filter-cour"],
+      "link_target": "coursesTrainingsAndCertificates-details.html#cert_kaggleGoogleAgAI",
+      "details": {
+        "type": "All, Certificate, Course",
+        "date": "Dec. 19, 2025",
+        "offering_organization": "Kaggle",
+        "funding_organization": "Google",
+        "description": "_XXThe 5-Day AI Agents Intensive course with Google is a hands-on educational program originally delivered live from November 10–14, 2025, and later released as a self-paced Kaggle Learn guide to enable broader access. The program is designed to introduce the foundations, architectures, and practical development workflows of modern AI agents, with a strong emphasis on real-world applicability.\n\nThe course is developed by Google’s machine learning researchers and engineers to provide structured exposure to agentic systems that extend beyond conventional large language model (LLM) usage. Core components of AI agents are covered, including models, tools, orchestration mechanisms, memory systems, and evaluation methodologies. Particular focus is placed on how experimental LLM prototypes can be transformed into production-ready, reliable, and scalable agent-based systems.\n\nInstruction is organised across five thematic days, combining conceptual explanations with practical demonstrations, codelabs, and guided discussions. On Day 1, foundational concepts of AI agents are introduced, including defining characteristics, autonomy, and distinctions between agentic architectures and traditional LLM applications. This session establishes the conceptual groundwork required for intelligent system design.\n\nDay 2 focuses on agent tools and interoperability through the Model Context Protocol (MCP). The mechanisms through which agents perform actions using external tools, APIs, and services are examined, along with standardised approaches for tool discovery and integration enabled by MCP.\n\nOn Day 3, attention is given to context engineering, sessions, and memory. Techniques for implementing short-term and long-term memory are explored to enable agents to retain context across interactions, supporting complex multi-turn reasoning and task execution.\n\nDay 4 addresses agent quality and reliability. Practices for evaluation, observability, logging, and tracing are introduced to provide transparency into agent behaviour. Key performance metrics and evaluation strategies are discussed to support systematic improvement and optimisation of agent performance.\n\nDay 5 transitions from experimentation to deployment. Best practices for deploying, scaling, and sharing AI agents in real-world environments are presented. The construction of multi-agent systems using the Agent-to-Agent (A2A) Protocol is also covered, enabling coordinated and collaborative agent interactions.\n\nThe program concludes with the submission of a capstone project that demonstrates applied understanding of the concepts introduced throughout the course. Successful completion of the project requirements is required for certification, which is awarded upon completion of the program.",
+        "course_link": "https://www.kaggle.com/learn-guide/5-day-agents",
+        "key_information": [
+          "_XXHands-on 5-day AI Agents Intensive course developed by Google ML researchers and engineers",
+          "Originally delivered live in November 2025, now available as a self-paced Kaggle Learn guide",
+          "Covers agent fundamentals, architectures, tools, orchestration, memory, evaluation, and deployment",
+          "_XXIntroduces Model Context Protocol (MCP) and Agent-to-Agent (A2A) protocol for interoperability and multi-agent systems",
+          "Emphasises building production-ready, scalable, and reliable AI agents",
+          "_XXIncludes a capstone project, required for successful course completion and certification"
+        ],
+        "certificate_link": "https://www.kaggle.com/certification/badges/wwmemran/105"
+      }
+    },
+    {
       "id_ref": "cert_berudand608genAI",
       "title": "Generative AI_XX",
       "serial_no": "1",
