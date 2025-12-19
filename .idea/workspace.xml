@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: XAI">
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: New certificate added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/courses_trainings_certificates.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +232,8 @@
       <workItem from="1765984613500" duration="193000" />
       <workItem from="1765984875659" duration="7784000" />
       <workItem from="1766106635774" duration="115000" />
-      <workItem from="1766140277447" duration="62000" />
+      <workItem from="1766140277447" duration="125000" />
+      <workItem from="1766148801195" duration="120000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -346,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766106718684</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Main contents commit: New certificate added">
+      <option name="closed" value="true" />
+      <created>1766140370485</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1766140370485</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,6 +389,7 @@
     <MESSAGE value="Main contents commit: readme changed" />
     <MESSAGE value="Main contents commit: all dynamic content generation done. also the data chaching is implemented" />
     <MESSAGE value="Main contents commit: XAI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: XAI" />
+    <MESSAGE value="Main contents commit: New certificate added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: New certificate added" />
   </component>
 </project>

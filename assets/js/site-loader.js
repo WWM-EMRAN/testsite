@@ -1797,16 +1797,25 @@ function renderHonorsAwardsDetails(honorsData) {
  * Filters items based on 'serial_no' and sorts them accordingly.
  * @param {object} coursesTrainingsCertificatesData // The wrapper object
  */
+
+/**
+ * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
+ * Filters work correctly using Isotope after dynamic rendering.
+ */
 function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
-    if (!coursesTrainingsCertificatesData || !coursesTrainingsCertificatesData.coursestrainingscertificates) {
-        console.error("Data structure invalid: Missing 'coursestrainingscertificates' array.");
+
+    if (
+        !coursesTrainingsCertificatesData ||
+        !coursesTrainingsCertificatesData.coursestrainingscertificates
+    ) {
+        console.error("Invalid data: Missing 'coursestrainingscertificates'");
         return;
     }
 
     const section = document.getElementById('coursesTrainingsCertificates');
     if (!section) return;
 
-    const sectionInfo = coursesTrainingsCertificatesData.section_info;
+    const sectionInfo = coursesTrainingsCertificatesData.section_info || {};
     const rawItems = coursesTrainingsCertificatesData.coursestrainingscertificates;
 
     const sectionTitleContainer = section.querySelector('.section-title');
@@ -1815,38 +1824,50 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
 
     if (!sectionTitleContainer || !filtersContainer || !contentContainer) return;
 
-    // 1. Render Section Title and Details Link
+    /* =========================================================
+       1. SECTION TITLE
+    ========================================================= */
     const sectionTitleH2 = sectionTitleContainer.querySelector('h2');
     const sectionDescriptionH6 = sectionTitleContainer.querySelector('h6');
 
-    if (sectionTitleH2 && sectionInfo) {
+    if (sectionTitleH2) {
         sectionTitleH2.innerHTML = `
-            <i class="${sectionInfo.icon_class}"></i> ${sectionInfo.title} 
-            <a href="coursesTrainingsAndCertificates-details.html"><i class="bx bx-link"></i></a>`;
-    }
-    if (sectionDescriptionH6 && sectionInfo) {
-        sectionDescriptionH6.textContent = sectionInfo.details;
+            <i class="${sectionInfo.icon_class || ''}"></i>
+            ${sectionInfo.title || ''}
+            <a href="coursesTrainingsAndCertificates-details.html">
+                <i class="bx bx-link"></i>
+            </a>`;
     }
 
-    // 2. Filter, Sort, and Aggregate Items
-    let allItems = [];
-    let filterTags = new Set(['*']);
+    if (sectionDescriptionH6) {
+        sectionDescriptionH6.textContent = sectionInfo.details || '';
+    }
+
+    /* =========================================================
+       2. PREPARE ITEMS
+    ========================================================= */
+    const allItems = [];
+    const filterTags = new Set(['*']);
 
     rawItems.forEach(item => {
-        if (item.serial_no && item.serial_no.toString().trim() !== "") {
+        if (item.serial_no && String(item.serial_no).trim() !== '') {
             if (Array.isArray(item.filter_tags)) {
                 item.filter_tags.forEach(tag => filterTags.add(tag));
             }
             allItems.push({
                 ...item,
-                filter_classes_raw: Array.isArray(item.filter_tags) ? item.filter_tags.join(' ') : ''
+                filter_classes_raw: Array.isArray(item.filter_tags)
+                    ? item.filter_tags.join(' ')
+                    : ''
             });
         }
     });
 
     allItems.sort((a, b) => parseInt(a.serial_no) - parseInt(b.serial_no));
 
-    // 3. Render Navigation Filters
+    /* =========================================================
+       3. RENDER FILTER BUTTONS (FIXED)
+    ========================================================= */
     const filterNames = {
         '*': 'All',
         'filter-cert': 'Certificate',
@@ -1857,56 +1878,89 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
     };
 
     filtersContainer.innerHTML = '';
+
     filterTags.forEach(tag => {
         const displayName = filterNames[tag] || tag;
         const isActive = tag === '*' ? 'filter-active' : '';
-        filtersContainer.innerHTML += `<li data-filter=".${tag}" class="${isActive}">${displayName}</li>`;
+        const filterValue = tag === '*' ? '*' : '.' + tag;
+
+        filtersContainer.innerHTML += `
+            <li class="${isActive}" data-filter="${filterValue}">
+                ${displayName}
+            </li>`;
     });
 
-    // 4. Render Items with Lightbox Integration
+    /* =========================================================
+       4. RENDER ITEMS
+    ========================================================= */
     contentContainer.innerHTML = '';
 
     allItems.forEach(item => {
         const imageSrc = item.image_path;
-        const sourceShort = item.source.split(' - ').slice(-1)[0];
+        const sourceShort = item.source
+            ? item.source.split(' - ').slice(-1)[0]
+            : '';
 
-        // We use 'portfolio-lightbox' to ensure compatibility with your theme's GLightbox setup
-        const itemHTML = `
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${item.filter_classes_raw}" data-aos="fade-up" data-aos-delay="200">
+        contentContainer.innerHTML += `
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${item.filter_classes_raw}"
+                 data-aos="fade-up" data-aos-delay="200">
+
                 <div class="portfolio-content h-100">
                     <img src="${imageSrc}" class="img-fluid" alt="${item.title}">
+
                     <div class="portfolio-info">
                         <h4>${item.title}</h4>
                         <p>${sourceShort}</p>
-                        
-                        <a href="${imageSrc}" 
-                           title="${item.title}" 
-                           data-gallery="portfolio-gallery-cert" 
-                           class="portfolio-lightbox preview-link">
+
+                        <a href="${imageSrc}"
+                           class="portfolio-lightbox preview-link"
+                           data-gallery="portfolio-gallery-cert"
+                           title="${item.title}">
                            <i class="bi bi-zoom-in"></i>
                         </a>
 
-                        <a href="${item.link_target}" 
-                           title="More Details" 
-                           class="details-link">
+                        <a href="${item.link_target}"
+                           class="details-link"
+                           title="More Details">
                            <i class="bi bi-link-45deg"></i>
                         </a>
                     </div>
                 </div>
             </div>`;
-
-        contentContainer.innerHTML += itemHTML;
     });
 
-    // 5. CRITICAL: Re-initialize Lightbox for dynamic content
-    // This allows the newly added HTML to open in the preview overlay
-    if (typeof GLightbox !== 'undefined') {
-        GLightbox({
-            selector: '.portfolio-lightbox'
+    /* =========================================================
+       5. INIT ISOTOPE (CRITICAL)
+    ========================================================= */
+    if (typeof Isotope !== 'undefined') {
+        const iso = new Isotope(contentContainer, {
+            itemSelector: '.isotope-item',
+            layoutMode: 'fitRows'
         });
+
+        const filterButtons = filtersContainer.querySelectorAll('li');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterButtons.forEach(el => el.classList.remove('filter-active'));
+                this.classList.add('filter-active');
+
+                iso.arrange({
+                    filter: this.getAttribute('data-filter')
+                });
+            });
+        });
+    } else {
+        console.warn("Isotope is not loaded.");
     }
 
-    // Refresh AOS animations if applicable
+    /* =========================================================
+       6. RE-INIT GLIGHTBOX + AOS
+    ========================================================= */
+    if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.portfolio-lightbox' });
+    }
+
     if (typeof AOS !== 'undefined') {
         AOS.refresh();
     }
