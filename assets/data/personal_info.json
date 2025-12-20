@@ -2,7 +2,7 @@
   "name": "EMRAN ALI_XX",
   "hero": {
     "title_main": "Emran Ali_XX",
-    "typed_items": "<i class='bi bi-mortarboard'></i> Education_XX , <i class='bx bxs-flask'></i> Research_XX , <i class='bi bi-laptop'></i> Development_XX",
+    "typed_items": "<i class='bi bi-mortarboard'></i> Education , <i class='bx bxs-flask'></i> Research , <i class='bi bi-laptop'></i> Development",
     "title_researcher": "PhD Researcher_XX",
     "title_institute_primary": "IT @ Deakin University, Australia_XX",
     "title_institute_secondary": "CSM @ Coventry University, United Kingdom_XX",
@@ -10,8 +10,9 @@
   },
   "profile_summary": {
     "title": "Emran's Profile Summary_XX",
+    "subtitle": "Overview_XX",
     "link_printable_cv": "printable_cv.html",
-    "intro_paragraph_html": "_XXI am a research and development enthusiast in Data Analytics, Machine (Deep) Learning, Generative AI, Explainability, Interpretability and Optimisation. Experienced in applied research in: Health Informatics, Business Analytics, Automation, and Sustainable Environment.",
+    "intro_paragraph_html": "_XXI am a research and development enthusiast in Data Analytics, Machine (Deep) Learning, Generative AI, Explainability, Interpretability and Optimisation. Experienced in applied research in: Health Informatics, Business Analytics, Automation, and Sustainable Environment. Involved in the academic and industrial collaboration researches and projects. ",
     "key_points_left": [
       {"icon_class": "bx bxs-graduation", "strong": "PhD_XX", "text": "IT@Deakin University & CSM@Coventry University - (Ongoing)"},
       {"icon_class": "bx bxs-graduation", "strong": "Master's", "text": "IT(Research)@Deakin University"},
@@ -19,22 +20,31 @@
       {"icon_class": "bx bx-award", "strong": "Scholarship (PhD)", "text": "DUPRS, Cotutelle (Deakin & Coventry)"},
       {"icon_class": "bx bx-award", "strong": "Fellowship (Master's)", "text": "STF, Ministry of Sci.&Tech., Bangladesh"},
       {"icon_class": "bx bi-tools", "strong": "Industry Involvement (Research)", "text": "Alfred Health & AETMOS"},
-      {"icon_class": "bx bx-bulb", "strong": "Projects", "text": "ICU Seizure Detection & Air Quality Prediction"}
+      {"icon_class": "bx bx-bulb", "strong": "Projects_XX", "text": "ICU Seizure Detection & Air Quality Prediction"}
     ],
     "key_points_right": [
-      {"icon_class": "bx bx-pen", "strong": "Teaching", "text": "HSTU & (Part-time)@Deakin University"},
+      {"icon_class": "bx bx-pen", "strong": "Teaching_XX", "text": "HSTU & (Part-time)@Deakin University"},
       {"icon_class": "bx bi-file-earmark-code", "strong": "Software Development", "text": "Sr. Dev.@DROIDBD & AAPBD"},
       {"icon_class": "bx bx-group", "strong": "Membership", "text": "ACS, IEEE, EMBS, DUSA, DAIS & DSEC"},
       {"icon_class": "bx bx-medal", "strong": "Awards", "text": "(AWS AI/ML & Bertelsmann NextGen) Scholarship"},
       {"icon_class": "bi bi-envelope-at", "strong": "Email", "text": "emran.ali@research.deakin.edu.au", "link": "mailto:emran.ali@research.deakin.edu.au"},
       {"icon_class": "bi bi-microsoft-teams", "strong": "MS Teams", "text": "wwm.emran@hotmail.com", "link": "https://teams.microsoft.com/l/chat/0/0?users=wwm.emran@hotmail.com"},
-      {"icon_class": "bx bxl-linkedin", "strong": "LinkedIn", "text": "https//www.linkedin.com/in/wwmemran", "link": "https//www.linkedin.com/in/wwmemran"},
-      {"icon_class": "bx bx-globe", "strong": "Website_XX", "text": "https://emran.humachlab.com", "link": "https://emran.humachlab.com"}
+      {"icon_class": "bx bxl-linkedin", "strong": "LinkedIn_XX", "text": "https//www.linkedin.com/in/wwmemran", "link": "https//www.linkedin.com/in/wwmemran"},
+      {"icon_class": "bx bx-globe", "strong": "Website", "text": "https://emran.humachlab.com", "link": "https://emran.humachlab.com"}
     ],
-    "research_area": "_XXArtificial Intelligence (AI) | Machine Learning (ML) | Deep Learning (DL) | Generative AI (GenAI) | Agentic AI | Interpretability* | Health Informatics* | (Bio)Signal Processing | Medical Technology (MedTech) | Electroencephalography (EEG) | Hypnogram* | Epilepsy | Sleep* | Aging* | Air Quality",
-    "recent_works": "_XXHypnogram Analysis, Sleep, Sleep Analysis, Sleep Disorder Detection, Aging, EEG Signal Analysis, EEG Channel Optimisation, Epileptic Seizure Detection, ML Model Interpretability, Meteorological Data Analysis, Air Quality Prediction, Realestate House Suggestion (GenAI), Multi-Agent Research Assistant, Business Data Analysis, Education Data Analysis."
+    "research_area": {
+      "icon_class": "bx bx-search-alt-2",
+      "title": "Research Area_XX",
+      "text": "_XXArtificial Intelligence (AI) | Machine Learning (ML) | Deep Learning (DL) | Generative AI (GenAI) | Agentic AI | Interpretability* | Health Informatics* | (Bio)Signal Processing | Medical Technology (MedTech) | Electroencephalography (EEG) | Hypnogram* | Epilepsy | Sleep* | Aging* | Air Quality"
+    },
+    "recent_works": {
+      "icon_class": "bx bx-book-content",
+      "title": "Recent Works_XX",
+      "text": "_XXHypnogram Analysis, Sleep, Sleep Analysis, Sleep Disorder Detection, Aging, EEG Signal Analysis, EEG Channel Optimisation, Epileptic Seizure Detection, ML Model Interpretability, Meteorological Data Analysis, Air Quality Prediction, Realestate House Suggestion (GenAI), Multi-Agent Research Assistant, Business Data Analysis, Education Data Analysis."
+    }
   },
   "about_full_text": {
+    "icon_class": "bx bx-user",
     "title": "About_XX",
     "paragraph_html": "_XXThis is Emran. I strive to cherish and appreciate every moment of my life. I have a deep admiration for nature and a preference for simplicity. I am a friendly individual with a strong passion for travel. <br><br> I am highly enthusiastic about learning new things, especially those that spark my interest. My fascination with Machine Learning began during an early lecture that explained how both humans and machines learn from their environment in similar ways. Since then, exploring Machine Learning has become not only a personal passion but also an integral part of my professional career. <br><br> I earned a 4-year Bachelor of Science (B.Sc.) degree in Computer Science and Engineering (CSE) from Hajee Mohammad Danesh Science and Technology University (HSTU), Bangladesh, with one year of partial research involvement. My research focused on enhancing text-search algorithms with a practical application for smartphones. During this period, I also completed various project-based works and actively engaged in numerous activities, including voluntary service, technology event management, and participation in computer programming contests. <br><br> After graduation, I worked in the software development industry in my home country for almost three years and developed several iOS applications both independently and collaboratively. I began my career at Kento Studios Ltd., later joined DROID Bangladesh (DROIDBD) Ltd., and eventually worked at Advanced Apps Bangladesh (AAPBD) Ltd. My responsibilities included software development strategies, automation, and industry-level management tasks. During this time, I was promoted to Senior Software Engineer and subsequently to Software Development Manager, and I also received a Best Employee Award in recognition of my dedication and hard work. <br><br> Later, I joined HSTU as a faculty member in the Department of CSE, where I have been working for over eight years. I taught a variety of major CSE courses and was involved in research, academic projects, and student supervision. The courses I taught include major programming languages—C, C++, Java, PHP, and C#; web technologies—HTML, CSS, PHP, MySQL; database courses—Database Systems, Oracle, MySQL; smartphone application development; data science–related subjects such as Artificial Intelligence, Machine Learning, and Pattern Recognition; as well as computer hardware fundamentals. <br><br> I was awarded a Science and Technology Fellowship (STF) from the Ministry of Science and Technology, Government of the People’s Republic of Bangladesh, for higher studies in the STEM fields. I then completed a 2-year research-based Master of Science (M.Sc.) degree in Information Technology (IT) at Deakin University, Australia. This program, offered by the School of IT (SIT) at the Melbourne Burwood campus, focused entirely on research. My master’s research primarily centred on applying machine learning and optimisation techniques to physiological signal (biosignal) processing and disease detection, specifically analysing brain signals (electroencephalograms—EEG) and applying machine learning methods for epileptic seizure detection. During this period, I published several research articles and developed a Python-based feature extraction library, which will soon be made available to the research community. <br><br> I also served as a research assistant on multiple projects. One voluntary initiative, conducted by Deakin University in collaboration with Monash University and Alfred Health, focused on automatic detection and prediction of epileptic seizures in ICU patients and identifying the minimal EEG channels required for monitoring. In another project with Monash University and AETMOS Australia (a provider of air quality monitoring and environmental health solutions), I worked on indoor air-temperature prediction for air-quality forecasting and examined its relationship with health implications. <br><br> I have been offered a Cotutelle (joint) Doctor of Philosophy (PhD) program at Deakin University, Australia, in collaboration with Coventry University, United Kingdom. My PhD research is fully funded through the Deakin University Postgraduate Research Scholarship (DUPRS). This joint program is conducted by all participating universities and supervised by faculty members across these institutions. My research will focus on exploring the relationship between sleep, sleep stages, and healthy ageing. I intend to apply interpretable machine learning models in this project, which will again involve the analysis of physiological signals. <br><br> I continuously expand my knowledge in the latest tools and technologies related to Artificial Intelligence (AI) and Machine Learning (ML). I have learned and applied state-of-the-art concepts in Generative AI (GenAI) and Agentic AI in various application areas, including AI automation. I have also received several competitive scholarships from renowned organisations, such as the AWS AI/ML Scholarship and the Bertelsmann Next Generation Tech Booster Scholarship, which enabled me to learn new technologies through various courses and nanodegrees. <br><br> I possess strong management, leadership, and technical skills, with expertise in programming and data analytics gained through extensive practice and experience. I look forward to applying my research knowledge and development skills to create industry-grade products and services that contribute to building a better future."
   }

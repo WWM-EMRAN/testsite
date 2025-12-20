@@ -318,68 +318,72 @@ function renderAbout(personalInfo) {
 
     const siteAssets = SITE_DATA.site.assets;
     const summaryData = personalInfo.profile_summary;
+    const fullAboutData = personalInfo.about_full_text;
 
-    // 1. Set Profile Image
+    // --- 1. RENDER TOP PROFILE SUMMARY ---
+    // Look for the first section-title inside the FIRST container of #about
+    const summaryContainer = aboutSection.querySelector('.container .section-title');
+    if (summaryContainer && summaryData) {
+        const titleH2 = summaryContainer.querySelector('h2');
+        if (titleH2) {
+            titleH2.innerHTML = `${summaryData.title} <a href="${summaryData.link_printable_cv}"> <i class="bx bx-printer"></i> </a>`;
+        }
+
+        const introParagraph = summaryContainer.querySelector('p');
+        if (introParagraph) {
+            introParagraph.innerHTML = summaryData.intro_paragraph_html;
+        }
+    }
+
+    // --- 2. RENDER OVERVIEW SUB-SECTION (Middle Image & Bullets) ---
     const profileImg = aboutSection.querySelector('.col-lg-4 img');
     if (profileImg && siteAssets) {
         profileImg.src = `assets/img/${siteAssets.images.profile_image_formal}`;
     }
 
-    // --- A. Profile Summary (Top 8-column content) ---
-    const summaryContainer = aboutSection.querySelector('.col-lg-8.content .section-title');
-
-    if (summaryContainer && summaryData) {
-        // Title and Printable CV link
-        const titleH2 = summaryContainer.querySelector('h2');
-        if (titleH2) {
-            titleH2.innerHTML =
-                `${summaryData.title} <a href="${summaryData.link_printable_cv}"> <i class="bx bx-printer"></i> </a>`;
-        }
-
-        // Intro paragraph
-        const introParagraph = summaryContainer.querySelector('p:nth-of-type(1)');
-        if (introParagraph) {
-            introParagraph.innerHTML = summaryData.intro_paragraph_html;
-        }
-
-        // Key Points (Left and Right Columns)
-        const leftList = summaryContainer.querySelector('.row .col-lg-6:nth-child(1) ul');
-        const rightList = summaryContainer.querySelector('.row .col-lg-6:nth-child(2) ul');
-
-        if (leftList) {
-            leftList.innerHTML = summaryData.key_points_left.map(item =>
-                `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
-            ).join('');
-        }
-
-        if (rightList) {
-            rightList.innerHTML = summaryData.key_points_right.map(item =>
-                `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
-            ).join('');
-        }
+    const overviewHeader = aboutSection.querySelector('.content h3');
+    if (overviewHeader && summaryData) {
+        overviewHeader.innerHTML = summaryData.subtitle;
     }
 
-    // --- B. FIX: Research Area/Recent Works (Targeting the new ID) ---
+    const leftList = aboutSection.querySelector('.content .row .col-lg-6:nth-child(1) ul');
+    const rightList = aboutSection.querySelector('.content .row .col-lg-6:nth-child(2) ul');
+
+    if (leftList && summaryData.key_points_left) {
+        leftList.innerHTML = summaryData.key_points_left.map(item =>
+            `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
+        ).join('');
+    }
+
+    if (rightList && summaryData.key_points_right) {
+        rightList.innerHTML = summaryData.key_points_right.map(item =>
+            `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
+        ).join('');
+    }
+
+    // --- 3. RESEARCH AREA & RECENT WORKS ---
     const researchAreaParagraph = document.getElementById('research-summary-area');
     if (researchAreaParagraph && summaryData) {
-        // This will now replace ALL content inside the <p> with the ID.
         researchAreaParagraph.innerHTML = `
-            <b>Research Area:</b> ${summaryData.research_area} <br>
-            <b>Recent Works:</b> ${summaryData.recent_works}
+            <b><i class="${summaryData.research_area.icon_class}"></i> ${summaryData.research_area.title}:</b> ${summaryData.research_area.text} <br>
+            <b><i class="${summaryData.recent_works.icon_class}"></i> ${summaryData.recent_works.title}:</b> ${summaryData.recent_works.text}
         `;
     }
 
-    // --- C. Full About Section (Below the summary) ---
-    const fullAboutContainer = aboutSection.querySelector('.container.section-title:nth-of-type(2)');
-    const fullAboutTitle = fullAboutContainer ? fullAboutContainer.querySelector('h2') : null;
-    const fullAboutContent = fullAboutContainer ? fullAboutContainer.querySelector('p') : null;
-    const fullAboutData = personalInfo.about_full_text;
+    // --- 4. RENDER FULL ABOUT SECTION (Bottom Long Text) ---
+    // This targets the container that is a DIRECT child of #about at the very end
+    const fullAboutContainer = aboutSection.querySelector(':scope > .container.section-title');
 
-    if (fullAboutTitle && fullAboutData) {
-        fullAboutTitle.innerHTML = `<i class="bx bx-user"></i> ${fullAboutData.title}`;
-    }
-    if (fullAboutContent && fullAboutData) {
-        fullAboutContent.innerHTML = fullAboutData.paragraph_html;
+    if (fullAboutContainer && fullAboutData) {
+        const fullAboutTitle = fullAboutContainer.querySelector('h2');
+        const fullAboutContent = fullAboutContainer.querySelector('p');
+
+        if (fullAboutTitle) {
+            fullAboutTitle.innerHTML = `<i class="${fullAboutData.icon_class}"></i> ${fullAboutData.title}`;
+        }
+        if (fullAboutContent) {
+            fullAboutContent.innerHTML = fullAboutData.paragraph_html;
+        }
     }
 }
 
@@ -398,56 +402,64 @@ function renderAboutCV(personalInfo) {
 
     const summaryData = personalInfo.profile_summary;
     const siteAssets = SITE_DATA.site.assets;
-    const resumePdfPath = siteAssets.documents.resume_pdf || '#';
+    const resumePdfPath = siteAssets?.documents?.resume_pdf || '#';
 
-    // 1. Set Profile Image
+    // --- 1. RENDER TOP RESUME HEADER & SUMMARY ---
+    // Target the #about section directly first
+    const aboutSection = cvContainer.querySelector('.section-title');
+
+    if (aboutSection && summaryData) {
+        // Look for the H2 anywhere inside #about for the Resume Header
+        const summaryHeader = aboutSection.querySelector('h2');
+        if (summaryHeader) {
+            summaryHeader.innerHTML = `
+                Resume - ${personalInfo.name} | 
+                <a href="javascript:void(0);" onclick="PrintElem('main_cv')"> <i class="bx bx-printer"></i> </a> | 
+                <a href="${resumePdfPath}" target="_blank"> <i class="bx bx-download"></i> </a>
+            `;
+        }
+
+        // Look for the first paragraph inside #about for the intro text
+        const introParagraph = aboutSection.querySelector('p');
+        if (introParagraph) {
+            introParagraph.innerHTML = summaryData.intro_paragraph_html;
+        }
+    }
+
+    // --- 2. RENDER OVERVIEW SUB-SECTION (Image & Key Points) ---
     const profileImg = cvContainer.querySelector('#about .col-lg-4 img');
     if (profileImg && siteAssets) {
         profileImg.src = `assets/img/${siteAssets.images.profile_image_formal}`;
     }
 
-    // --- A. Top Header and Buttons ---
-    const summaryHeader = cvContainer.querySelector('#about .col-lg-8.content .section-title h2');
-
-    if (summaryHeader && summaryData) {
-        // Title, Print Button, and Download Button
-        summaryHeader.innerHTML = `
-            Resume - ${personalInfo.name} | 
-            <a href="javascript:void(0);" onclick="PrintElem('main_cv')"> <i class="bx bx-printer"></i> | </a> 
-            <a href="${resumePdfPath}" target="_blank"> <i class="bx bx-download"></i> </a>
-        `;
+    const overviewHeader = cvContainer.querySelector('#about .content h3');
+    if (overviewHeader && summaryData) {
+        overviewHeader.innerHTML = summaryData.subtitle;
     }
 
-    // --- B. Intro Paragraph & Key Points (Same logic as renderAbout) ---
-    const introParagraph = cvContainer.querySelector('#about .col-lg-8.content .section-title p:nth-of-type(1)');
-    if (introParagraph && summaryData) {
-        introParagraph.innerHTML = summaryData.intro_paragraph_html;
-    }
+    // Updated selectors to ensure they hit the correct columns in the CV row
+    const leftList = cvContainer.querySelector('#about .content .row .col-lg-6:nth-child(1) ul');
+    const rightList = cvContainer.querySelector('#about .content .row .col-lg-6:nth-child(2) ul');
 
-    const leftList = cvContainer.querySelector('#about .col-lg-8.content .row .col-lg-6:nth-child(1) ul');
-    const rightList = cvContainer.querySelector('#about .col-lg-8.content .row .col-lg-6:nth-child(2) ul');
-
-    if (leftList && rightList && summaryData) {
+    if (leftList && summaryData.key_points_left) {
         leftList.innerHTML = summaryData.key_points_left.map(item =>
             `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
         ).join('');
+    }
 
+    if (rightList && summaryData.key_points_right) {
         rightList.innerHTML = summaryData.key_points_right.map(item =>
             `<li><i class="${item.icon_class}"></i> <strong>${item.strong}:</strong> <span>${item.link ? `<a target="_blank" href="${item.link}">${item.text}</a>` : item.text}</span> </li>`
         ).join('');
     }
 
-    // --- C. FIX: Research Area/Recent Works (Targeting the new ID) ---
+    // --- 3. RESEARCH AREA & RECENT WORKS ---
     const researchAreaParagraph = document.getElementById('research-summary-area');
     if (researchAreaParagraph && summaryData) {
-        // This will now replace ALL content inside the <p> with the ID.
         researchAreaParagraph.innerHTML = `
-            <b>Research Area:</b> ${summaryData.research_area} <br>
-            <b>Recent Works:</b> ${summaryData.recent_works}
+            <b><i class="${summaryData.research_area.icon_class}"></i> ${summaryData.research_area.title}:</b> ${summaryData.research_area.text} <br>
+            <b><i class="${summaryData.recent_works.icon_class}"></i> ${summaryData.recent_works.title}:</b> ${summaryData.recent_works.text}
         `;
-    } else if (researchAreaParagraph) {
-        // If data is missing but the element exists, ensure it is cleared.
-        researchAreaParagraph.innerHTML = '';
     }
 }
 
@@ -1792,14 +1804,6 @@ function renderHonorsAwardsDetails(honorsData) {
 
 /**
  * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
- * for the main index page.
- * Handles the flat data structure: data.coursestrainingscertificates is the main array.
- * Filters items based on 'serial_no' and sorts them accordingly.
- * @param {object} coursesTrainingsCertificatesData // The wrapper object
- */
-
-/**
- * Renders the Courses, Trainings, and Certificates section (ID: #coursesTrainingsCertificates)
  * Filters work correctly using Isotope after dynamic rendering.
  */
 function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
@@ -1965,6 +1969,7 @@ function renderCoursesTrainingsCertificates(coursesTrainingsCertificatesData) {
         AOS.refresh();
     }
 }
+
 
 
 

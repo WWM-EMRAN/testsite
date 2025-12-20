@@ -2,8 +2,8 @@
   "site_info": {
     "meta_description": "Emran Ali - Educator, Trainer, Researcher, Developer: Personal Portfolio.",
     "meta_keywords": "Emran Ali, Educator, Teacher, Trainer, Researcher, AI, Machine Learning, Data Science, PhD, Projects, Developer, Portfolio, Resume, CV, Personal Website",
-    "author": "Emran Ali",
-    "title": "Emran Ali_XX - Personal Website"
+    "author": "Emran Ali_XX",
+    "title": "Emran Ali - Personal Website_XX"
   },
   "cache_settings": {
     "expiration_seconds": 3600,
@@ -95,8 +95,8 @@
       ]
     },
     "main_page_footer": {
-      "sitename": "iPortfolio_XX",
-      "design_credit": "BootstrapMade_XX",
+      "sitename": "iPortfolio",
+      "design_credit": "BootstrapMade",
       "design_link": "https://bootstrapmade.com/"
     }
   }
