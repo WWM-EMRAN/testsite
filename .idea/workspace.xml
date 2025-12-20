@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: New certificate added">
+    <list default="true" id="da72c47b-f9f1-4f47-8f04-195e082d5de6" name="Changes" comment="Main contents commit: certificate filter applied">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/extra_stylesAndIcons.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/extra_stylesAndIcons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/personal_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/personal_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/data/site.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/data/site.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/site-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/site-loader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printable_cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/printable_cv.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +239,8 @@
       <workItem from="1765984875659" duration="7784000" />
       <workItem from="1766106635774" duration="115000" />
       <workItem from="1766140277447" duration="125000" />
-      <workItem from="1766148801195" duration="120000" />
+      <workItem from="1766148801195" duration="174000" />
+      <workItem from="1766242142262" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="Version 1.2 with updated contents and grammer checks: done.">
       <option name="closed" value="true" />
@@ -355,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766140370485</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Main contents commit: certificate filter applied">
+      <option name="closed" value="true" />
+      <created>1766148942974</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1766148942974</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +405,7 @@
     <MESSAGE value="Main contents commit: all dynamic content generation done. also the data chaching is implemented" />
     <MESSAGE value="Main contents commit: XAI" />
     <MESSAGE value="Main contents commit: New certificate added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: New certificate added" />
+    <MESSAGE value="Main contents commit: certificate filter applied" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main contents commit: certificate filter applied" />
   </component>
 </project>

@@ -85,6 +85,28 @@
 
 
 
+/* H2 Gap minimisation*/
+/* Reduce gap specifically for the CV page */
+#main_cv .section-title {
+    margin-bottom: 10px !important; /* Reduces space below the title */
+    padding-bottom: 0 !important;
+}
+
+#main_cv .section-title h2 {
+    margin-bottom: 5px !important; /* Tightens space between H2 and the subtitle/paragraph */
+}
+
+#main_cv .section-title + .row,
+#main_cv .section-title + table {
+    margin-top: 0 !important; /* Removes top margin from the element immediately following the title */
+}
+
+/* Specific fix for resume items to keep them compact */
+#main_cv .resume-item {
+    padding-bottom: 10px !important;
+}
+
+
 
 
 /*ICON CLASSES*/
